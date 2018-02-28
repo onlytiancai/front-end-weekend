@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>standardattributes</title>
+
+    <style>
+        a:focus {
+            color: lime;
+            background: red;
+        }
+
+        #div1 {
+            width: 350px;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
+    <script type="text/javascript">
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("Text", ev.target.id);
+        }
+
+        function drop(ev) {
+            var data = ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+            ev.preventDefault();
+        }
+    </script>
+</head>
+
+<body>
+    <a href="https://baidu.com" accesskey="b" tabindex="2">百度</a>
+    <a href="https://taobao.com" accesskey="t" tabindex="1">淘宝</a>
+    <a href="https://www.microsoft.com/" tabindex="3">Microsoft</a>
+    <p title="百度，全球最大的中文搜索引擎">baidu.com</p>
+    <p dir="rtl">文本方向从右到左!</p>
+    <p contenteditable="true">这是一个段落。是可编辑的。尝试修改文本。</p>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br />
+    <p id="drag1" draggable="true" ondragstart="drag(event)">这是一段可移动的段落。请把该段落拖入上面的矩形。</p>
+    <p hidden="hidden">这是一段隐藏的段落。</p>
+</body>
+
+</html>
