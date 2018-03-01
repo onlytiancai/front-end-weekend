@@ -30,8 +30,12 @@
             color: #7a7a7a;
         }
 
-        .top-banner {
+        .top-banner-edu {
             background: url("images/top-banner-edu-bg.png");
+        }
+
+        .top-banner-manufacturing {
+            background: url("images/top-banner-manufacturing-bg.png");
         }
 
         .top-banner .container {
@@ -66,14 +70,34 @@
 
 <body>
 
-    <div class="top-banner">
-        <div class="container">
-            <img class="top-banner-text" src="images/top-banner-manufacturing-text.png" alt="">
-            <img class="top-banner-img" src="images/top-banner-manufacturing.png" alt="">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="2000">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active top-banner top-banner-manufacturing">
+                <div class="container">
+                    <img class="top-banner-text" src="images/top-banner-manufacturing-text.png" alt="">
+                    <img class="top-banner-img" src="images/top-banner-manufacturing.png" alt="">
+                </div>
+                <!-- end container -->
+            </div>
+            <div class="item top-banner top-banner-edu">
+                <div class="container">
+                    <img class="top-banner-text" src="images/top-banner-edu-text.png" alt="">
+                    <img class="top-banner-img" src="images/top-banner-edu.png" alt="">
+                </div>
+                <!-- end container -->
+            </div>
+            ...
         </div>
-        <!-- end container -->
     </div>
-    <!-- end topbanner -->
+
+
 
 
     <div class="container manufacturing">
@@ -116,6 +140,9 @@
         <!-- end row -->
     </div>
     <!-- end container-->
+
+    <script src="/lib/jquery.min.js"></script>
+    <script src="/lib/bootstrap-3.3.7/js/bootstrap.js"></script>
 </body>
 
 </html>
