@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML 综合练习</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<table  cellspacing="0" cellpadding="10">
+		<thead>
+			<tr>
+				<td colspan="2">
+					<h1>北京欢迎你</h1>
+					<h2>有梦想谁都了不起</h2>
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<ul>
+						<li><a href="login">登录</a></li>
+						<li><a href="register">注册新用户</a></li>
+					</ul>
+				</td>
+				<td>
+					<form action="/register" method="post">
+						<table border="1" cellspacing="0" cellpadding="10">
+							<thead>
+								<tr>
+									<th colspan="4">用户注册</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>用户名:</td>
+									<td><input name="username" type="text" value=""></td>
+									<td colspan="2"><a href="#">检测是否有相同用户名</a></td>
+								</tr>
+								<tr>
+									<td>密码:</td>
+									<td><input name="password" type="password" value=""> <span>*</span> (至少 6 位)</td>
+									<td>真实姓名:</td>
+									<td><input name="realname" type="text" value=""> <span>*</span> </td>
+								</tr>
+								<tr>
+									<td>性别:</td>
+									<td>
+										<label><input type="radio" name="sex" value="male">男</label>
+										<label><input type="radio" name="sex" value="female">女</label>
+									</td>
+									<td>爱好:</td>
+									<td>
+										<label><input type="checkbox" name="interest" value="reading">读书</label>
+										<label><input type="checkbox" name="interest" value="film">看电影</label>
+									</td>
+								</tr>
+								<tr>
+									<td>证件类型:</td>
+									<td>
+										<select name="card">
+											<option value="idcard">身份证</option>
+											<option value="student">学生证</option>
+										</select>
+									</td>
+									<td>证件号码</td>
+									<td>
+										<input name="cardnumber" type="text" value=""> <span>*</span>
+									</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="4"><input type="reset" value="重置"><input type="submit" value="注册"></td>
+								</tr>
+							</tfoot>
+						</table>
+					</form>						
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="2">
+					©2018 Baidu <a href="#">使用百度前必读</a> <a>意见反馈</a> 京ICP证030173号 		
+				</td>
+			</tr>
+		
+		</tfoot>
+	</table>
+</body>
+</html>	
