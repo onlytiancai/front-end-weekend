@@ -257,5 +257,31 @@
 		</li>
 		<li>Milk</li>
 	</ul>
+	
+	<!--表单-->
+	<form action="/login" method="post" enctype="application/x-www-form-urlencoded">
+		<p>用户名：<input name="username" type="text" value=""></p>
+		<p>密码：<input name="password" type="password" value=""></p>
+		<p><input type="reset" value="重置"><input type="submit" value="登录"></p>
+	</form>
+	
+	<!--单选，多选-->
+	<form action="/register" method="post">
+		<p>性别：<label><input type="radio" name="sex" value="male">男</label>
+		<label><input type="radio" name="sex" value="female">女</label></p>
+		<p>爱好：<label><input type="checkbox" name="interest" value="reading">读书</label>
+		<label><input type="checkbox" name="interest" value="film">看电影</label></p>
+	</form>
+	
+	<!--下拉列表-->
+	<form action="">
+	<select name="cars">
+		<option value="volvo">Volvo</option>
+		<option value="saab">Saab</option>
+		<option value="fiat">Fiat</option>
+		<option value="audi">Audi</option>
+	</select>
+	</form>
+
 </body>
 </html>
