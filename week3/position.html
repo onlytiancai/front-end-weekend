@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .absolute-test {
+            position: absolute;
+            background-color: lightgreen;
+        }
+
+        .absolute-test .in {
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            background-color: blueviolet;
+        }
+
+        .absolute-test2 {
+            background-color: lightgreen;
+            padding: 20px;
+        }
+
+        .absolute-test2 .in {
+            position: absolute;
+        }
+
+        .absolute-test3 {
+            background-color: lightgreen;
+            height: 300px;
+            width: 300px;
+        }
+
+        .absolute-test3 .in {
+            background-color: lightblue;
+            width: 50px;
+            height: 50px;
+            float: right;
+            position: absolute;
+        }
+
+        .absolute-test4 {
+            position: relative;
+            background-color: lightgreen;
+            height: 300px;
+            width: 300px;
+        }
+
+        .absolute-test4 .in {
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            top: 10px;
+            bottom: 10px;
+            background-color: lightblue;
+
+        }
+
+        .absolute-test5 {
+            position: relative;
+            background-color: lightgreen;
+            height: 300px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .absolute-test5 .in {
+
+            background-color: lightblue;
+            position: absolute;
+
+        }
+
+        .absolute-test6 {
+            position: relative;
+            background-color: lightgreen;
+            height: 100px;
+            width: 100px;
+            overflow: auto;
+        }
+
+        .absolute-test6 .in {
+            height: 200px;
+            width: 200px;
+            background-color: lightblue;
+        }
+
+        .absolute-test7 {
+            position: relative;
+            background-color: lightgreen;
+            height: 300px;
+            width: 300px;
+        }
+        
+        .absolute-test7 .out {
+            height: 100px;
+            width: 200px;
+            overflow: hidden;
+            background-color: lightblue;
+        }
+
+        .absolute-test7 .in {
+            height: 200px;
+            width: 100px;
+            position: absolute;
+            background-color: lightpink; 
+        }
+
+        .absolute-test8 {
+            background-color: lightgreen;
+            height: 200px;
+            width: 200px;
+            overflow: auto; 
+            position: relative;
+        }
+
+        .absolute-test8 .a {
+            height: 300px;
+            width: 100px;
+            background-color: lightblue;  
+        }
+
+        .absolute-test8 .b {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: lightpink; 
+        }
+    </style>
+</head>
+
+<body>
+    <h1>position</h1>
+    <h2>absolute 包裹性</h2>
+    <div class="absolute-test">
+        <div class="in"></div>
+    </div>
+    <hr style="margin-top: 300px;">
+
+    <h2>absolute 破坏性</h2>
+
+    <div class="absolute-test2">
+        <div class="in">
+            撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方
+            撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方
+            撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方 撒旦发射点发生第三方
+        </div>
+    </div>
+    <hr style="margin-top: 300px;">
+
+    <h2>absolute 去浮动</h2>
+
+    <div class="absolute-test3">
+        <div class="in"></div>
+    </div>
+
+    <hr style="margin-top: 300px;">
+
+    <h2>absolute 偏移特性</h2>
+
+    <div class="absolute-test4">
+        <div class="in"></div>
+    </div>
+
+    <hr style="margin-top: 300px;">
+    <h2>absolute 对居中行元素的影响</h2>
+
+    <div class="absolute-test5">
+        <span class="in">5555</span>
+    </div>
+
+    <hr style="margin-top: 300px;">
+    <h2>absolute 对居 overflow 的影响</h2>
+
+    <div class="absolute-test6">
+        <div class="in"></div>
+    </div>
+
+    <hr style="margin-top: 300px;">
+    <h2>absolute 对居 overflow 的影响 2</h2>
+
+    <div class="absolute-test7">
+        <div class="out">
+                <div class="in"></div>
+        </div>
+    </div>
+
+    <hr style="margin-top: 300px;">
+    <h2>absolute 遮罩，遮不住滚动条外部</h2>
+
+    <div class="absolute-test8">
+        <div class="a"></div>
+        <div class="b"></div>
+    </div>
+</body>
+
+</html>
