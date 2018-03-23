@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    .box {
+        background-color: lightpink;
+        width: 300px;
+        height: 300px;
+    }
+
+    .in {
+        background-color: lightgreen;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .margin-test .in {
+        margin: 0 auto ;
+    }
+
+    .margin-test2 {
+        position: relative;
+    }
+
+    .margin-test2 .in {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    .margin-test3 {
+        position: relative;
+    }
+
+    .margin-test3 .in {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    </style>
+</head>
+<body>
+    <h2>水平居中</h2>
+    <div class="box margin-test">
+        <div class="in"></div>
+    </div>
+
+    <h2>垂直居中</h>
+    <div class="box margin-test2">
+        <div class="in"></div>
+    </div>
+
+    <h2>水平垂直均居中</h2>
+    <div class="box margin-test3">
+        <div class="in"></div>
+    </div>
+</body>
+</html>
