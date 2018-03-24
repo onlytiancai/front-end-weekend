@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .a {
+        background-color: lightblue;
+    }
+    .a a {
+        display: inline-block;
+        height: 50px;
+        width: 300px;
+        margin: 10px;
+        background-color: lightgreen;
+        font-size: 25px;
+        padding: 10px;
+    }
+    
+    .a img {
+        width: 200px;
+    }
+    
+    .b {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .c {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100px;
+        
+        height: 100px;    
+        background-color: lightgreen;
+        
+    }
+    
+    .d {
+        position: relative;
+        width: 300px;        
+        height: 300px;    
+        background-color: lightgreen;
+    }
+    
+    .d .in {
+        width: 50px;
+        height: 50px;
+        margin-left: auto;
+        margin-right: auto;
+
+        background-color: lightblue;
+        
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    
+    .e {
+        background-color: lightblue;
+    }
+    .e span{
+        background-color: lightgreen;
+        font-size: 50px;
+        line-height: 100px;
+    }
+    
+    .e .bb {
+        font-size: 20px;
+    }
+    
+    .footer {
+        height: 1000px;
+    }
+    
+    .test1 {
+        background-color: lightblue;
+        height: 100px;
+        overflow: auto;        
+    }
+    
+    .test2 {
+        background-color: lightblue;
+        height: 100px;       
+    }
+    
+    .test2 span {
+        background-color: lightgreen;
+        height: 50px;
+        width: 200px;
+        display: inline-block;
+    }
+    
+    .box {
+        background-color: lightgreen;
+        height: 500px;
+        width: 500px;
+    }
+    
+    .test3 .in {
+
+        background-color: lightblue;
+        
+        margin: 0 50px;
+        border: 10px solid red;
+        padding: 0 20px;
+    }
+    
+    .test4 {
+        background-color: lightgreen;
+        width: 90%;
+        min-width:800px;
+    }
+    
+    .test5 {
+        background-color: lightblue;
+        height: 100px;    
+        width: 300px;
+        word-wrap: wrap;
+    }
+    
+    .test5 span {
+        background-color: lightgreen;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    
+    .test6 {
+        background-color: lightgreen;
+        height: 300px;
+        width: 100px;
+        margin-top: 50px;
+    }
+    
+    .test6 .in {
+        padding: 50%;
+        background-color: lightblue;
+        font-size: 0;
+    }
+    
+    .test7 input, .test7 textarea {
+        font-size: 50px;
+        
+    }
+    
+    .test7 .aa {
+        padding: 0;
+    }
+    
+    .test7 .cc {
+        padding: 0;
+    }
+    
+    .test7 .cc {
+        display:none;
+    }
+    
+    .test7 label {
+        padding: 10px;
+        display: inline-block;
+        background-color: lightblue;
+        height:50px;
+    }
+    
+    .test8 {
+        position: relative;
+    }
+    
+    .test8 .out {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+    }
+    
+    .test8 .in {
+        width: 50px;
+        height: 50px;
+        background-color: red;        
+        position: absolute;
+        margin: 50%;
+    }
+    
+    .test9 {
+        margin-top: 50px;
+        background-color: lightgreen;
+        overflow: hidden;
+    }
+    
+    .test9 .in {
+        background-color: lightblue;
+        margin: 50px;
+        margin: 50px 100px;
+        margin: 50px 100px 10px;
+        margin: 50px 100px 10px 30px;
+    }
+    </style>
+</head>
+<body>
+    <div class="a">
+        <a ref="http://baidu.com">百度百度百度</a>                  
+        <a ref="http://baidu.com">百度百度百度</a>  
+        <img src="../images/logo.png" alt="logo">
+    </div>
+    <hr>
+
+    <img class="b" src="../images/logo.png" >
+    
+    <hr>
+    <div class="c"></div>
+    
+    <hr>
+    
+    <div class="d">
+        <div class="in"></div>
+    </div>
+    
+    <hr>
+    
+    <div class="e">
+        <span>abcdefg asdfasd</span>
+        <span class="bb">asdf sadf 3sdf</span>
+    </div>
+    
+    <hr>
+    <div class="test1">
+        <p>你知道我在扥给你吗</p>
+        <p>你知道我在扥给你吗</p>
+        <p>你知道我在扥给你吗</p>
+        <p>你知道我在扥给你吗</p>
+        <p>你知道我在扥给你吗</p>
+        <p>你知道我在扥给你吗</p>
+        <p>你知道我在扥给你吗</p>
+    </div>
+    
+    <hr>
+    
+    <div class="test2">
+        <span>sadfa sdf</span>
+    </div>
+    <hr>
+    
+    <div class="box test3">
+        <div class="in">3333 56553333 56553333 56553333 56553333 56553333 56553333 56553333 5655</div>
+    </div>
+
+    <hr>
+    
+    <div class="test4">
+      <div class="in">3333 56553333 56553333 56553333 56553333 56553333 56553333 56553333 5655</div>
+    </div>
+   
+    <hr>
+    
+    <div class="test5">
+        <span>sadfa sdf sadfa sdfsadfa sdfsadfa sdfsadfa sdfsadfa sdfsadfa sdfsadfa sdfsadfa sdfsadfa sdfsadfa sdf</span>
+    </div>
+    <hr>
+    
+    <div class="test6">
+        <span class="in"></span>
+    </div>
+    
+    <div class="test7">
+        <input class="aa" type="text" value="">
+        <input type="text" value="">
+        
+        <input id="cc" class="cc" type="button" value="Click me.">
+        <label for="cc">click me</label>
+        
+        <input type="button" value="Click me.">
+        <textarea>asdfasdf</textarea>
+        
+    </div>
+    <hr>
+    
+    <div class="box test8">
+        <div class="out">
+            <div class="in"></div>
+        </div>        
+    </div>
+    
+    <div class="test9">
+        <div class="in">asdfasf</div>
+    </div>
+    
+    <div class="footer"></div>
+
+</body>
+</html>

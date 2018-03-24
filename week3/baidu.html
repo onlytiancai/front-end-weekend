@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>百度一下，你就知道</title>
+    <style>
+    .nav {
+        float: right;
+        list-style: none;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    
+    .nav li {
+        display: inline-block;
+        margin-left: 10px;
+    }
+    
+    .nav a:link, .nav a:visited {
+        color: #222;
+    }
+    
+    .nav a:hover, .nav a:active {
+        color: blue;
+    }
+    
+    img.logo {
+        display: block;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        clear: right;
+    }
+    
+    .search {
+        text-align: center;
+    }
+    
+    .search-word {
+        width: 500px;
+        height: 30px;
+    }
+    
+    .search-button {
+        width: 100px;
+        height: 36px;  
+        margin-left: -6px;
+        vertical-align: bottom;
+        
+        background-color: #3385ff;
+        color: #fff;
+        border: 0;
+    }
+    
+    .search-button:hover {
+        background-color: #317ef3;
+    }
+    
+    .search-camera {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-image: url("../images/baidu.camera.png");
+        background-repeat: no-repeat;
+        
+        position: absolute;
+        margin-left: -30px;
+        margin-top: 10px;
+    }
+    
+    .search-camera:hover {
+        background-position: 0 -20px;
+    }
+        
+    </style>
+</head>
+<body>
+
+
+    <ul class="nav">
+        <li><a href="//news.baidu.com">新闻</a></li>
+        <li><a href="//hao123.com">hao123</a></li>
+        <li><a href="//map.baidu.com">地图</a></li>
+        <li><a href="//v.baidu.com">视频</a></li>
+        <li><a href="//tieba.baidu.com">贴吧</a></li>
+        <li><a href="//xueshu.baidu.com">学术</a></li>
+        <li><a href="//passport.baidu.com">登录</a></li>
+        <li><a href="/settings.html">设置</a></li>
+    </ul>
+    <img class="logo" alt="logo" src="../images/baidu.logo.gif">
+    <div class="search">
+        <input class="search-word" type="text" value="" name="keyword">
+        <span class="search-camera"></span>
+        <input class="search-button" type="button" value="百度一下">
+    </div>
+   
+    <div class="footer">
+        <img alt="qrcode" src="../images/baidu.qrcode.png">
+        <p class="site-name">百度</p>
+        <ul>
+            <li><a href="#">把百度设为主页</a></li>
+            <li><a href="#">关于百度</a></li>
+            <li><a href="#">About Baidu</a></li>
+            <li><a href="#">百度推广</a></li>
+        </ul>
+        <p>
+            &copy;2018 Baidu 
+            <a href="">使用百度前必读</a>
+            <a href="">意见反馈</a>
+            京ICP证030173
+            <span class="icp"></span>
+            <a href="">京公网安备11000002000001号</a>
+            <span class="police"></span>
+        </p>
+    </div>
+</body>
+</html>
