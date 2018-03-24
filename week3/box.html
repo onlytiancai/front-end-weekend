@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .line-padding {
+
+            background-color: blanchedalmond;
+            line-height: 1.5;
+        }
+
+        .line-padding span {
+            background-color: brown;
+            padding-top: 20px;
+            vertical-align: top;
+        }
+
+        .box {
+            width: 300px;
+            border: 25px solid green;
+            padding: 25px;
+            margin: 25px;
+        }
+
+        .outline {
+            width: 200px;
+            height: 200px;
+            border: 5px solid #000;
+            outline: 5px dotted green;
+        }
+
+        .test {
+            background: slateblue;
+            height: 20px;
+        }
+
+        .margin-container {
+            background-color: skyblue;
+        }
+
+        .margin {
+            width: 200px;
+            height: 50px;
+            border: 1px solid #000;
+            margin: 50px;
+        }
+
+        .layout-test {
+            position: relative;
+            background-color: slategray;
+            width: 200px;
+            height: 200px;
+        }
+
+        .layout-test .in {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-color: sienna;
+            width: 100px;
+            height: 100px;
+            margin-left: -50%;
+            margin-top: -50%;
+
+        }
+
+        .layout-test2 {
+            position: relative;
+            background-color: slategray;
+            width: 200px;
+            height: 200px;
+        }
+
+        .layout-test2 .out {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+
+        .layout-test2 .in {
+            background-color: sienna;
+            width: 100px;
+            height: 100px;
+            margin-left: -50%;
+            margin-top: -50%;
+
+        }
+
+        .layout-test3 {
+            background-color: silver;
+            width: 200px;
+            overflow: hidden;
+        }
+
+        .layout-test3 ul {
+            margin: 0;
+            padding: 0;
+            margin-right: -10px;
+        }
+
+        .layout-test3 li {
+            width: 60px;
+            height: 200px;
+            float: left;
+            list-style: none;
+            margin-right: 10px;
+            background-color: sandybrown;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .layout-test4 {
+            background: sandybrown;
+            height: 100%;
+        }
+
+        .layout-test4 .main {
+            width: 100%;
+            height: 100%;
+
+            float: left;
+        }
+
+        .layout-test4 .main .in {
+            margin: 0 210px 0 310px;
+            height: 100%;
+            min-width: 300px;
+            background-color: sienna;
+        }
+
+        .layout-test4 .left,
+        .layout-test4 .right {
+            background-color: lightblue;
+            height: 100%;
+            float: left;
+        }
+
+        .layout-test4 .left {
+            width: 300px;
+            margin-left: -100%;
+        }
+
+        .layout-test4 .right {
+            width: 200px;
+            margin-left: -200px;
+        }
+
+        .layout-test5 {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+
+        .layout-test5 .left {
+            float: left;
+            width: 100px;
+            background: lightblue;
+
+        }
+
+        .layout-test5 .right {
+            float: right;
+            width: 100px;
+            background: lightblue;
+
+        }
+
+        .layout-test5 .main {
+            background: lightcoral;
+            margin: 0 110px;
+        }
+
+        .layout-test5 .left,
+        .layout-test5 .right,
+        .layout-test5 .main {
+
+            padding-bottom: 9999px;
+            margin-bottom: -9999px;
+        }
+
+        .padding-test {
+            background-color: brown;
+            width: 100px;
+            height: 600px;
+        }
+
+        .padding-test .in {
+            padding: 50%;
+            background-color: skyblue;
+        }
+
+        .line-border {
+            width: 200px;
+            border: 1px solid #000;
+        }
+
+        .line-border span {
+            background-color: yellowgreen;
+            padding: 10px;
+            border: 1px solid blue;
+            position: fixed;
+        }
+
+        .border-test {
+            border: 5px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <span class="border-test">我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你
+        我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在秋天等你我在
+        秋天等你我在秋天等你我在秋天等你我在秋天等你</span>
+    <div class="box"></div>
+    <div class="outline"></div>
+
+    <div class="test"></div>
+    <div class="margin-container">
+        <div class="margin"></div>
+        <div class="margin"></div>
+        <div class="margin"></div>
+    </div>
+    <div class="test"></div>
+
+    <div class="layout-test">
+        <div class="in"></div>
+    </div>
+
+    <hr>
+
+    <div class="layout-test2">
+        <div class="out">
+            <div class="in">asdfasdasfd</div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="layout-test3">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="layout-test4">
+        <div class="main">
+            <div class="in"></div>
+        </div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+
+    <hr>
+    <ul class="layout-test5">
+        <li class="left">左侧文字比较少</li>
+        <li class="right">右侧文字比较多右侧文字比较多右侧文字比较多右侧文字比较多右侧文字比较多右侧文字比较多右侧文字比较多右侧文字比较多右侧文字比较多右侧文字比较多右侧文字比较多右侧文字比较多右侧文字比较多右侧文字比较多右侧文字比较多右侧文字比较多
+        </li>
+        <li class="main">
+            中间文字比较少
+        </li>
+    </ul>
+    <hr>
+    <p class="line-padding">abcd
+        <span>22222222222222222222222222</span>efghigklmn</p>
+    <hr>
+    <h2>用百分比 padding 实现正方形头图</h2>
+    <div class="padding-test">
+        <div class="in"></div>
+    </div>
+
+    <hr>
+
+    <h2>行内元素设置边框</h2>
+
+    <div class="line-border">
+        <span>行元素设置边框行元素素设置边框素设置边框</span>
+    </div>
+</body>
+
+</html>
