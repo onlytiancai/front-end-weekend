@@ -1,0 +1,9 @@
+.register, .login {
+    color: green;
+}
+a {
+    text-decoration: none;
+}
+h1, h2 {
+    color: blue;
+}
