@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: lightgreen;
+        }
+
+        .box {
+            margin: 20px;
+            height: 300px;
+            width: 300px;
+            background: lightgreen;
+        }
+
+        .in {
+            height: 100px;
+            width: 100px;
+            background-color: lightblue;
+        }
+
+        .blue {
+            background-color: blue;
+            color: #fff;
+        }
+
+        .red {
+            background-color: red;
+            color: #fff;
+        }
+
+        .relation {
+            position: relative;
+        }
+
+        .textimg {
+            width: 300px;
+            height: 300px;
+            line-height: 300px;
+            margin: 20px;
+        }
+
+        .textimg span {
+            display: inline-block;
+            line-height: 20px;
+            vertical-align: middle;
+        }
+
+        .textimg2 {
+            width: 300px;
+            height: 100px;
+            line-height: 100px;
+            margin: 20px;
+        }
+
+        .textimg2 img {
+            vertical-align: middle;
+        }
+
+        .textimg3 {
+            width: 500px;
+            height: 100px;
+            line-height: 100px;
+            margin: 20px;
+        }
+
+        .textimg3 span {
+            vertical-align: middle;
+            font-size: 20px;
+        }
+
+        .textimg3 img {
+            vertical-align: middle;
+        }
+
+        .textimg4 {
+            width: 500px;
+            height: 100px;
+            line-height: 100px;
+            margin: 20px;
+        }
+
+        .textimg4 span {
+            line-height: 20px;
+            font-size: 20px;
+        }
+
+        .textimg4 .span1 {
+            vertical-align: top;
+
+        }
+
+        .textimg4 .span2 {
+            vertical-align: text-top;
+        }
+
+        .textimg4 .span3 {
+            vertical-align: bottom;
+        }
+
+        .textimg4 .span4 {
+            vertical-align: text-bottom;
+        }
+
+        .textimg4 .span5 {
+            vertical-align: middle;
+        }
+
+        .textimg4 .span6 {
+            vertical-align: baseline;
+        }
+
+        .position-test .in {
+            position: static;
+        }
+
+        .position-test2 .in {
+            position: relative;
+        }
+
+        .position-test3 .in {
+            position: absolute;
+        }
+
+        .position-test4 .in {
+            position: fixed;
+        }
+
+
+
+        .position-test5 .out {
+            position: relative;
+            display: inline;
+            background-color: lightyellow;
+            font-size: 100px;
+            line-height: 200px;
+        }
+
+        .position-test5 .in {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .position-test6 {
+            position: relative;
+        }
+
+        .position-test6 .in {
+            position: absolute;
+            right: -50px;
+            top: -20px;
+        }
+
+        .position-test7 {
+            position: relative;
+            font-size: 0;
+        }
+
+        .position-test7 .in {
+            display: inline-block;
+        }
+
+        .position-test7 .in2 {
+            display: inline-block;
+            font-size: 20px;
+            position: absolute;
+            background-color: lightyellow;
+        }
+
+        .position-test7 .in3 {
+            display: inline-block;
+            font-size: 20px;
+            position: absolute;
+            background-color: lightyellow;
+            margin-left: -50px;
+        }
+
+        .position-test8 {
+            position: relative;
+            padding: 50px;
+        }
+
+        .position-test8 .in {
+            position: absolute;
+            margin-left: 50px;
+            left: 50px;
+        }
+
+
+        .position-test9 {
+            position: relative;
+            overflow: auto;
+        }
+
+        .position-test9 .in {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        .position-test9 .in2 {
+            height: 800px;
+        }
+
+        .float-test {
+            position: relative;
+        }
+
+        .float-test .out {
+            float: left;
+            width: 90%;
+        }
+
+        .float-test .in {
+            margin: 10px;
+            float: left;
+        }
+
+        .float-test .in2 {
+            background-color: red;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+
+        .position-test10 .out {
+            position: absolute;
+        }
+
+        .position-test10 .in {
+            position: absolute;
+            left: 50px;
+            top: 0;
+        }
+
+        .absolute-test {
+            position: relative;
+        }
+
+        .absolute-test .out {
+            position: absolute;
+            background-color: lightyellow;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+        }
+
+        .absolute-test .in {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            width: 50%;
+            margin: auto auto;
+        }
+
+        .absolute-test2 {
+            position: relative;
+            text-align: center;
+        }
+
+        .absolute-test2 .in {
+            position: absolute;
+        }
+
+        .absolute-test3 {
+            position: relative;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        .absolute-test3 .in {
+            position: absolute;
+            height: 300px;
+        }
+
+        .absolute-test4 {
+            height: 100px;
+            position: relative;
+        }
+
+        .absolute-test4 .out {
+
+            overflow: hidden;
+        }
+
+        .absolute-test4 .in {
+            position: absolute;
+            height: 200px;
+        }
+
+        .relation-test1 .in:nth-child(1) {
+            position: relative;
+            left: 100px;
+        }
+
+        .relation-test2 .in {
+            width: 200px;
+            height: 200px;
+        }
+
+        .relation-test3 .in:nth-child(2) {
+            margin-top: -20px;
+        }
+
+        .fixed-test {
+            /* position: fixed; */
+            top: 50px;
+            left: 50px;
+            right: 50px;
+            bottom: 50px;
+        }
+
+        .absolute-test10 {
+            line-height: 3;
+            padding: 20px;
+        }
+
+        .absolute-test10 i {
+            position: absolute;
+            width: 28px;
+            height: 11px;
+            margin: -6px 0 0 2px;
+            background: url('../images/hot.gif');
+        }
+
+        .absolute-test11 i {
+            position: absolute;
+            width:40px;
+            text-align: center;
+            height: 18px;
+            line-height: 18px;
+            font-style: normal;
+            background-color: orange;
+            color: white;
+            padding: 2px;
+        }
+
+        .absolute-test11 .in {
+            width: 100%;
+            height: 100%;            
+            line-height: 2;
+            background-color: pink;
+            display: inline-block;
+        }
+
+        .absolute-test11  .rt {
+            margin-left: -44px;
+        }
+
+        .absolute-test11 .lb {
+            margin-top: -22px;
+        }
+
+        .absolute-test11  .rb {
+            float: right;
+            margin-top: -22px;
+            margin-left: -44px;
+        }
+
+        .footer {
+            margin-top: 500px;
+        }
+        .absolute-test12 {
+            height: 30px;
+            width: 200px;
+            border: 1px solid #999;            
+        }
+
+        .absolute-test12 .con {
+            overflow: hidden;
+        }
+        .absolute-test12 .con input {
+            display: block;
+            float: left;
+            height: 28px;
+            width: 160px;
+            border: none;
+            padding-left: 10px;
+        }
+
+        .absolute-test12 .con a {            
+            display: block;
+            float: left;
+            width: 30px;
+            height: 30px;
+            background-color:pink;
+        }
+
+        .absolute-test12 ul {
+            position: absolute; /* 不加不会脱离文档流*/
+            list-style: none;
+            width: 170px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .absolute-test12 li {
+            background-color: lightgoldenrodyellow;
+            border: 1px solid #eee;
+            cursor: pointer;
+            text-indent: 1em;
+        }
+
+        .absolute-test12 li:hover {
+            background: lightcoral;
+        }
+
+        .absolute-test13 .out {
+            text-align: right;
+        }
+
+        .absolute-test13 ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;            
+
+            display: inline-block; /* 让 .out 的 text-align 生效*/            
+            position: absolute; /* 利用其静态位置*/
+
+            background-color: lightblue;
+
+            
+        }
+
+        .absolute-test13 li {
+            text-align: center;
+            width: 20px;
+            line-height: 20px;
+            margin-top: 4px;
+            background-color: pink;
+            border-radius: 50%;
+        }
+
+        .absolute-test14 {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            padding: 20px;
+
+        }
+
+        .absolute-test14 i {
+            position: absolute;
+            margin-left: -15px;
+            color: red;
+            font-style: normal;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h2>定位对文档流的影响</h2>
+
+    <div class="position-test box">
+        <div class="in">static</div>
+        <p>我是文字，我是文字我是文字</p>
+    </div>
+
+    <div class="position-test2 box">
+        <div class="in">relative</div>
+        <p>我是文字，我是文字我是文字</p>
+    </div>
+
+    <div class="position-test3 box">
+        <div class="in">absolute</div>
+        <p>我是文字，我是文字我是文字</p>
+    </div>
+
+    <div class="position-test4 box">
+        <div class="in">fixed</div>
+        <p>我是文字，我是文字我是文字</p>
+    </div>
+
+    <h2>absolute的定位父元素是行元素，包含块边界是内容区域</h2>
+    <div class="position-test5 box">
+        <div class="out">
+            11111
+            <div class="in"></div>
+        </div>
+    </div>
+
+    <h2>absolute 定位的偏移是负值</h2>
+    <div class="position-test6 box">
+        <div class="in">我是一个小鸭子</div>
+    </div>
+
+    <h2>absolute 定位如果 offset 为 auto ，默认在原始位置</h2>
+    <div class="position-test7 box">
+        <div class="in"></div>
+        <div class="in2">撒旦法撒旦法</div>
+        <div class="in blue"></div>
+    </div>
+
+    <h2>absolute 定位如果 offset 为 auto ，默认在原始位置，可用负 margin 针对原始位置做偏移</h2>
+    <div class="position-test7 box">
+        <div class="in"></div>
+        <div class="in3">撒旦法撒旦法</div>
+        <div class="in blue"></div>
+    </div>
+
+    <h2>absolute 指定偏移，以及复杂 auto 计算</h2>
+    <div class="position-test8 box">
+        <div class="in"></div>
+    </div>
+
+    <h2>absolute 的随滚动条滚动</h2>
+    <div class="position-test9 box">
+        <div class="in"></div>
+        <div class="in2"></div>
+    </div>
+
+    <h2>浮动包含块自动延伸，包含住所有包含块</h2>
+    <div class="float-test box">
+        <div class="out blue">
+            <div class="in"></div>
+            <div class="in"></div>
+            <div class="in"></div>
+        </div>
+    </div>
+
+    <h3>absolute包含块不会自动包含住所有所有后代定位元素</h3>
+    <div class="position-test10 box">
+        <div class="out blue">
+            asdfasdf asdf
+            <div class="in"></div>
+        </div>
+    </div>
+
+    <h2>绝对定位后浮动会消失</h2>
+    <div class="float-test box">
+        <div class="out blue">
+            <div class="in">1</div>
+            <div class="in in2">2</div>
+            <div class="in">3</div>
+        </div>
+    </div>
+
+    <h2>absolute 的四个偏移量同时设置，让元素拉伸，拉伸后子元素可设置高度，且垂直 margin auto 可用</h2>
+    <div class="absolute-test box">
+        <div class="out">
+            <div class="in"></div>
+        </div>
+    </div>
+
+    <h2>absolute 对水平居中的影响，定位元素左边界将与其父级块级元素的中线对齐</h2>
+    <div class="absolute-test2 box">
+        <span class="in">Hello World</span>
+    </div>
+
+    <h2>absolute 虽然脱离了文档流，但父元素的overflow：hidden 还是会裁剪它</h2>
+
+    <div class="absolute-test3 box">
+        <div class="in"></div>
+    </div>
+
+    <h2>overflow:hidden 有时针对 absolute 元素会失效，因为它不是 absolute 的定位父元素</h2>
+    <div class="absolute-test4 box">
+        <div class="out">
+            <div class="in"></div>
+        </div>
+    </div>
+
+    <h2>相对定位偏移后，原来位置还存在</h2>
+    <div class="relation-test1">
+        <div class="in">333</div>
+        <div class="in"></div>
+    </div>
+
+    <h2>相对定位不会改变 inline 元素的 inline 性质，不能设置宽高</h2>
+    <div class="relation-test2 box">
+        <span class="in">333333</span>
+    </div>
+
+    <h2>relation 可以防止覆盖，又不脱离文档流</h2>
+    <div class="relation-test3 relation box">
+        <div class="in relation"></div>
+        <div class="in blue"></div>
+    </div>
+
+    <h2>固定定位遮罩不随滚动条滚动</h2>
+    <div class="fixed-test blue"></div>
+
+    <h2>多行文本垂直居中</h2>
+    <div class="textimg">
+        <span>多行文本居中多行文本居中多行文本居中多行文本居中多行文本居中多行文本居中</span>
+    </div>
+
+    <h2>图片垂直居中</h2>
+    <div class="textimg2">
+        <img src="../images/logo-gray.png" alt="">
+    </div>
+
+
+    <h2>文本图片垂直居中</h2>
+    <div class="textimg3">
+        <span>单行文本</span>
+        <img src="../images/logo-gray.png" alt="">
+        <span>单行文本</span>
+    </div>
+
+    <h2>行元素对齐测试</h2>
+    <div class="textimg4">
+        <span class="span1">top</span>
+        <span class="span2">text-top</span>
+        <span class="span3">bottom</span>
+        <span class="span4">text-bottom</span>
+        <span class="span5">middle</span>
+        <span class="span6">baseline</span>
+    </div>
+
+    <h2>absolute 应用：图标跟随</h2>
+    <div class="absolute-test10 box">
+        你去哪里呀，我去年巴黎页
+        <i></i>
+    </div>
+
+    <h2>absolute 应用：父元素不设置相对定位的四角提示，依赖于 inline-block 对空白的效果</h2>
+    <div class="absolute-test11 box">
+        <i class="lt">自制</i>
+        <div class="in">测试内
+                测试内容撒旦法撒旦发射点发 萨德f收到萨德f收到萨德f收到
+            容</div><!--
+        --><i class="rt">独家</i>
+        <i class="lb">1080p</i>
+        <span style="width: 100%;display:inline-block"></span><!--
+        --><i class="rb">最新</i>
+    </div>
+
+    <h2>absolute 应用：下拉菜单</h2>
+    <div class="absolute-test12">
+        <div class="con">
+            <input type="text">
+            <a href=""></a>
+        </div>
+        <ul>
+            <li>菜单 1</li>
+            <li>菜单 2</li>
+            <li>菜单 3</li>
+        </ul>
+    </div>
+
+    <h2>absolute 应用：边缘对齐</h2>
+
+    <div class="absolute-test13 box">
+        <div class="out">
+            <ul>
+                <li>一</li>
+                <li>二</li>
+                <li>三</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>星号对齐</h2>
+    <ul class="absolute-test14 box">
+        <li>
+            <i>*</i>
+            <span>手机号</span>
+        </li>
+        <li>
+            <span>用户名</span>
+        </li>
+        <li>
+            <i>*</i>
+            <span>密码</span>
+        </li>
+    </ul>
+
+    <div class="footer"></div>
+</body>
+
+</html>

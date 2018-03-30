@@ -200,6 +200,90 @@
         margin: 50px 100px 10px;
         margin: 50px 100px 10px 30px;
     }
+    
+    .test10 {
+        margin-top: 20px;   
+        padding: 20px;
+        background-color: lightgreen;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .test10 span, .test10 input {
+        display: inline-block;
+        height: 50px;
+        border: 0;
+        margin: 0;
+        padding: 0;      
+    }
+    
+    .test10 span {
+        width: 50px;
+        line-height: 50px;
+    }
+
+    .test10 .icon-left {
+        position: relative;
+        color: #aaa;
+        left: 52px;
+    }
+
+    .test10 .word {
+        padding-left: 55px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .test10 .icon-right {
+        position: absolute;
+        background-color: blue;
+    }
+
+    .test11 a {
+        display: inline-block;
+        padding: .5em 1em;
+        background-color: #cad5eb;
+    }
+
+    .test12 a {
+        display: inline-block;
+        padding: .5em 1em;
+        background-color: #cad5eb;
+        margin-right: -5px;
+    }
+
+    .test13  {
+        font-size: 0;
+    }
+
+    .test13 a {
+        font-size: 16px;
+        display: inline-block;
+        padding: .5em 1em;
+        background-color: #cad5eb;
+    }
+
+    .test14  {
+        letter-spacing: -100px;
+    }
+
+    .test14 a {
+        letter-spacing: 0;
+        display: inline-block;
+        padding: .5em 1em;
+        background-color: #cad5eb;        
+    }
+    
+    .test15  {
+        word-spacing: -6px;
+    }
+
+    .test15 a {
+        word-spacing: 0;
+        display: inline-block;
+        padding: .5em 1em;
+        background-color: #cad5eb;        
+    }
     </style>
 </head>
 <body>
@@ -216,7 +300,7 @@
     <div class="c"></div>
     
     <hr>
-    
+    <h2>子元素使用margin auto垂直水平均居中</h2>
     <div class="d">
         <div class="in"></div>
     </div>
@@ -289,6 +373,65 @@
     <div class="test9">
         <div class="in">asdfasf</div>
     </div>
+    
+    <div class="test10">
+        <span class="icon-left">手机：</span>
+        <input class="word"type="input" value="">
+        <span class="icon-right"></span>
+        <input class="button" type="button" value="搜索">
+    </div>
+
+    <h2>inline-block 之间默认有间隙</h2>
+    <input  >   <input type="submit" >
+
+    <h2>display: inline-block 的元素默认也会有间隙</h2>
+    <div class="test11">
+        <a href="##">惆怅</a>
+        <a href="##">淡定</a>
+        <a href="##">热血</a>
+    </div>
+
+    <h2>移除空格回车可以去掉间隙</h2>
+    <div class="test11">
+        <a href="##">惆怅</a><a href="##">淡定</a><a href="##">热血</a>
+    </div>
+
+    <h2>用注释把空白去掉可以去掉间隙</h2>
+    <div class="test11">
+        <a href="##">惆怅</a><!--
+        --><a href="##">淡定</a><!--
+        --><a href="##">热血</a>
+    </div>
+
+    <h2>用负 margin 去掉间隙</h2>
+    <div class="test12">
+        <a href="##">惆怅</a>
+        <a href="##">淡定</a>
+        <a href="##">热血</a>
+    </div>
+
+    <h2>用 font-size: 0 去掉间隙</h2>
+    <div class="test13">
+        <a href="##">惆怅</a>
+        <a href="##">淡定</a>
+        <a href="##">热血</a>
+    </div>
+
+    <h2>用负 letter-spacing 去掉间隙</h2>
+    <div class="test14">
+        <a href="##">惆怅</a>
+        <a href="##">淡定</a>
+        <a href="##">热血</a>
+    </div>
+
+    <h2>用负 word-spacing 去掉间隙</h2>
+    <div class="test15">
+        <a href="##">惆怅</a>
+        <a href="##">淡定</a>
+        <a href="##">热血</a>
+    </div>
+
+
     
     <div class="footer"></div>
 
