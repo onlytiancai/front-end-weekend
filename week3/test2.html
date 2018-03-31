@@ -245,11 +245,16 @@
         background-color: #cad5eb;
     }
 
+    .test12 {
+        font-size: 30px;
+    }
+    
     .test12 a {
+        
         display: inline-block;
         padding: .5em 1em;
         background-color: #cad5eb;
-        margin-right: -5px;
+        margin-right: -15px;
     }
 
     .test13  {
@@ -264,7 +269,7 @@
     }
 
     .test14  {
-        letter-spacing: -100px;
+        letter-spacing: -500px;
     }
 
     .test14 a {
@@ -283,6 +288,52 @@
         display: inline-block;
         padding: .5em 1em;
         background-color: #cad5eb;        
+    }
+    
+    .test16  {
+        width: 400px;
+        height: 200px;
+        background-color: lightgreen;
+        
+    }
+    .test16 div {
+        box-sizing: border-box;
+    }
+    
+    .test16 .a {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        border: 5px solid #ddd;
+
+    }
+    
+    .test16 .b {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border: 5px solid blue;
+    }
+    
+    .test17:active input {
+        outline: 5px solid blue;
+    }
+    
+    .test18 {        
+        width: 100%;
+        
+        border-collapse: collapse;
+        padding: 20px;   /* border-collapse: collapse 时 table 的padding不起作用 */
+        
+        border: 1px solid #ddd;
+    }
+    
+    .test18 td {
+        padding: 20px;       
+        background-color: lightblue;
+        border: 1px solid #ddd;
     }
     </style>
 </head>
@@ -382,7 +433,8 @@
     </div>
 
     <h2>inline-block 之间默认有间隙</h2>
-    <input  >   <input type="submit" >
+    <input type="text" > 
+    <input type="submit" >
 
     <h2>display: inline-block 的元素默认也会有间隙</h2>
     <div class="test11">
@@ -431,9 +483,24 @@
         <a href="##">热血</a>
     </div>
 
-
+    <div class="test16">
+        <div class="a"></div><div class="b"></div>
+    </div>
+    
+    <div class="test17">
+         <input type="text">
+    </div>
+    <h2>display: table demo </h2>
+    <table class="test18">
+        <tr>
+            <td>33</td>
+            <td>33</td>
+        </tr>
+    </table>
+    阿斯蒂芬斯蒂芬
     
     <div class="footer"></div>
+
 
 </body>
 </html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简历</title>
+    <style>
+    body {
+        background-color: #EBECF1;
+    }
+    
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    .container {
+        width: 90%;
+        min-width: 768px;
+        max-width: 1080px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .sidebar {
+        box-sizing: border-box;
+        width: 30%;
+        background-color: #283848;
+        color: #fff;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+    
+    .main {        
+        width: 70%;
+        margin-left: 31%;
+    }
+    
+    .sidebar .header {
+        background-color: #16222E;
+    }    
+    
+    .sidebar .header h1 {
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        margin: 0;
+    }    
+    
+    .sidebar .portrait {
+        background-color: #23313E;
+        height: 200px;
+        text-align: center;
+    }
+    
+    .sidebar .portrait img {
+        margin-top: 20px;
+        width: 150px;
+    }
+    
+    .sidebar .self-intro {
+        padding: 20px;
+    }
+    
+    .sidebar .qrcode {
+        margin-top: 50px;
+    }    
+    
+    .main-header {
+        overflow: hidden;
+    }
+    .main-header .personal-details,
+    .main-header .contact-details {        
+        color: #fff;
+        float:left;
+        width: 49%;
+        height: 230px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    .main-header .personal-details {
+        background-color: #DF4E3D;
+    }
+    
+    .main-header .contact-details {    
+        background-color: #23B495;
+        margin-left: 2%; 
+    }
+    
+    .main .personal-details,
+    .main .contact-details,
+    .main .experience,
+    .main .education,
+    .main .honor {
+        position: relative;
+    }
+    
+    .main .icon {
+        position: absolute;
+        width: 80px;
+        top: 20px;
+        right: 20px;
+    }
+    
+    .main .experience,
+    .main .education {
+        margin: 20px 0;
+        padding: 20px;
+        background-color: #fff;
+        overflow: hidden;
+    }
+    
+    .main .experience .title,
+    .main .education .title {
+        width: 30%;
+        float: left;
+    }
+    
+    .main .experience .detail,
+    .main .education .detail {
+        width: 70%;
+        float: left;
+    }
+    
+    .main .honor {
+        background-color: #398FCC;
+        color: #fff;
+        margin: 20px 0 0 0;
+        padding: 20px;
+        overflow: hidden;
+    }
+    
+    .main .honor ul {
+        box-sizing: border-box;
+        width: 50%;
+        float: left;
+        padding-left: 50px;
+        list-style: disc;
+    }
+    
+    </style>
+</head>   
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="header">
+                <h1>个人简历</h1>
+            </div>
+            <div class="portrait">
+                <img src="../images/luffy.jpg" alt="portrait">
+                <p>朱自清</p>
+            </div>
+            <div class="self-intro">
+                <h2>自我介绍</h2>
+                <p>朱自清（1898年11月22日—1948年8月12日），原名自华，号秋实，后改名自清，字佩弦。中国近代散文家、诗人、学者、民主战士。 [1] </p>
+                <p>原籍浙江绍兴，出生于江苏省东海县（今连云港市东海县平明镇），后随祖父、父亲定居扬州，自称“我是扬州人”。1916年中学毕业并成功考入北京大学预科。1919年开始发表诗歌。1928年第一本散文集《背影》出版。 [2-3]  1932年7月，任清华大学中国文学系主任。1934年，出版《欧游杂记》和《伦敦杂记》。1935年，出版散文集《你我》。 [4]  1948年8月12日因胃穿孔病逝于北平，年仅50岁。</p>
+                <img src="../images/techaction-qrcode.png" class="qrcode" alt="arcode">
+                <ul class="contact">
+                    <li><i></i> 手机：18953553088 </li>
+                    <li><i></i> 邮箱：haohu@techaction.cn </li>
+                    <li><i></i> QQ：415492354 </li>                    
+                </ul>
+            </div>
+        </div><!-- /siderbar -->
+        <div class="main">
+            <div class="main-header">
+                <div class="personal-details">
+                    <img src="../images/icon1.png" class="icon">
+                    <h2>基本资料</h2>
+                    <ul>
+                        <li>出生年月：1989 年 5 月</li>
+                        <li>专业：计算机技术</li>
+                        <li>学位：硕士</li>
+                        <li>英语：专业 4 级</li>
+                        <li>婚姻状况：单身</li>
+                    </ul>
+                </div>
+                <div class="contact-details">
+                    <img src="../images/icon2.png" class="icon">
+                    <h2>联系方式</h2>
+                    <ul class="contact">
+                        <li><i></i> 手机：18953553088 </li>
+                        <li><i></i> 邮箱：haohu@techaction.cn </li>
+                        <li><i></i> QQ：415492354 </li>                  
+                </ul>
+                </div>
+            </div>
+            <div class="experience">
+                <img src="../images/icon3.png" class="icon">  
+                <h2>项目经历</h2>
+                <div class="item">
+                    <div class="title">
+                        <h3>高级开发工程师</h3>
+                        <p>1999-2005</p>
+                    </div>
+                    <div class="detail">
+                        <h3>百度技术有限公司</h3>
+                        <p>中华民族到了最危险的时候，每个人都迫着发出最后的吼声。起来起来起来，我们万众一心，冒着敌人的炮火，前进前进前进进。</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="title">
+                        <h3>自身开发工程师</h3>
+                        <p>2005-2010</p>
+                    </div>
+                    <div class="detail">
+                        <h3>腾讯有限公司</h3>
+                        <p>中华民族到了最危险的时候，每个人都迫着发出最后的吼声。起来起来起来，我们万众一心，冒着敌人的炮火，前进前进前进进。</p>
+                    </div>
+                </div>                
+            </div>
+            <div class="education">
+                <img src="../images/icon4.png" class="icon"> 
+                <h2>教育经历</h2>
+                <div class="item">
+                    <div class="title">
+                        <h3>学委</h3>
+                        <p>1999-2005</p>
+                    </div>
+                    <div class="detail">
+                        <h3>清华大学</h3>
+                        <p>中华民族到了最危险的时候，每个人都迫着发出最后的吼声。起来起来起来，我们万众一心，冒着敌人的炮火，前进前进前进进。</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="title">
+                        <h3>班长</h3>
+                        <p>2005-2010</p>
+                    </div>
+                    <div class="detail">
+                        <h3>北京大学</h3>
+                        <p>中华民族到了最危险的时候，每个人都迫着发出最后的吼声。起来起来起来，我们万众一心，冒着敌人的炮火，前进前进前进进。</p>
+                    </div>
+                </div>  
+            </div>
+            <div class="honor">            
+                 <img src="../images/icon5.png" class="icon">
+                 <h2>获奖经历</h2>
+                 <ul>
+                    <li>2010 年 优秀学生会干部</li>
+                    <li>2011 年 国家科技进步奖</li>
+                    <li>2010 年 优秀学生会干部</li>
+                    <li>2011 年 国家科技进步奖</li>
+                 </ul>
+                 <ul>
+                    <li>2010 年 优秀学生会干部</li>
+                    <li>2011 年 国家科技进步奖</li>
+                    <li>2010 年 优秀学生会干部</li>
+                    <li>2011 年 国家科技进步奖</li>
+                 </ul>                 
+            </div>            
+        </div><!-- /main -->
+    </div><!-- /container -->
+</body>
+</html>
