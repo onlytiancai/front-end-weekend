@@ -151,13 +151,67 @@
             text-decoration: none;
         }
 
+        .tab-nav li a.active {
+            color: #1abc9c;
+            background: #fff;
+        }
+
         .tab-content {
             padding: 25px;
         }
 
-        .tab-nav li a.active {
-            color: #1abc9c;
-            background: #fff;
+        .collapse .item {
+            background: #9b59b6;
+            border-bottom: 1px solid rgba(255, 255, 255, .3);
+        }
+
+        .collapse .item h2 {
+            position: relative;
+
+            margin: 0;
+            height: 70px;
+            line-height: 70px;
+            text-indent: 30px;
+            font-size: 24px;
+
+
+            background: #8e44ad;
+            cursor: pointer;
+
+            transition: all .5s;
+        }
+
+        .collapse .item h2:hover {
+            background: #6e208e;
+        }
+
+        .collapse .item h2::after {
+            content: '';
+            width: 0;
+            height: 0;
+
+            border-width: 7px;
+            border-style: solid;
+            border-color: #fff transparent transparent transparent;
+
+            position: absolute;
+            top: 35px;
+            right: 20px;
+        }
+
+        .collapse .content {
+            padding: 30px;
+            color: rgba(255, 255, 255, .85);
+        }
+
+        .collapse h2.hide::after {
+            border-color: transparent #fff transparent transparent;
+            top: 30px;
+            right: 22px;
+        }
+
+        .collapse .content.hide {
+            display: none;
         }
     </style>
     <script src="../lib/jquery.min.js"></script>
@@ -190,6 +244,82 @@
 
             <div id="content-russia" class="tab-content">
                 <h2>Если жизнь тебя обманет</h2>
+                <div class="content">
+                    <p>Если жизнь тебя обманет,</p>
+                    <p>Не печалься，не сердись!</p>
+                    <p>В день уныния смирись:</p>
+                    <p>День веселья, верь, настанет.</p>
+                    <p>Сердце в будущем живёт;</p>
+                    <p>Настоящее уныло:</p>
+                    <p>Все мгновенно，все пройдёт;</p>
+                    <p>Что пройдёт, то будет мило.</p>
+                    <p>KOBVCS</p>
+                </div>
+            </div>
+
+            <div id="content-english" class="tab-content">
+                <h2>If by Life You Were Deceived</h2>
+                <div class="content">
+                    <p>If by life you were deceived,</p>
+                    <p>Don't be dismal,don't be wild!</p>
+                    <p>In the day of grief,be mild:</p>
+                    <p>Merry days will come,believe.</p>
+                    <p>Heart is living in tomorrow;</p>
+                    <p>Present is dejected here:</p>
+                    <p>In a moment,passes sorrow;</p>
+                    <p>That which passes will be dear.</p>
+                </div>
+            </div>
+
+            <div id="content-chinese" class="tab-content">
+                <h2>假如生活欺骗了你</h2>
+                <div class="content">
+                    <p>假如生活
+                        <a href="#" class="link-popup">欺骗</a>了你，</p>
+                    <p>不要悲伤，不要心急！</p>
+                    <p>忧郁的日子里须要镇静：</p>
+                    <p>相信吧，快乐的日子将会来临！</p>
+                    <p>心儿永远向往着未来；</p>
+                    <p>现在却常是忧郁。</p>
+                    <p>一切都是瞬息，一切都将会过去；</p>
+                    <p>而那过去了的，就会成为亲切的怀恋。</p>
+                </div>
+            </div>
+
+            <div id="content-yantai" class="tab-content">
+                <h2>假如生活护龙了你</h2>
+                <div class="content">
+                    <p>假如生活护龙了你</p>
+                    <p>表吱声</p>
+                    <p>表咋呼</p>
+                    <p>表嘟囔</p>
+                    <p>也表年息儿</p>
+                    <p>更表哭丧个脸子</p>
+                    <p>你从哪儿跌倒</p>
+                    <p>就在哪儿爬一会儿</p>
+                    <p>也表起来</p>
+                    <p>一直往前顾应</p>
+                    <p>像毛毛虫一样</p>
+                    <p>顾应。。。顾应</p>
+                    <p>一直顾应</p>
+                    <p>总有一天</p>
+                    <p>你会变成</p>
+                    <p>有翅膀的</p>
+                    <p>扑棱蛾子</p>
+                    <p>到时候一抖搂翅膀</p>
+                    <p>想他么怎么飞就怎么飞</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="collapse">
+
+        <div class="item">
+            <h2>Если жизнь тебя обманет</h2>
+            <div class="content">
                 <p>Если жизнь тебя обманет,</p>
                 <p>Не печалься，не сердись!</p>
                 <p>В день уныния смирись:</p>
@@ -200,9 +330,11 @@
                 <p>Что пройдёт, то будет мило.</p>
                 <p>KOBVCS</p>
             </div>
+        </div>
 
-            <div id="content-english" class="tab-content">
-                <h2>If by Life You Were Deceived</h2>
+        <div class="item">
+            <h2>If by Life You Were Deceived</h2>
+            <div class="content">
                 <p>If by life you were deceived,</p>
                 <p>Don't be dismal,don't be wild!</p>
                 <p>In the day of grief,be mild:</p>
@@ -212,9 +344,11 @@
                 <p>In a moment,passes sorrow;</p>
                 <p>That which passes will be dear.</p>
             </div>
+        </div>
 
-            <div id="content-chinese" class="tab-content">
-                <h2>假如生活欺骗了你</h2>
+        <div class="item">
+            <h2>假如生活欺骗了你</h2>
+            <div class="content">
                 <p>假如生活
                     <a href="#" class="link-popup">欺骗</a>了你，</p>
                 <p>不要悲伤，不要心急！</p>
@@ -225,9 +359,11 @@
                 <p>一切都是瞬息，一切都将会过去；</p>
                 <p>而那过去了的，就会成为亲切的怀恋。</p>
             </div>
+        </div>
 
-            <div id="content-yantai" class="tab-content">
-                <h2>假如生活护龙了你</h2>
+        <div class="item">
+            <h2>假如生活护龙了你</h2>
+            <div class="content">
                 <p>假如生活护龙了你</p>
                 <p>表吱声</p>
                 <p>表咋呼</p>
@@ -248,12 +384,7 @@
                 <p>到时候一抖搂翅膀</p>
                 <p>想他么怎么飞就怎么飞</p>
             </div>
-
         </div>
-
-
-
-
 
     </div>
 
@@ -369,8 +500,37 @@
             showChinese();
         })();
 
+    </script>
 
+    <script>
+        // 折叠面板
+        (function(){
+            var titles = document.querySelectorAll('.collapse h2'),
+                items = document.querySelectorAll('.collapse .item');
 
+            function foldAll() {
+                for (var i = 0; i < titles.length; i++) {
+                    items[i].querySelector('.content').className = 'content hide';
+                    titles[i].className = 'hide';         
+                }
+            }
+
+            function openPanel(panel) {
+                var targetClass = panel.className == 'hide' ? '' : 'hide';
+                foldAll();
+                panel.parentNode.querySelector('.content').className = 'content ' + targetClass;
+                panel.className = targetClass;
+            }
+
+            for (var i = 0; i < titles.length; i++) {
+                titles[i].addEventListener('click', function() {
+                    openPanel(this);
+                });                
+            }
+
+            foldAll();
+            
+        })();
     </script>
 </body>
 
