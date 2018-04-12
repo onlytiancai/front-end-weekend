@@ -123,16 +123,44 @@
             height: 100%;
             background: rgba(0, 0, 0, .3);
         }
+
+        .tab-container {
+            background: #fff;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, .15);
+        }
+
+        .tab-container .tab-nav {
+            background: #1abc9c;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .tab-container .tab-nav li {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .tab-container .tab-nav li a {
+            display: block;
+            /* 必须，否则背景色不会占满*/
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .tab-content {
+            padding: 25px;
+        }
+
+        .tab-nav li a.active {
+            color: #1abc9c;
+            background: #fff;
+        }
     </style>
     <script src="../lib/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('a, .popup-close, .popup-bg').on('click', function(e) {
-                e.preventDefault();
-                $('.popup').toggleClass('show');
-            });
-        });
-    </script>
 </head>
 
 <body>
@@ -142,57 +170,91 @@
     </div>
 
     <div class="main">
-        <h2>Если жизнь тебя обманет</h2>
-        <p>Если жизнь тебя обманет,</p>
-        <p>Не печалься，не сердись!</p>
-        <p>В день уныния смирись:</p>
-        <p>День веселья, верь, настанет.</p>
-        <p>Сердце в будущем живёт;</p>
-        <p>Настоящее уныло:</p>
-        <p>Все мгновенно，все пройдёт;</p>
-        <p>Что пройдёт, то будет мило.</p>
-        <p>KOBVCS</p>
 
-        <h2>If by Life You Were Deceived</h2>
-        <p>If by life you were deceived,</p>
-        <p>Don't be dismal,don't be wild!</p>
-        <p>In the day of grief,be mild:</p>
-        <p>Merry days will come,believe.</p>
-        <p>Heart is living in tomorrow;</p>
-        <p>Present is dejected here:</p>
-        <p>In a moment,passes sorrow;</p>
-        <p>That which passes will be dear.</p>
+        <div class="tab-container">
+            <ul class="tab-nav">
+                <li>
+                    <a href="#content-russia" id="nav-russia">俄语</a>
+                </li>
+                <li>
+                    <a href="#content-english" id="nav-english">英语</a>
+                </li>
+                <li>
+                    <a href="#content-chinese" id="nav-chinese">汉语</a>
+                </li>
+                <li>
+                    <a href="#content-yantai" id="nav-yantai">烟台话</a>
 
-        <h2>假如生活欺骗了你</h2>
-        <p>假如生活<a href="#">欺骗</a>了你，</p>
-        <p>不要悲伤，不要心急！</p>
-        <p>忧郁的日子里须要镇静：</p>
-        <p>相信吧，快乐的日子将会来临！</p>
-        <p>心儿永远向往着未来；</p>
-        <p>现在却常是忧郁。</p>
-        <p>一切都是瞬息，一切都将会过去；</p>
-        <p>而那过去了的，就会成为亲切的怀恋。</p>
+                </li>
+            </ul>
 
-        <h2>假如生活护龙了你</h2>
-        <p>假如生活护龙了你</p>
-        <p>表吱声</p>
-        <p>表咋呼</p>
-        <p>表嘟囔</p>
-        <p>也表年息儿</p>
-        <p>更表哭丧个脸子</p>
-        <p>你从哪儿跌倒</p>
-        <p>就在哪儿爬一会儿</p>
-        <p>也表起来</p>
-        <p>一直往前顾应</p>
-        <p>像毛毛虫一样</p>
-        <p>顾应。。。顾应</p>
-        <p>一直顾应</p>
-        <p>总有一天</p>
-        <p>你会变成</p>
-        <p>有翅膀的</p>
-        <p>扑棱蛾子</p>
-        <p>到时候一抖搂翅膀</p>
-        <p>想他么怎么飞就怎么飞</p>
+            <div id="content-russia" class="tab-content">
+                <h2>Если жизнь тебя обманет</h2>
+                <p>Если жизнь тебя обманет,</p>
+                <p>Не печалься，не сердись!</p>
+                <p>В день уныния смирись:</p>
+                <p>День веселья, верь, настанет.</p>
+                <p>Сердце в будущем живёт;</p>
+                <p>Настоящее уныло:</p>
+                <p>Все мгновенно，все пройдёт;</p>
+                <p>Что пройдёт, то будет мило.</p>
+                <p>KOBVCS</p>
+            </div>
+
+            <div id="content-english" class="tab-content">
+                <h2>If by Life You Were Deceived</h2>
+                <p>If by life you were deceived,</p>
+                <p>Don't be dismal,don't be wild!</p>
+                <p>In the day of grief,be mild:</p>
+                <p>Merry days will come,believe.</p>
+                <p>Heart is living in tomorrow;</p>
+                <p>Present is dejected here:</p>
+                <p>In a moment,passes sorrow;</p>
+                <p>That which passes will be dear.</p>
+            </div>
+
+            <div id="content-chinese" class="tab-content">
+                <h2>假如生活欺骗了你</h2>
+                <p>假如生活
+                    <a href="#" class="link-popup">欺骗</a>了你，</p>
+                <p>不要悲伤，不要心急！</p>
+                <p>忧郁的日子里须要镇静：</p>
+                <p>相信吧，快乐的日子将会来临！</p>
+                <p>心儿永远向往着未来；</p>
+                <p>现在却常是忧郁。</p>
+                <p>一切都是瞬息，一切都将会过去；</p>
+                <p>而那过去了的，就会成为亲切的怀恋。</p>
+            </div>
+
+            <div id="content-yantai" class="tab-content">
+                <h2>假如生活护龙了你</h2>
+                <p>假如生活护龙了你</p>
+                <p>表吱声</p>
+                <p>表咋呼</p>
+                <p>表嘟囔</p>
+                <p>也表年息儿</p>
+                <p>更表哭丧个脸子</p>
+                <p>你从哪儿跌倒</p>
+                <p>就在哪儿爬一会儿</p>
+                <p>也表起来</p>
+                <p>一直往前顾应</p>
+                <p>像毛毛虫一样</p>
+                <p>顾应。。。顾应</p>
+                <p>一直顾应</p>
+                <p>总有一天</p>
+                <p>你会变成</p>
+                <p>有翅膀的</p>
+                <p>扑棱蛾子</p>
+                <p>到时候一抖搂翅膀</p>
+                <p>想他么怎么飞就怎么飞</p>
+            </div>
+
+        </div>
+
+
+
+
+
     </div>
 
     <div id="top">Top</div>
@@ -227,6 +289,7 @@
     <div class="footer">footer</div>
 
     <script>
+        // 返回顶部
         var nav = document.getElementById("top");
 
         nav.addEventListener('click', function () {
@@ -241,6 +304,73 @@
                 nav.className = '';
             }
         };
+    </script>
+
+    <script>
+        // 弹出框
+        $(document).ready(function () {
+            $('a.link-popup, .popup-close, .popup-bg').on('click', function (e) {
+                e.preventDefault();
+                $('.popup').toggleClass('show');
+            });
+        });
+    </script>
+    <script>
+        // 标签页
+
+        (function () {
+            var nav_russia = document.getElementById('nav-russia');
+            var nav_english = document.getElementById('nav-english');
+            var nav_chinese = document.getElementById('nav-chinese');
+            var nav_yantai = document.getElementById('nav-yantai');
+
+            var content_russia = document.getElementById('content-russia');
+            var content_english = document.getElementById('content-english');
+            var content_chinese = document.getElementById('content-chinese');
+            var content_yantai = document.getElementById('content-yantai');
+
+            content_english.style.display = content_chinese.style.display = content_yantai.style.display = 'none';
+            nav_russia.className = 'active';
+
+            function hideAll() {
+                nav_russia.className = nav_english.className = nav_chinese.className = nav_yantai.className = 'none';
+                content_russia.style.display = content_english.style.display = content_chinese.style.display = content_yantai.style.display = 'none';
+            }
+
+            function showRussia() {
+                hideAll();
+                nav_russia.className = 'active';
+                content_russia.style.display = 'block';
+            }
+
+            function showEnglish() {
+                hideAll();
+                nav_english.className = 'active';
+                content_english.style.display = 'block';
+            }
+
+            function showChinese() {
+                hideAll();
+                nav_chinese.className = 'active';
+                content_chinese.style.display = 'block';
+            }
+
+            function showYantai() {
+                hideAll();
+                nav_yantai.className = 'active';
+                content_yantai.style.display = 'block';
+            }
+
+            nav_russia.addEventListener('click', showRussia);
+            nav_english.addEventListener('click', showEnglish);
+            nav_chinese.addEventListener('click', showChinese);
+            nav_yantai.addEventListener('click', showYantai);
+
+            showChinese();
+        })();
+
+
+
     </script>
 </body>
 
