@@ -213,6 +213,61 @@
         .collapse .content.hide {
             display: none;
         }
+
+        .menu {
+            background: #27ae60;
+            height: 65px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu  li {
+            list-style: none;
+            display: block;
+            float: left;
+            border-right: 1px solid rgba(255, 255, 255, .3);
+            position: relative;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 0 35px;
+            line-height: 65px;
+            font-size: 21px; 
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu li ul {
+            display: none;
+            position: absolute;
+            top: 65px;
+            background: #2ecc71;
+        }
+
+        .menu li:hover ul {
+            display: block;
+        }
+
+        .menu li ul li {
+            width: 100%;
+            border-right: 0;
+            border-top: 1px solid rgba(255, 255, 255, .3);
+        }
+
+        .menu li ul li a {
+            font-size: 14px;
+            line-height: 50px;
+        }
+
+        .menu li:hover {
+            background: rgba(0, 0, 0, .2);
+        }
     </style>
     <script src="../lib/jquery.min.js"></script>
 </head>
@@ -220,7 +275,37 @@
 <body>
 
     <div class="header">
-        <h1>假如生活欺骗了你</h1>
+        <ul class="menu">
+            <li>
+                <a href="">主页</a>
+            </li>
+            <li>
+                <a href="">新闻</a>
+                <ul>
+                    <li>
+                        <a href="">体育</a>
+                    </li>
+                    <li>
+                        <a href="">天气</a>
+                    </li>
+                    <li>
+                        <a href="">金融</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">产品</a>
+                <ul>
+                    <li><a href="">机器</a></li>
+                    <li><a href="">压缩机</a></li>
+                    <li><a href="">车辆</a></li>
+                    <li><a href="">建筑</a></li>
+                </ul>
+            </li>
+            <li><a href="">服务</a></li>
+            <li><a href="">联系我们</a></li>
+        </ul>
+        <h1>假如生活欺骗了你</h1>        
     </div>
 
     <div class="main">
@@ -417,8 +502,6 @@
         <div class="popup-bg"></div>
     </div>
 
-    <div class="footer">footer</div>
-
     <script>
         // 返回顶部
         var nav = document.getElementById("top");
@@ -504,14 +587,14 @@
 
     <script>
         // 折叠面板
-        (function(){
+        (function () {
             var titles = document.querySelectorAll('.collapse h2'),
                 items = document.querySelectorAll('.collapse .item');
 
             function foldAll() {
                 for (var i = 0; i < titles.length; i++) {
                     items[i].querySelector('.content').className = 'content hide';
-                    titles[i].className = 'hide';         
+                    titles[i].className = 'hide';
                 }
             }
 
@@ -523,13 +606,13 @@
             }
 
             for (var i = 0; i < titles.length; i++) {
-                titles[i].addEventListener('click', function() {
+                titles[i].addEventListener('click', function () {
                     openPanel(this);
-                });                
+                });
             }
 
             foldAll();
-            
+
         })();
     </script>
 </body>
