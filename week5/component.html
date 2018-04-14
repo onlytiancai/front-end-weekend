@@ -6,6 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>常用组件</title>
+    <script>
+    var a = null, 
+        b = 3, 
+        c = "abc", 
+        d = '123';
+    
+    if (b % 2 == 2) {
+        console.log('even');
+    } else {
+        console.log('odd');
+    }
+    
+    for (var i = 0; i < b; i ++) {
+        console.log("for test: " + i);
+    }
+    
+    console.log(b == 3? 'aaa' : 'bbb');
+    console.log(a, b, a == b, c, d);
+    
+    function fun() {
+        var b = 4;
+        console.log('fun test:' + b);
+        console.log("this=" + this);
+        console.log('this.name = ', this.name);
+    }
+    
+    fun();
+    
+    function A(){
+        this.name = 'hello';
+    }
+    A.prototype.fun = fun;
+    
+    var a = new A();
+    a.fun();    
+    
+   
+    var o = {a: 1, b: 2, c: [1, 2, 3]};
+    
+    console.log("object test: " + o.a + ' ' + o.b);
+    
+    var arr = [1, 'a', 2, {a: 1, b: 2}];
+    console.log(arr[0], arr[1], arr);
+    
+    function add(a) {
+        function inner(b) {
+            return a + b;
+        }
+        return inner;
+    }
+    
+    var add3 = add(3), add5 = add(5);
+    console.log(add3(4));
+    console.log(add5(6));
+    console.log(add(3)(10));
+    
+    </script>
     <style>
         body {
             background: lightgreen;
@@ -509,15 +566,17 @@
         nav.addEventListener('click', function () {
             window.scrollTo(0, 0);
         });
+        
+        window.addEventListener('scroll', function() {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
-        window.onscroll = function () {
-            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;;
             if (scrollTop > 200) {
                 nav.className = 'show';
             } else {
                 nav.className = '';
             }
-        };
+        });
+
     </script>
 
     <script>
@@ -543,8 +602,7 @@
             var content_chinese = document.getElementById('content-chinese');
             var content_yantai = document.getElementById('content-yantai');
 
-            content_english.style.display = content_chinese.style.display = content_yantai.style.display = 'none';
-            nav_russia.className = 'active';
+
 
             function hideAll() {
                 nav_russia.className = nav_english.className = nav_chinese.className = nav_yantai.className = 'none';
@@ -582,6 +640,8 @@
 
             showChinese();
         })();
+        
+        
 
     </script>
 
