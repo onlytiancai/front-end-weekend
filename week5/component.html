@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>常用组件</title>
+    <style>
+        body {
+            background: lightgreen;
+        }
+
+        #top {
+            position: fixed;
+            z-index: 5000;
+            right: 50px;
+            bottom: 50px;
+
+            box-sizing: border-box;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, .2);
+            border: 1px solid rgba(255, 255, 255, .6);
+
+            text-align: center;
+            padding-top: 25px;
+            color: #fff;
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+            opacity: 0;
+            transition: all 1s;
+        }
+
+        #top.show {
+            opacity: 1;
+        }
+
+        #top::after {
+            content: '';
+            width: 0;
+            height: 0;
+
+            border-width: 8px;
+            border-style: solid;
+            border-color: transparent transparent #fff transparent;
+
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            margin-left: -8px;
+        }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            visibility: hidden;
+            opacity: 0;
+
+            transition: all .5s;
+        }
+
+        .popup.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .popup-content {
+            position: absolute;
+            z-index: 200;
+
+            width: 700px;
+            height: 400px;
+            box-sizing: border-box;
+
+            left: 50%;
+            top: 50%;
+            margin-left: -350px;
+            margin-top: -200px;
+            padding: 30px 50px;
+
+            background: #fff;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, .2);
+            text-align: center;
+
+            overflow: auto;
+        }
+
+        .popup-content h2 {
+            color: #555;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .popup-content p {
+            color: #888;
+            font-size: 21px;
+        }
+
+        .popup-content button {
+            color: #fff;
+            background: #e74c3c;
+            border-radius: 4px;
+            border: 0;
+            font-size: 21px;
+            padding: 10px 50px;
+        }
+
+        .popup-content button:hover {
+            background: #c0392b;
+        }
+
+        .popup-bg {
+            position: absolute;
+            z-index: 100;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .3);
+        }
+
+        .tab-container {
+            background: #fff;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, .15);
+        }
+
+        .tab-container .tab-nav {
+            background: #1abc9c;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .tab-container .tab-nav li {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .tab-container .tab-nav li a {
+            display: block;
+            /* 必须，否则背景色不会占满*/
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .tab-nav li a.active {
+            color: #1abc9c;
+            background: #fff;
+        }
+
+        .tab-content {
+            padding: 25px;
+        }
+
+        .collapse .item {
+            background: #9b59b6;
+            border-bottom: 1px solid rgba(255, 255, 255, .3);
+        }
+
+        .collapse .item h2 {
+            position: relative;
+
+            margin: 0;
+            height: 70px;
+            line-height: 70px;
+            text-indent: 30px;
+            font-size: 24px;
+
+
+            background: #8e44ad;
+            cursor: pointer;
+
+            transition: all .5s;
+        }
+
+        .collapse .item h2:hover {
+            background: #6e208e;
+        }
+
+        .collapse .item h2::after {
+            content: '';
+            width: 0;
+            height: 0;
+
+            border-width: 7px;
+            border-style: solid;
+            border-color: #fff transparent transparent transparent;
+
+            position: absolute;
+            top: 35px;
+            right: 20px;
+        }
+
+        .collapse .content {
+            padding: 30px;
+            color: rgba(255, 255, 255, .85);
+        }
+
+        .collapse h2.hide::after {
+            border-color: transparent #fff transparent transparent;
+            top: 30px;
+            right: 22px;
+        }
+
+        .collapse .content.hide {
+            display: none;
+        }
+
+        .menu {
+            background: #27ae60;
+            height: 65px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu  li {
+            list-style: none;
+            display: block;
+            float: left;
+            border-right: 1px solid rgba(255, 255, 255, .3);
+            position: relative;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 0 35px;
+            line-height: 65px;
+            font-size: 21px; 
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu li ul {
+            display: none;
+            position: absolute;
+            top: 65px;
+            background: #2ecc71;
+        }
+
+        .menu li:hover ul {
+            display: block;
+        }
+
+        .menu li ul li {
+            width: 100%;
+            border-right: 0;
+            border-top: 1px solid rgba(255, 255, 255, .3);
+        }
+
+        .menu li ul li a {
+            font-size: 14px;
+            line-height: 50px;
+        }
+
+        .menu li:hover {
+            background: rgba(0, 0, 0, .2);
+        }
+    </style>
+    <script src="../lib/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <ul class="menu">
+            <li>
+                <a href="">主页</a>
+            </li>
+            <li>
+                <a href="">新闻</a>
+                <ul>
+                    <li>
+                        <a href="">体育</a>
+                    </li>
+                    <li>
+                        <a href="">天气</a>
+                    </li>
+                    <li>
+                        <a href="">金融</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">产品</a>
+                <ul>
+                    <li><a href="">机器</a></li>
+                    <li><a href="">压缩机</a></li>
+                    <li><a href="">车辆</a></li>
+                    <li><a href="">建筑</a></li>
+                </ul>
+            </li>
+            <li><a href="">服务</a></li>
+            <li><a href="">联系我们</a></li>
+        </ul>
+        <h1>假如生活欺骗了你</h1>        
+    </div>
+
+    <div class="main">
+
+        <div class="tab-container">
+            <ul class="tab-nav">
+                <li>
+                    <a href="#content-russia" id="nav-russia">俄语</a>
+                </li>
+                <li>
+                    <a href="#content-english" id="nav-english">英语</a>
+                </li>
+                <li>
+                    <a href="#content-chinese" id="nav-chinese">汉语</a>
+                </li>
+                <li>
+                    <a href="#content-yantai" id="nav-yantai">烟台话</a>
+
+                </li>
+            </ul>
+
+            <div id="content-russia" class="tab-content">
+                <h2>Если жизнь тебя обманет</h2>
+                <div class="content">
+                    <p>Если жизнь тебя обманет,</p>
+                    <p>Не печалься，не сердись!</p>
+                    <p>В день уныния смирись:</p>
+                    <p>День веселья, верь, настанет.</p>
+                    <p>Сердце в будущем живёт;</p>
+                    <p>Настоящее уныло:</p>
+                    <p>Все мгновенно，все пройдёт;</p>
+                    <p>Что пройдёт, то будет мило.</p>
+                    <p>KOBVCS</p>
+                </div>
+            </div>
+
+            <div id="content-english" class="tab-content">
+                <h2>If by Life You Were Deceived</h2>
+                <div class="content">
+                    <p>If by life you were deceived,</p>
+                    <p>Don't be dismal,don't be wild!</p>
+                    <p>In the day of grief,be mild:</p>
+                    <p>Merry days will come,believe.</p>
+                    <p>Heart is living in tomorrow;</p>
+                    <p>Present is dejected here:</p>
+                    <p>In a moment,passes sorrow;</p>
+                    <p>That which passes will be dear.</p>
+                </div>
+            </div>
+
+            <div id="content-chinese" class="tab-content">
+                <h2>假如生活欺骗了你</h2>
+                <div class="content">
+                    <p>假如生活
+                        <a href="#" class="link-popup">欺骗</a>了你，</p>
+                    <p>不要悲伤，不要心急！</p>
+                    <p>忧郁的日子里须要镇静：</p>
+                    <p>相信吧，快乐的日子将会来临！</p>
+                    <p>心儿永远向往着未来；</p>
+                    <p>现在却常是忧郁。</p>
+                    <p>一切都是瞬息，一切都将会过去；</p>
+                    <p>而那过去了的，就会成为亲切的怀恋。</p>
+                </div>
+            </div>
+
+            <div id="content-yantai" class="tab-content">
+                <h2>假如生活护龙了你</h2>
+                <div class="content">
+                    <p>假如生活护龙了你</p>
+                    <p>表吱声</p>
+                    <p>表咋呼</p>
+                    <p>表嘟囔</p>
+                    <p>也表年息儿</p>
+                    <p>更表哭丧个脸子</p>
+                    <p>你从哪儿跌倒</p>
+                    <p>就在哪儿爬一会儿</p>
+                    <p>也表起来</p>
+                    <p>一直往前顾应</p>
+                    <p>像毛毛虫一样</p>
+                    <p>顾应。。。顾应</p>
+                    <p>一直顾应</p>
+                    <p>总有一天</p>
+                    <p>你会变成</p>
+                    <p>有翅膀的</p>
+                    <p>扑棱蛾子</p>
+                    <p>到时候一抖搂翅膀</p>
+                    <p>想他么怎么飞就怎么飞</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="collapse">
+
+        <div class="item">
+            <h2>Если жизнь тебя обманет</h2>
+            <div class="content">
+                <p>Если жизнь тебя обманет,</p>
+                <p>Не печалься，не сердись!</p>
+                <p>В день уныния смирись:</p>
+                <p>День веселья, верь, настанет.</p>
+                <p>Сердце в будущем живёт;</p>
+                <p>Настоящее уныло:</p>
+                <p>Все мгновенно，все пройдёт;</p>
+                <p>Что пройдёт, то будет мило.</p>
+                <p>KOBVCS</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <h2>If by Life You Were Deceived</h2>
+            <div class="content">
+                <p>If by life you were deceived,</p>
+                <p>Don't be dismal,don't be wild!</p>
+                <p>In the day of grief,be mild:</p>
+                <p>Merry days will come,believe.</p>
+                <p>Heart is living in tomorrow;</p>
+                <p>Present is dejected here:</p>
+                <p>In a moment,passes sorrow;</p>
+                <p>That which passes will be dear.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <h2>假如生活欺骗了你</h2>
+            <div class="content">
+                <p>假如生活
+                    <a href="#" class="link-popup">欺骗</a>了你，</p>
+                <p>不要悲伤，不要心急！</p>
+                <p>忧郁的日子里须要镇静：</p>
+                <p>相信吧，快乐的日子将会来临！</p>
+                <p>心儿永远向往着未来；</p>
+                <p>现在却常是忧郁。</p>
+                <p>一切都是瞬息，一切都将会过去；</p>
+                <p>而那过去了的，就会成为亲切的怀恋。</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <h2>假如生活护龙了你</h2>
+            <div class="content">
+                <p>假如生活护龙了你</p>
+                <p>表吱声</p>
+                <p>表咋呼</p>
+                <p>表嘟囔</p>
+                <p>也表年息儿</p>
+                <p>更表哭丧个脸子</p>
+                <p>你从哪儿跌倒</p>
+                <p>就在哪儿爬一会儿</p>
+                <p>也表起来</p>
+                <p>一直往前顾应</p>
+                <p>像毛毛虫一样</p>
+                <p>顾应。。。顾应</p>
+                <p>一直顾应</p>
+                <p>总有一天</p>
+                <p>你会变成</p>
+                <p>有翅膀的</p>
+                <p>扑棱蛾子</p>
+                <p>到时候一抖搂翅膀</p>
+                <p>想他么怎么飞就怎么飞</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="top">Top</div>
+
+    <div class="popup">
+        <div class="popup-content">
+            <h2>假如生活护龙了你</h2>
+            <p>假如生活护龙了你</p>
+            <p>表吱声</p>
+            <p>表咋呼</p>
+            <p>表嘟囔</p>
+            <p>也表年息儿</p>
+            <p>更表哭丧个脸子</p>
+            <p>你从哪儿跌倒</p>
+            <p>就在哪儿爬一会儿</p>
+            <p>也表起来</p>
+            <p>一直往前顾应</p>
+            <p>像毛毛虫一样</p>
+            <p>顾应。。。顾应</p>
+            <p>一直顾应</p>
+            <p>总有一天</p>
+            <p>你会变成</p>
+            <p>有翅膀的</p>
+            <p>扑棱蛾子</p>
+            <p>到时候一抖搂翅膀</p>
+            <p>想他么怎么飞就怎么飞</p>
+            <button class="popup-close">关闭弹窗</button>
+        </div>
+        <div class="popup-bg"></div>
+    </div>
+
+    <script>
+        // 返回顶部
+        var nav = document.getElementById("top");
+
+        nav.addEventListener('click', function () {
+            window.scrollTo(0, 0);
+        });
+
+        window.onscroll = function () {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;;
+            if (scrollTop > 200) {
+                nav.className = 'show';
+            } else {
+                nav.className = '';
+            }
+        };
+    </script>
+
+    <script>
+        // 弹出框
+        $(document).ready(function () {
+            $('a.link-popup, .popup-close, .popup-bg').on('click', function (e) {
+                e.preventDefault();
+                $('.popup').toggleClass('show');
+            });
+        });
+    </script>
+    <script>
+        // 标签页
+
+        (function () {
+            var nav_russia = document.getElementById('nav-russia');
+            var nav_english = document.getElementById('nav-english');
+            var nav_chinese = document.getElementById('nav-chinese');
+            var nav_yantai = document.getElementById('nav-yantai');
+
+            var content_russia = document.getElementById('content-russia');
+            var content_english = document.getElementById('content-english');
+            var content_chinese = document.getElementById('content-chinese');
+            var content_yantai = document.getElementById('content-yantai');
+
+            content_english.style.display = content_chinese.style.display = content_yantai.style.display = 'none';
+            nav_russia.className = 'active';
+
+            function hideAll() {
+                nav_russia.className = nav_english.className = nav_chinese.className = nav_yantai.className = 'none';
+                content_russia.style.display = content_english.style.display = content_chinese.style.display = content_yantai.style.display = 'none';
+            }
+
+            function showRussia() {
+                hideAll();
+                nav_russia.className = 'active';
+                content_russia.style.display = 'block';
+            }
+
+            function showEnglish() {
+                hideAll();
+                nav_english.className = 'active';
+                content_english.style.display = 'block';
+            }
+
+            function showChinese() {
+                hideAll();
+                nav_chinese.className = 'active';
+                content_chinese.style.display = 'block';
+            }
+
+            function showYantai() {
+                hideAll();
+                nav_yantai.className = 'active';
+                content_yantai.style.display = 'block';
+            }
+
+            nav_russia.addEventListener('click', showRussia);
+            nav_english.addEventListener('click', showEnglish);
+            nav_chinese.addEventListener('click', showChinese);
+            nav_yantai.addEventListener('click', showYantai);
+
+            showChinese();
+        })();
+
+    </script>
+
+    <script>
+        // 折叠面板
+        (function () {
+            var titles = document.querySelectorAll('.collapse h2'),
+                items = document.querySelectorAll('.collapse .item');
+
+            function foldAll() {
+                for (var i = 0; i < titles.length; i++) {
+                    items[i].querySelector('.content').className = 'content hide';
+                    titles[i].className = 'hide';
+                }
+            }
+
+            function openPanel(panel) {
+                var targetClass = panel.className == 'hide' ? '' : 'hide';
+                foldAll();
+                panel.parentNode.querySelector('.content').className = 'content ' + targetClass;
+                panel.className = targetClass;
+            }
+
+            for (var i = 0; i < titles.length; i++) {
+                titles[i].addEventListener('click', function () {
+                    openPanel(this);
+                });
+            }
+
+            foldAll();
+
+        })();
+    </script>
+</body>
+
+</html>

@@ -3,12 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>简历</title>
+    <title>CSS 简历模版</title>
     <style>
+    
     body {
         background-color: #EBECF1;
+        font-size: 15px;
     }
     
     ul {
@@ -18,7 +19,7 @@
     }
     .container {
         width: 90%;
-        min-width: 768px;
+        min-width: 600px;
         max-width: 1080px;
         margin: 0 auto;
         overflow: hidden;
@@ -102,9 +103,18 @@
         position: relative;
     }
     
+    .main .personal-details *,
+    .main .contact-details *,
+    .main .experience *,
+    .main .education *,
+    .main .honor * {
+        position: relative; /* 防止被遮盖*/
+    }
+    
     .main .icon {
         position: absolute;
-        width: 80px;
+        width: 15%;
+        max-width: 80px;
         top: 20px;
         right: 20px;
     }
@@ -123,11 +133,21 @@
         float: left;
     }
     
+    .main .experience .title p,
+    .main .education .title p{
+        color: #666;
+    }
+    
     .main .experience .detail,
     .main .education .detail {
         width: 70%;
         float: left;
     }
+    
+    .main .experience .detail p,
+    .main .education .detail p{
+        color: #666;
+    }    
     
     .main .honor {
         background-color: #398FCC;
@@ -207,7 +227,7 @@
                 </div>
                 <div class="item">
                     <div class="title">
-                        <h3>自身开发工程师</h3>
+                        <h3>资深开发工程师</h3>
                         <p>2005-2010</p>
                     </div>
                     <div class="detail">
