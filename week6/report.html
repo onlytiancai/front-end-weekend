@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>艾氪森专业能力评估报告</title>
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js"></script>
+    <style>
+        #skill-chart,
+        #overall-chart {
+            height: 300px;
+            width: 100%;
+
+        }
+        h1, h2, h3 {
+            color:#05A3EB;
+        }
+        .panel-body h3{
+            text-align: center;                    
+            font-size: 300%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>艾氪森专业能力评估报告</h1>
+        </div>
+        <div class="row">
+            <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 基本信息</h2>
+            <div class="col-md-6">
+
+                <div class="panel panel-info">
+                    <div class="panel-heading">个人信息</div>
+                    <div class="panel-body">
+                        <ul>
+                            <li>姓名：流川枫</li>
+                            <li>出生年月：1996 年 05 月</li>
+                            <li>英语水平：CET 4</li>
+                            <li>求职职位：Web 开发工程师</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="panel panel-info">
+                    <div class="panel-heading">联系方式</div>
+                    <div class="panel-body">
+                        <ul>
+                            <li>手机号: 178 8888 6210</li>
+                            <li>Eamil: 8888@qq.com</li>
+                            <li>个人网站: http://techaction.cn</li>
+                            <li>Github：wawasoft</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / row-->
+
+        <div class="row">
+            <h2><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 能力概况</h2>
+            <div class="col-md-6">
+
+                <div class="panel panel-info">
+                    <div class="panel-heading">软件技能</div>
+                    <div class="panel-body" id="skill-chart">
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="panel panel-info">
+                    <div class="panel-heading">综合能力</div>
+                    <div class="panel-body" id="overall-chart">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / row-->
+
+        <div class="row">
+
+            <h2><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span> 学习概况</h2>
+            <div class="col-md-3">
+                <div class="panel panel-info">
+                    <div class="panel-heading">课程总分</div>
+                    <div class="panel-body">
+                        <h3>500</h3>
+                    </div>
+                </div>
+            </div>
+            <!--/ col -->
+
+            <div class="col-md-3">
+                <div class="panel panel-info">
+                    <div class="panel-heading">代码行数</div>
+                    <div class="panel-body">
+                        <h3>21985 <small>行</small></h3>
+                    </div>
+                </div>
+            </div>
+            <!--/ col -->
+
+            <div class="col-md-3">
+                <div class="panel panel-info">
+                    <div class="panel-heading">作业完成情况</div>
+                    <div class="panel-body">
+                        <h3>80%</h3>
+                    </div>
+                </div>
+            </div>
+            <!--/ col -->
+
+            <div class="col-md-3">
+                <div class="panel panel-info">
+                    <div class="panel-heading">视频学习时长</div>
+                    <div class="panel-body">
+                        <h3>600
+                            <small>分钟</small>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <!--/ col -->
+
+        </div>
+        <!-- / row-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2><span class="glyphicon glyphicon-education" aria-hidden="true"></span> 教师评语</h2>
+                <blockquote>
+                    <p>流川枫同学学习期间认真听讲，课下作业也能及时完成，在项目实践中考虑比较周全，代码质量较高</p>
+                    <footer>高老师</footer>
+                </blockquote>
+            </div>
+        </div>
+        <!-- /row -->
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 项目情况</h2>
+                <table class="table">
+                    <tr>
+                        <th>项目名称</th>
+                        <th>代码规范度</th>
+                        <th>功能完成度</th>
+                        <th>用户体验</th>
+                        <th>代码质量</th>
+                        <th>健壮性</th>
+                    </tr>
+                    <tr>
+                        <td>CSS 综合练习 1</td>
+                        <td>A</td>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>A</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>CSS 综合练习 2</td>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>A</td>
+                        <td>A</td>
+                        <td>B</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- / row-->
+        <hr>
+
+        <p>Copyright 艾氪森科技</p>
+
+    </div>
+
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('skill-chart'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '软件技能概况'
+            },
+            tooltip: {},
+            legend: {
+                data: ['分数']
+            },
+            xAxis: {
+                data: ["HTML", "CSS", "Javascript", "Java", "MySQL", "Linux"]
+            },
+            itemStyle: {
+                // 设置扇形的颜色
+                color: 'skyblue',
+                shadowBlur: 200,
+                shadowColor: 'rgba(0, 0, 0, 0.0)'
+            },
+            yAxis: {},
+            series: [{
+                name: '分数',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+        myChart = echarts.init(document.getElementById('overall-chart'));
+        option = {
+            title: {
+                text: '综合能力'
+            },
+            tooltip: {},
+            legend: {
+                data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+            },
+            radar: {
+                // shape: 'circle',
+                name: {
+                    textStyle: {
+                        color: '#fff',
+                        backgroundColor: '#999',
+                        borderRadius: 3,
+                        padding: [3, 5]
+                    }
+                },
+                indicator: [
+                    { name: '学习能力', max: 6500 },
+                    { name: '创新能力', max: 16000 },
+                    { name: '解决问题能力', max: 30000 },
+                    { name: '细心程度', max: 38000 },
+                    { name: '坚持能力', max: 52000 },
+                ]
+            },
+            series: [{
+                name: '预算 vs 开销（Budget vs spending）',
+                type: 'radar',
+                // areaStyle: {normal: {}},
+                data: [
+                    {
+                        value: [4300, 10000, 28000, 35000, 50000],
+                        name: '平均值）'
+                    },
+                    {
+                        value: [5000, 14000, 28000, 31000, 42000],
+                        name: '该学生'
+                    }
+                ]
+            }]
+        };
+        myChart.setOption(option);
+
+
+    </script>
+</body>
+
+</html>
