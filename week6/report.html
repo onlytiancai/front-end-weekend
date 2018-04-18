@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js"></script>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #FFF;
+            font-family: "Helvetica Neue", sans-serif;            
+        }
+
         #skill-chart,
         #overall-chart {
             height: 300px;
@@ -27,13 +38,76 @@
             text-align: center;
             font-size: 300%;
         }
+
+        #timeline {
+            margin-left: 20%;
+            border-left: 10px solid #bce1fa;
+        }
+
+        #timeline li {
+            list-style: none;
+            display: block;
+            width: 100%;
+            clear: both;
+            position: relative;
+        }
+
+        #timeline li::before {
+            content: '';
+            display: block;
+            border-radius: 50%;
+            background: #3498DB;
+            width: 30px;
+            height: 30px;
+            border: 5px solid #bce1fa;
+            position: absolute;
+            left: -25px;
+            top: 0;
+        }
+
+        #timeline li time {
+            left: -25%;
+            top: 8px;
+            width: 20%;
+            position: absolute;
+            
+            color: #AAA;
+            text-align: right;
+        }
+
+        .timeline-content {
+            margin: 0 0 20px 5%;
+            background: #57b4f6;
+            color: #FFF;
+            padding: 10px;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .timeline-content h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .timeline-content::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent #57b4f6 transparent transparent;
+            position: absolute;
+            left: -20px;
+            top: 12px;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
-            <h1>艾氪森专业能力评估报告</h1>
+            <h1>艾氪森能力评估报告</h1>
         </div>
         <div class="row">
             <h2>
@@ -103,7 +177,9 @@
                 <div class="panel panel-info">
                     <div class="panel-heading">课程总分</div>
                     <div class="panel-body">
-                        <h3>500 <small>分</small> </h3>
+                        <h3>500
+                            <small>分</small>
+                        </h3>
                     </div>
                 </div>
             </div>
@@ -125,7 +201,9 @@
                 <div class="panel panel-info">
                     <div class="panel-heading">作业完成情况</div>
                     <div class="panel-body">
-                        <h3>80 <small>%</small></h3>
+                        <h3>80
+                            <small>%</small>
+                        </h3>
                     </div>
                 </div>
             </div>
@@ -193,6 +271,48 @@
             </div>
         </div>
         <!-- / row-->
+        <div class="row">
+            <h2> <span class="glyphicon glyphicon-send" aria-hidden="true"></span> 学习详情</h2>
+            <div class="col-md-12">
+                <ul id="timeline">
+                    <li>
+                        <time datetime="2015-09-18">2015-9-18</time>
+                        <div class="timeline-content">
+                            <h1>CSS 效果学习</h1>
+                            <p>通过使用 CSS 我们可以大大提升网页开发的工作效率！在我们的 CSS 教程中，您会学到如何使用 CSS 同时控制多重网页的样式和布局。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <time datetime="2015-09-14">2015-9-14</time>
+                        <div class="timeline-content">
+                            <h1>CSS 定位学习</h1>
+                            <p>通过使用 CSS 我们可以大大提升网页开发的工作效率！在我们的 CSS 教程中，您会学到如何使用 CSS 同时控制多重网页的样式和布局。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <time datetime="2015-09-13">2015-9-13</time>
+                        <div class="timeline-content">
+                            <h1>CSS 基础布局学习</h1>
+                            <p>通过使用 CSS 我们可以大大提升网页开发的工作效率！在我们的 CSS 教程中，您会学到如何使用 CSS 同时控制多重网页的样式和布局。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <time datetime="2015-09-12">2015-9-12</time>
+                        <div class="timeline-content">
+                            <h1>CSS 基本样式学习</h1>
+                            <p>通过使用 CSS 我们可以大大提升网页开发的工作效率！在我们的 CSS 教程中，您会学到如何使用 CSS 同时控制多重网页的样式和布局。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <time datetime="2015-09-10">2015-9-10</time>
+                        <div class="timeline-content">
+                            <h1>CSS 选择器学习</h1>
+                            <p>通过使用 CSS 我们可以大大提升网页开发的工作效率！在我们的 CSS 教程中，您会学到如何使用 CSS 同时控制多重网页的样式和布局。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <hr>
 
         <p>Copyright 艾氪森科技</p>
