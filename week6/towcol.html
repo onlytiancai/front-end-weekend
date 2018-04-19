@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>两栏布局</title>
+    
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    section {
+        width: 980px;
+        background-color: #f5f5f5;
+        box-shadow: 0 0 1px rgba(0, 0, 0, .4) inset;
+        margin: 20px auto;
+        padding: 40px;
+        box-sizing: border-box;
+    }
+
+    article {
+        width: 49%;
+        float: left;
+        position: relative;
+    }
+
+    article:first-child {
+        margin-right: 2%;
+    }
+
+    section:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 15px;
+        color: #777;
+    }
+
+    h1, p {
+        width: 65%;
+        margin-left: 35%;        
+    }
+
+    img {
+        position: absolute;
+        top: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <section>
+        <article>
+            <h1>三国演义</h1>
+            <p>《三国演义》反映了丰富的历史内容，人物名称、地理名称、主要事件与《三国志》基本相同。人物性格也是在《三国志》留下的固定形象基础上，才进行再发挥，进行夸张、美化、丑化等等，这也是历史演义小说的套路。《三国演义》一方面反映了较为真实的三国历史，照顾到读者希望了解真实历史的需要；另一方面，根据明朝社会的实际情况对三国人物进行了夸张、美化、丑化等等。</p>
+            <img src="images/osx-yosemite-icons/PNG/128/appstore.png" alt="appstore">
+        </article>
+
+        <article>
+                <h1>西游记</h1>
+                <p>《西游记》又称央视版或86版《西游记》，改编自明代小说家吴承恩同名文学古典名著。是由中国国际电视总公司出品的一部41集古装神话剧。由杨洁执导，戴英禄，杨洁，邹忆青共同编剧，六小龄童、徐少华、迟重瑞、汪粤、马德华、崔景富、闫怀礼、刘大刚等主演，李世宏、李扬、张云明、里坡等担任主要配音。[1] </p>
+                <img src="images/osx-yosemite-icons/PNG/128/ichat.png" alt="ichat">
+            </article>
+    </section>
+</body>
+
+</html>

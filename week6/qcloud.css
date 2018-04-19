@@ -1,0 +1,153 @@
+header nav.navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+header .navbar .navbar-brand {
+    color: #fff;
+}
+
+header .navbar .navbar-nav a {
+    color: #fff;
+}
+
+header .navbar .navbar-nav a:hover {
+    color: blue;
+}
+
+.banner {}
+
+.banner .carousel-caption {
+    text-align: left;
+    left: 50px;
+}
+
+.banner .carousel-caption h1 {
+    font-size: 4vw;
+    margin-bottom: 20px;
+}
+
+.banner .carousel-caption p {
+    font-size: 1.5vw;
+    margin-bottom: 40px;
+}
+
+.banner .carousel-caption a {
+    display: block;
+    text-align: center;
+    width: 200px;
+    border: 1px solid #fff;
+    font-size: 20px;
+    line-height: 50px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.banner .carousel-caption a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.discount {
+    position: relative;
+    background-color: #eee;
+    padding: 20px 0;
+}
+
+.discount h1 {
+    font-size: 20px;
+}
+
+.discount img {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 70px;
+    opacity: 0.1;
+}
+
+.discount .item {
+    border-right: 1px solid #aaa;
+}
+
+.discount .item:last-child {
+    border-right: 0;
+}
+
+@media (max-width : 992px) {
+    .discount .item {
+        border-right: 0;
+    }
+}
+
+.solution {
+    background: #222;
+}
+
+.solution h3 {
+    color: #fff;
+}
+
+.solution .tab-pane {
+    height: 300px;
+    padding: 30px;
+    color: #fff;
+}
+.solution .tab-pane:nth-child(odd) {
+    background: green;
+}
+
+.solution .tab-pane:nth-child(even) {
+    background: orange;
+}
+
+.customer img {
+    width: 100%;
+}
+
+.map {
+    background-color: #eee; 
+}
+
+.map p {
+    text-align: center;
+}
+
+.map img {
+    width: 90%;
+}
+
+.customer .item {
+    margin: 20px 0;
+}
+
+.links {
+    background-color: #000; 
+}
+
+.links .item h3 {
+    color: #fff;
+    font-size: 14px;
+}
+
+.links ul {
+    padding-left: 0;
+}
+
+.links .item li {
+    list-style: none;
+}
+
+.links .item a {
+    color: #666;    
+}
+
+.links hr {    
+    border-top: 1px solid #666;    
+}
+
+.footer {
+    background-color: #000;
+    color: #666;
+    padding-bottom: 20px;
+}

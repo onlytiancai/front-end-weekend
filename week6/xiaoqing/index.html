@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文经学院 20 周年庆</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #F7081A;
+            color: #fff;
+            background: radial-gradient(#F7081A, #9D0F12);
+            min-width: 800px;
+        }
+
+        .logo {
+            float: right;
+            width: 300px;
+            margin: 50px;
+            position: relative;
+            z-index: 100;
+        }
+
+        .container .logo::after {
+            content: '';
+            clear: both;
+            display: table;
+        }
+
+        .container {
+            position: relative;
+            clear: both;
+            text-align: center;
+            padding-top: 50px;
+            width: 1024px;
+            margin: 0 auto;
+
+        }
+
+        .container h1 {
+            color: #FFFE00;
+            font-size: 4vw;
+            font-size: 4em;
+            margin: 20px 50px;
+            text-align: center;
+            text-shadow: -20px 20px 30px #222;
+            position: relative;
+            z-index: 100;
+        }
+
+        .container .join {
+            z-index: 200;
+            position: relative;
+            display: block;
+            width: 200px;
+            padding: 10px;
+            background: #FED943;
+            color: #896CB7;
+            margin: 0 auto;
+            text-decoration: none;
+            font-size: 2em;
+            border-radius: 5px;
+            border-bottom: 3px solid #CBBF36;
+            transition: all .2s;
+        }
+
+        .container .join:hover {
+            background: #FFFE00;
+        }
+
+        .banners {
+            z-index: 100;
+            position: fixed;
+            bottom: 0;
+            margin-top: 50px;
+            font-size: 0;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .banners .in {
+            width: 200%;
+        }
+
+        .banners img {
+            opacity: .8;
+            margin: 0;
+            height: 200px;
+            transition: all .2s;
+            cursor: pointer;
+        }
+
+        .banners img:hover {
+            opacity: 1;
+        }
+
+        .balloons img {
+            position: absolute;
+            top: 20%;
+            left: -15px;
+            max-width: 150px;
+            z-index: 90;
+            opacity: .9;
+        }        
+
+        .balloons img:nth-child(1) {
+            top: 10%;
+            left: 20%;
+            width: 100px;
+            opacity: .5;
+
+        }
+
+        .balloons img:nth-child(2) {
+            left: auto;
+            top: auto;
+            right: 20%;
+            bottom: 20%;
+            width: auto;
+            opacity: .8;
+        }
+
+        .balloons img:nth-child(3) {
+            left: auto;
+            top: 5%;
+            right: 10%;
+            width: 100px;
+            opacity: .3;
+            transform: scaleX(-1);
+        }
+
+        .balloons img:nth-child(4) {
+            left: 30%;
+            top: 45%;            
+            width: 150px;
+            opacity: .6;
+            transform: scaleX(-1);
+
+        }
+
+        .balloons img:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <img class="logo" src="logo.png" alt="">
+
+    <div class="container">
+        <h1>庆祝文经学院创办 20 周年</h1>
+        <h2>2003 - 2023</h2>
+        <p>时间：2018 年 08 月 08 日晚 6 点半</p>
+        <p>地点：教学楼 2 楼 大礼堂</p>
+        <a href="#" class="join">报名参加</a>
+
+
+    </div>
+
+    <div class="banners">
+        <div class="in">
+            <img src="banner01.png" alt="">
+            <img src="banner02.png" alt="">
+            <img src="banner03.png" alt="">
+            <img src="banner04.png" alt="">
+            <img src="banner05.png" alt="">
+            <img src="banner06.png" alt="">
+            <img src="banner07.png" alt="">
+        </div>
+
+    </div>
+
+    <div class="balloons">
+        <img class="balloon" src="balloon1.png" alt="">
+        <img class="balloon" src="balloon1.png" alt="">
+        <img class="balloon" src="balloon1.png" alt="">
+        <img class="balloon" src="balloon1.png" alt="">
+        <img class="balloon" src="balloon1.png" alt="">
+    </div>
+
+
+</body>
+
+</html>

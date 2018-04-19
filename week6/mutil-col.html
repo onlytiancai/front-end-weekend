@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>多列等高布局</title>
+
+    <style>
+    #container {
+        width: 800px;    
+        margin: 20px auto;    
+
+        overflow: hidden;
+    }
+
+    .col {
+        width: 33.33%;
+        float: left;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 20px;
+        color: #fff;
+        background-color: #2980b9;
+
+        padding-bottom: 500px;
+
+        margin-bottom: -500px;
+    }
+
+    .col img {
+        width: 30%;
+        padding-top: 30px;
+    }
+
+    .col:nth-child(2) {
+        background-color: #3498db;
+    }
+
+    .col:nth-child(3) {
+        background-color: #67aeef;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+        <div class="col">
+            <img src="../images/osx-yosemite-icons/PNG/128/appstore.png" alt="appstore">
+            <h1>三国演义</h1>
+            <p>《三国演义》反映了丰富的历史内容，人物名称、地理名称、主要事件与《三国志》基本相同。</p>
+        </div>
+
+        <div class="col">
+            <img src="../images/osx-yosemite-icons/PNG/128/ichat.png" alt="ichat">
+            <h1>西游记</h1>
+            <p>《西游记》又称央视版或86版《西游记》，改编自明代小说家吴承恩同名文学古典名著。
+        </div>
+
+        <div class="col">
+            <img src="../images/osx-yosemite-icons/PNG/128/ibooks.png" alt="ibooks">
+            <h1>红楼梦</h1>
+            <p>《红楼梦》，中国古典四大名著之首，清代作家曹雪芹创作的章回体长篇小说[1] ，又名《石头记》《金玉缘》。
+            </p>
+        </div>
+
+    </div>
+</body>
+
+</html>
