@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>week6</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: url('../images/bg.jpg') no-repeat;
+            /* background-size: 100% 100%; */
+            background-size: cover;
+            /* background-size: contain; */
+        }
+
+        .img-test img {
+            margin: 50px;
+
+            width: 30%;
+            min-width: 300px;
+
+            /* max-width: 100%; */
+        }
+
+        /* https://www.jianshu.com/p/9f00d36a79e8 */
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container * {
+            box-sizing: border-box
+        }
+
+        .row:before,
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        [class *='col-'] {
+            float: left;
+            min-height: 1px;
+            padding: 12px;
+            /* 设置间距 */
+
+            /* for test */
+            font-size: 72px;
+            text-align: center;     
+            color: #fff;       
+        }
+
+        .col-1 {
+            width: 16.66%;
+        }
+
+        .col-2 {
+            width: 33.33%;
+        }
+
+        .col-3 {
+            width: 50%;
+        }
+
+        .col-4 {
+            width: 66.664%;
+        }
+
+        .col-5 {
+            width: 83.33%;
+        }
+
+        .col-6 {
+            width: 100%;
+        }
+
+        @media all and (max-width: 769px) {
+            .col-md-1 {
+                width: 16.66%;
+            }
+            .col-md-2 {
+                width: 33.33%;
+            }
+            .col-md-3 {
+                width: 50%;
+            }
+            .col-md-4 {
+                width: 66.664%;
+            }
+            .col-md-5 {
+                width: 83.33%;
+            }
+            .col-md-6 {
+                width: 100%;
+            }
+        }
+
+        @media all and (max-width: 600px) {
+            .col-sm-1 {
+                width: 16.66%;
+            }
+            .col-sm-2 {
+                width: 33.33%;
+            }
+            .col-sm-3 {
+                width: 50%;
+            }
+            .col-sm-4 {
+                width: 66.664%;
+            }
+            .col-sm-5 {
+                width: 83.33%;
+            }
+            .col-sm-6 {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="img-test">
+        <img src="../images/onepiece.jpg" alt="">
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2 col-md-3 col-sm-6">1</div>
+            <div class="col-2 col-md-3 col-sm-6">2</div>
+            <div class="col-2 col-md-3 col-sm-6">3</div>
+            <div class="col-2 col-md-3 col-sm-6">4</div>
+            <div class="col-2 col-md-3 col-sm-6">5</div>
+            <div class="col-2 col-md-3 col-sm-6">6</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
