@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>文经学院 15 周年庆</title>
+        <style>
+        
+        html {
+            height: 100%;
+        }
+        
+        body {
+            margin: 0;
+            padding:0;
+            background: radial-gradient(#F7081A,#9D0F12);
+            min-width: 600px;
+            color: #fff;
+        }
+        
+        .logo {
+            width: 30%;
+            min-width: 200px;
+            max-width: 300px;
+            
+            float: right;
+            margin-top: 50px;
+            margin-right: 50px;
+            margin-bottom: 100px;
+        }
+        
+        h1 {
+            clear: both;
+            text-align: center;
+            color: gold;
+            
+            font-size: 6vw;    
+            position: relative;
+            z-index: 100;
+        }
+        
+        p {
+            text-align: center;
+        }
+        
+        .time {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        
+        a {
+            display: block;
+            width: 150px; 
+            height: 50px;
+            line-height: 50px;
+            margin: 0 auto;
+            background: gold;
+            border: 0;
+            color: blue;
+            font-size: 1.5em;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        a:hover {
+            background-color: yellow;
+        }
+        
+        .qiqiu img {
+            position: absolute;
+            height: 200px;
+            transition: all .2s;
+            z-index: 90;
+        }       
+        
+        .qiqiu img:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            height: 250px;
+            opacity: .3;
+        }
+        
+        .qiqiu img:nth-child(2) {
+            top: 40%;
+            left: 20%;
+            height: 300px;
+            opacity: .6;
+            transform: scaleX(-1);
+        }
+        
+        .qiqiu img:nth-child(3) {
+            top: 50%;
+            right: 20%;
+            height: 300px;
+            opacity: .6;
+            transform: scaleX(-1);
+        }
+        
+        .qiqiu img:nth-child(4) {
+            top: 20%;
+            right: 10%;
+            height: 200px;
+            opacity: .3;            
+        }
+        
+        .qiqiu img:nth-child(5) {
+            top: 10%;
+            right: 50%;
+            height: 200px;
+            opacity: .3;            
+        }        
+        
+        .qiqiu img:hover {
+            opacity: 1;
+        }
+        
+        </style>
+    </head>
+    <body>
+        <img src="logo.png" alt="logo" class="logo">
+        <h1>热烈庆祝文经学院建校 15 周年</h1>
+        <p class="time">2003 - 2013</p>
+        <p>时间：2018 年 05 月 01 日晚 6 点半</p>
+        <p>地点：教学楼 2 楼 大厅</p>
+        <a href="">报名参加</a>
+        
+        <div class="qiqiu">
+            <img src="balloon1.png">
+            <img src="balloon1.png">
+            <img src="balloon1.png">
+            <img src="balloon1.png">
+            <img src="balloon1.png">
+        </div>
+    </body>
+</html>
