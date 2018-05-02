@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>week 6 </title>
+    <style>
+    /*
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    */
+    body {
+        background-color: lightgreen;
+    }
+
+
+    .test {
+        width: 200px;
+        height: 200px;
+        background: lightgreen;
+    }
+    
+    .test2 li {
+        display: block;
+        width: 30%;
+        min-width: 100px;
+        height: 200px;
+        background: red;
+        margin: 1%;
+        float: left;
+    }
+      
+    @media only screen and (max-width: 800px) {
+        body{
+            background-color: lightyellow;
+        }
+
+    }
+    @media only screen and (max-width: 600px) {
+        body{
+            background-color: lightblue;
+        }
+        .test2 li {
+            width: 45%;
+        }
+    }
+    
+    .testimg {
+        max-width: 100%;
+        
+    }
+    </style>
+</head>
+<body>
+    <div class="test">
+    </div>
+    <ul>
+        <li>aaaa</li>
+        <li>aaaa</li>
+    </ul>
+    <h1>h1 aaa</h1>
+    <h2>h2 aaa</h2>
+    <h3>h3 aaa</h3>
+    <p>p aaa</p>
+    <p>p bbb</p>
+    <code>abcdefg</code>
+    
+    <table border="1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+    </table>
+    
+    <ul class="test2">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
+    <img class="testimg" alt="" src="../images/onepiece.jpg">
+    
+</body>

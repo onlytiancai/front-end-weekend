@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>week 6 test 3</title>
+
+    <link href="../lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">   
+  </head>
+  <body>
+      <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                
+                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topmenu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                
+                    <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-apple"></span> 艾氪森</a>
+                </div>
+                
+                <div id="topmenu" class="collapse navbar-collapse" >
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">菜单1</a></li>
+                        <li ><a href="#">菜单1</a></li>
+                    </ul>
+                     
+                    <p class="navbar-text pull-right">欢迎你 Mark Otto</p>
+                </div>
+
+                 
+
+            </div>
+      </nav>
+      
+    <div class="container">
+        
+        <!-- 警告框 -->
+        <div class="alert alert-warning alert-dismissible">
+        
+          <button type="button" class="close" 
+            data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          
+          <strong>Warning!</strong> Better check yourself, you're not looking too good.
+        </div>
+    
+        <!-- 面包屑导航 -->
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+        </ol>
+        
+        <!-- 按钮组 -->
+        <div class="btn-group" >
+            <button type="button" class="btn btn-default">Left</button>
+            <button type="button" class="btn btn-default">Middle</button>
+            <button type="button" class="btn btn-default">Right</button>
+        </div>
+        
+        <!-- 列表组 -->
+        <ul class="list-group">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+    
+        <!-- 面板 -->
+        <div class="panel panel-warning">
+            <div class="panel-heading">Panel heading without title</div>
+            <div class="panel-body">
+            Panel content
+            </div>
+        </div>
+
+        <!-- 标签页 -->
+        <ul class="nav nav-tabs" >
+            <li  class="active"><a href="#home"  data-toggle="tab">Home</a></li>
+            <li ><a href="#profile"  data-toggle="tab">Profile</a></li>
+            <li ><a href="#messages" data-toggle="tab">Messages</a></li>
+            <li ><a href="#settings" data-toggle="tab">Settings</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div  class="tab-pane active" id="home">home</div>
+            <div class="tab-pane" id="profile">profile</div>
+            <div  class="tab-pane" id="messages">message</div>
+            <div  class="tab-pane" id="settings">settings</div>
+        </div>
+
+
+
+        <p class="text-info"><span class="glyphicon glyphicon-apple"></span>你好，世界！</p>
+        <h2 class="text-center">阿斯顿发送到发</h2>
+        <h3>阿斯顿发送到发</h3>
+        <h4>阿斯顿发送到发</h4>
+        <h5 class="text-uppercase">abcdefghigklmn</h5>
+        
+        <ul class="list-unstyled">
+            <li>aaa</li>
+            <li class="text-warning">bbb</li>
+            <li>ccc</li>
+        </ul>
+        <ol>
+            <li>aaa</li>
+            <li>bbb</li>
+            <li>ccc</li>
+        </ol>
+        
+        <div class="bg-success pull-right">asdd</div>
+        
+        <p>写一段代码： <code>abcdefg</code>  快捷键： <kbd>Ctrl + K</kbd></p>
+        
+        <pre>funciton () {
+    console.log('Hello world.');
+}</pre>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover table-condensed ">
+                <tr>
+                    <td>姓名</td>
+                    <td>年龄</td>
+                    <td>学校</td>
+                    <td>姓名姓名姓名姓名姓名姓名</td>
+                    <td>年龄姓名姓名姓名姓名</td>
+                    <td>学校姓名姓名姓名姓名姓名姓名</td>            
+                </tr>
+                <tr class="warning">
+                    <td>流川枫</td>
+                    <td>18</td>
+                    <td>向北</td>
+                    <td>姓名</td>
+                    <td>年龄</td>
+                    <td>学校</td>            
+                </tr>    
+                <tr>
+                    <td>赤木晴子</td>
+                    <td>18</td>
+                    <td>向北</td>
+                    <td>姓名</td>
+                    <td>年龄</td>
+                    <td>学校</td>            
+                </tr>  
+                <tr>
+                    <td>赤木晴子</td>
+                    <td>18</td>
+                    <td>向北</td>
+                    <td>姓名</td>
+                    <td>年龄</td>
+                    <td>学校</td>
+                </tr>        
+            </table>
+        </div> <!-- / table container -->
+        
+        <div class="row">
+            <div class="col-md-8">
+                <form>
+                    <div class="form-group form-group-lg">
+                        <label>姓名</label>
+                        <input class="form-control" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>密码</label>
+                        <input class="form-control" type="text">
+                    </div>  
+                    <button class="btn btn-default">提交</button>
+                    <button class="btn btn-lg btn-primary">注册</button>
+                </form>              
+            </div>      
+        </div>
+
+    </div> <!-- /container -->
+    
+
+    <script src="../lib/jquery.min.js"></script>
+    <script src="../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>    
+    
+
+  </body>
+</html>
