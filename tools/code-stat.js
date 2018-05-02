@@ -1,21 +1,45 @@
-var fs = require('fs');
-var exec = require('child_process').exec;
-var path = require('path');
+const fs = require('fs');
+const { exec } = require('child_process');
+const path = require('path');
+const { promisify } = require('util');
 
-var source = 'tools/students/';
-var files = fs.readdirSync(source);
-files.map(function (student) {
-    if (fs.lstatSync(path.join(source, student)).isDirectory()) {
+const readdirAsync = promisify(fs.readdir);
+const lstatAsync = promisify(fs.lstat);
+const execAsync = promisify(exec);
 
-        console.log(student);
-        exec(`sloc --exclude jquery* -f json tools/students/${student}/`, (err, stdout, stderr) => {
-            if (err) return;
+const studentsDir = path.resolve(__dirname, 'students');
 
-            var line = JSON.parse(stdout).summary.source || 0;            
+async function main() {
+    const students = await readdirAsync(studentsDir);
+
+    for (const student of students) {
+        const studentDir = path.resolve(studentsDir, student);
+        const statInfo = await lstatAsync(studentDir);
+
+        if (statInfo.isDirectory()) {            
+
+            let cmd = `cd ${studentDir}/`;
+            console.log(cmd);
+            let ret = await execAsync(cmd);
+            if (ret.err) continue;
+
+            cmd = `git pull`;
+            console.log(cmd);
+            ret = await execAsync(cmd);
+            if (ret.err) continue;
+
+            cmd = `sloc --exclude jquery* -f json ${studentDir}/`;
+            console.log(cmd);
+            ret = await execAsync(cmd);
+            if (ret.err) continue;
+
+            const line = JSON.parse(ret.stdout).summary.source || 0;
             console.log(`${student}\t${line}`);
-        });
-
+        }
     }
-});
+}
+
+main();
+
 
 
