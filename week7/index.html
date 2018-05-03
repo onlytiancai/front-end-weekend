@@ -13,6 +13,15 @@
             margin: 0;
         }
 
+        body {
+            background-image: url("../images/week7/header_bg.jpg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            overflow-x: hidden;
+        }
+
         div,
         img {
             transition: all 1s ease-out 0s;
@@ -36,7 +45,7 @@
 
         /* begin page title */
 
-        .page .main .text-box {            
+        .page .main .text-box {
             padding: 10px;
         }
 
@@ -361,7 +370,7 @@
 
         .page3 .main .pic-box .rolling-box img {
             padding-top: 133px;
-            animation-name: rolling;            
+            animation-name: rolling;
             animation-duration: 5s;
             animation-timing-function: linear;
             animation-delay: 0s;
@@ -380,7 +389,6 @@
             }
         }
 
-
         .page3 .main .text-box h6 {
             background-color: #43b500;
         }
@@ -398,6 +406,1075 @@
         }
 
         /* end page 3*/
+
+        /* begin page 4*/
+
+        .page4 {
+            background-color: #ff9966;
+        }
+
+        .page4 .main .pic-box .bg-box {
+            position: relative;
+            margin: 0 auto;
+            width: 630px;
+            height: 637px;
+        }
+
+        .page4 .main .pic-box .bg-box .bg-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .page4 .main .pic-box .bg-box .bg-inner .sleep-box {
+            position: absolute;
+            top: 150px;
+            left: 50px;
+            /* 初始化状态 */
+            opacity: 0;
+            transition-delay: 1.1s;
+        }
+
+        .page4 .main .pic-box .bg-box .bg-inner .sleep-box .mouth-box {
+            position: absolute;
+            top: 125px;
+            left: 132px;
+            animation-name: mouth;
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        @keyframes mouth {
+            0% {
+                transform: scale(0.5) rotateZ(-25deg);
+            }
+
+            50% {
+                transform: scale(1) rotateZ(-25deg);
+            }
+
+            100% {
+                transform: scale(0.5) rotateZ(-25deg);
+            }
+        }
+
+        .page4 .main .pic-box .bg-box .bg-inner .sleep-box .pao-box {
+            position: absolute;
+            top: 130px;
+            left: 70px;
+
+            transform-origin: right 10%;
+            animation-name: pao;
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        @keyframes pao {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(0.5);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .page4 .main .pic-box .bg-box .bg-inner .server-box {
+            position: absolute;
+            top: 140px;
+            left: 360px;
+            opacity: 0;
+            transition-delay: 0.8s;
+        }
+
+        .page4 .main .text-box h6 {
+            background-color: #fc763a;
+        }
+
+        .page4 .main .text-box h6:before {
+            border-bottom: 20px solid #fc763a;
+        }
+
+        .page4.active .main .pic-box .bg-box .bg-inner .sleep-box {
+            opacity: 1;
+        }
+
+        .page4.active .main .pic-box .bg-box .bg-inner .server-box {
+            opacity: 1;
+        }
+
+        /* end page 4*/
+
+        /* begin page 5*/
+
+        .page5 {
+            background-color: #fed6ad;
+        }
+
+        .page5 .main .pic-box .map-line-box {
+            position: relative;
+            width: 710px;
+            height: 587px;
+            margin: 0 auto;
+        }
+
+        .page5 .main .pic-box .map-line-box svg.drawline path {
+            /* 初始状态 */
+            stroke-dasharray: 150%;
+            stroke-dashoffset: 150%;
+        }
+
+        /* 中国地图 外轮廓*/
+
+        .page5 .main .pic-box .map-line-box svg.drawline path:first-child {
+            /* 初始状态 */
+            stroke-dasharray: 530%;
+            stroke-dashoffset: 0;
+            opacity: 0;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner {
+            /* 给所有 drop 做定位*/
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .province-box {
+            position: absolute;
+            top: 6px;
+            left: 241px;
+
+            /* 初始化状态*/
+            opacity: 0;
+            transition-delay: 2s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop {
+            position: absolute;
+            /* 初始化状态*/
+            opacity: 0;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -40%;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-image: url(../images/week7/drop_circle.png);
+            background-repeat: no-repeat;
+            background-position: center;
+
+            /* 初始化状态*/
+            opacity: 0;
+
+            transition: all 1s linear 0s;
+            transition-delay: 3.5s;
+            transform: rotateX(80deg);
+            animation-name: dropCircle;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        @keyframes dropCircle {
+            from {
+                background-size: 1%;
+            }
+
+            to {
+                background-size: 200%;
+            }
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop1 {
+            width: 54px;
+            height: 54px;
+            top: 350px;
+            left: 490px;
+            transition-delay: 2.8s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop1:after {
+            animation-duration: 1.8s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop2 {
+            width: 40px;
+            height: 40px;
+            top: 190px;
+            left: 420px;
+            transition-delay: 1.8s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop2:after {
+            animation-duration: 1.5s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop3 {
+            width: 56px;
+            height: 56px;
+            top: 250px;
+            left: 570px;
+            transition-delay: 2s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop3:after {
+            animation-duration: 2s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop4 {
+            width: 43px;
+            height: 43px;
+            top: 200px;
+            left: 570px;
+            transition-delay: 2.8s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop4:after {
+            animation-duration: 1.6s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop5 {
+            width: 52px;
+            height: 52px;
+            top: 250px;
+            left: 340px;
+            transition-delay: 2.4s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop5:after {
+            animation-duration: 1.7s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop6 {
+            width: 35px;
+            height: 35px;
+            top: 113px;
+            left: 528px;
+            transition-delay: 2.2s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop6:after {
+            animation-duration: 1.3s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop7 {
+            width: 60px;
+            height: 60px;
+            top: 140px;
+            left: 525px;
+            transition-delay: 2.6s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop7:after {
+
+            animation-duration: 2.2s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop8 {
+            width: 40px;
+            height: 40px;
+            top: 20px;
+            left: 610px;
+            transition-delay: 2.4s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop8:after {
+
+            animation-duration: 1.8s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop9 {
+            width: 35px;
+            height: 35px;
+            top: 160px;
+            left: 360px;
+            transition-delay: 2.2s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop9:after {
+
+            animation-duration: 1.2s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop10 {
+            width: 40px;
+            height: 40px;
+            top: 300px;
+            left: 522px;
+            transition-delay: 1.8s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop10:after {
+
+            animation-duration: 1.4s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop11 {
+            width: 40px;
+            height: 40px;
+            top: 70px;
+            left: 580px;
+            transition-delay: 1.5s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop11:after {
+
+            animation-duration: 1.6s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop12 {
+            width: 45px;
+            height: 45px;
+            top: 360px;
+            left: 320px;
+            transition-delay: 1.7s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop12:after {
+
+            animation-duration: 1.9s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop13 {
+            width: 50px;
+            height: 50px;
+            top: 60px;
+            left: 460px;
+            transition-delay: 1.9s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop13:after {
+
+            animation-duration: 1.8s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop14 {
+            width: 40px;
+            height: 40px;
+            top: -40px;
+            left: 620px;
+            transition-delay: 1.5s;
+        }
+
+        .page5 .main .pic-box .map-line-box .map-inner .drop14:after {
+            animation-duration: 1.5s;
+        }
+
+        .page5 .main .text-box h6 {
+            background-color: #ffba7b;
+        }
+
+        .page5 .main .text-box h6:before {
+            border-bottom: 20px solid #ffba7b;
+        }
+
+        .page5.active .main .pic-box .map-line-box svg.drawline path {
+            stroke-dashoffset: 0;
+        }
+
+        .page5.active .main .pic-box .map-line-box svg.drawline path:first-child {
+            opacity: 1;
+        }
+
+        .page5.active .main .pic-box .map-line-box .map-inner .province-box {
+            opacity: 1;
+        }
+
+        .page5.active .main .pic-box .map-line-box .map-inner .drop {
+            opacity: 1;
+        }
+
+        .page5.active .main .pic-box .map-line-box .map-inner .drop:after {
+            opacity: 1;
+        }
+
+        .page5.active .main .pic-box .map-line-box .map-inner .drop1 {
+            top: 450px;
+        }
+
+        .page5.active .main .pic-box .map-line-box .map-inner .drop2 {
+            top: 290px;
+        }
+
+        .page5.active .main .pic-box .map-line-box .map-inner .drop3 {
+            top: 350px;
+        }
+
+        .page5.active .main .pic-box .map-line-box .map-inner .drop4 {
+            top: 300px;
+        }
+
+        .page5.active .main .pic-box .map-line-box .map-inner .drop5 {
+            top: 350px;
+        }
+
+        .page5.active .main .pic-box .map-line-box .map-inner .drop6 {
+            top: 213px;
+        }
+
+        .page5.active .main .pic-box .map-line-box .map-inner .drop7 {
+            top: 240px;
+        }
+
+        .page5.active .main .pic-box .map-line-box .map-inner .drop8 {
+            top: 120px;
+        }
+
+        .page5.active .main .pic-box .map-line-box .map-inner .drop9 {
+            top: 260px;
+        }
+
+        .page5.active .main .pic-box .map-line-box .map-inner .drop10 {
+            top: 400px;
+        }
+
+        .page5.active .main .pic-box .map-line-box .map-inner .drop11 {
+            top: 170px;
+        }
+
+        .page5.active .main .pic-box .map-line-box .map-inner .drop12 {
+            top: 460px;
+        }
+
+        .page5.active .main .pic-box .map-line-box .map-inner .drop13 {
+            top: 160px;
+        }
+
+        .page5.active .main .pic-box .map-line-box .map-inner .drop14 {
+            top: 60px;
+        }
+
+        /* end page 5*/
+
+        /* begin page 6 */
+
+        .page6 {
+            background-color: #009966;
+        }
+
+        .page6 .main .pic-box .bg-box {
+            position: relative;
+            width: 689px;
+            height: 620px;
+            margin: 0 auto;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .customer-box {
+            position: absolute;
+            width: 132px;
+            height: 120px;
+            top: 260px;
+            left: 300px;
+        }
+
+        page6 .main .pic-box .bg-box .bg-inner .customer-box svg.drawline path {
+            transition-delay: 1s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .weixin-box {
+            position: absolute;
+            width: 156px;
+            height: 130px;
+            top: 100px;
+            left: 100px;
+            opacity: 0;
+            transition-delay: 1.4s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .weixin-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .weixin-box img.weixin-mask {
+            animation-name: weixin;
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        @keyframes weixin {
+            0% {
+                opacity: 1;
+            }
+
+            0.1% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            50.1% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .weixin-box .signal {
+            position: absolute;
+            width: 132px;
+            height: 120px;
+            top: 120px;
+            left: 80px;
+            transform: rotateZ(90deg);
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .weixin-box .signal svg.signal-line path {
+            opacity: 0;
+            animation-name: signal;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .weixin-box .signal svg.signal-line path:nth-child(1) {
+            animation-delay: 1.15s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .weixin-box .signal svg.signal-line path:nth-child(2) {
+            animation-delay: 0.9s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .weixin-box .signal svg.signal-line path:nth-child(3) {
+            animation-delay: 0.65s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .weixin-box .signal svg.signal-line path:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes signal {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            40% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .email-box {
+            position: absolute;
+            top: 120px;
+            left: 490px;
+            opacity: 0;
+            transition-delay: 1.6s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .email-box .email-top {
+            position: absolute;
+            top: -4px;
+            left: 2px;
+            transform: rotateZ(180deg);
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .email-box .email-top img {
+            transform-origin: 50% 95%;
+            /* 调整旋转的相对位置  */
+            transform: rotateX(180deg);
+            animation-name: openemail;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        @keyframes openemail {
+            0% {
+                transform: rotateX(0deg);
+            }
+
+            15% {
+                transform: rotateX(0deg);
+            }
+
+            35% {
+                transform: rotateX(180deg);
+            }
+
+            65% {
+                transform: rotateX(180deg);
+            }
+
+            85% {
+                transform: rotateX(0deg);
+            }
+
+            100% {
+                transform: rotateX(0deg);
+            }
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .email-box .email-bottom {
+            position: absolute;
+            top: 25px;
+            left: 2px;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .email-box .email-inner {
+            position: absolute;
+            overflow: hidden;
+            height: 0px;
+            top: 40px;
+            left: 19px;
+
+            animation-name: emailinner;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        @keyframes emailinner {
+            0% {
+                top: 40px;
+                height: 0;
+            }
+
+            25% {
+                top: 40px;
+                height: 0;
+            }
+
+            40% {
+                top: 8px;
+                height: 32px;
+            }
+
+            60% {
+                top: 8px;
+                height: 32px;
+            }
+
+            80% {
+                top: 40px;
+                height: 0;
+            }
+
+            100% {
+                top: 40px;
+                height: 0;
+            }
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .email-box .signal {
+            position: absolute;
+            width: 132px;
+            height: 120px;
+            top: 30px;
+            left: -130px;
+
+            transform: rotateZ(180deg);
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .email-box .signal svg.signal-line path {
+            opacity: 0;
+            animation-name: signal;
+            animation-duration: 2.2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .email-box .signal svg.signal-line path:nth-child(1) {
+            animation-delay: 0.75s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .email-box .signal svg.signal-line path:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .email-box .signal svg.signal-line path:nth-child(3) {
+            animation-delay: 0.25s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .email-box .signal svg.signal-line path:nth-child(4) {
+            animation-delay: 0s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .shake-box {
+            position: absolute;
+            top: 400px;
+            left: 140px;
+            opacity: 0;
+            transition-delay: 1.8s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .shake-box img {
+
+            animation-name: shake;
+            animation-duration: 3.2s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            1% {
+                transform: rotate(10deg);
+            }
+
+            3% {
+                transform: rotate(-10deg);
+            }
+
+            5% {
+                transform: rotate(10deg);
+            }
+
+            7% {
+                transform: rotate(-10deg);
+            }
+
+            9% {
+                transform: rotate(10deg);
+            }
+
+            11% {
+                transform: rotate(-10deg);
+            }
+
+            12% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .shake-box .signal {
+            position: absolute;
+            width: 132px;
+            height: 120px;
+            top: -20px;
+            left: 100px;
+            transform: rotateZ(0deg);
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .shake-box .signal svg.signal-line path {
+            opacity: 0;
+            animation-name: signal;
+            animation-duration: 1.8s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .shake-box .signal svg.signal-line path:nth-child(1) {
+            animation-delay: 0.95s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .shake-box .signal svg.signal-line path:nth-child(2) {
+            animation-delay: 0.7s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .shake-box .signal svg.signal-line path:nth-child(3) {
+            animation-delay: 0.45s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .shake-box .signal svg.signal-line path:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .sms-box {
+            position: absolute;
+            top: 410px;
+            left: 470px;
+            opacity: 0;
+            transition-delay: 2s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .sms-box img {
+            animation-name: sms;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        @keyframes sms {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        .page6 .main .pic-box .bg-box .bg-inner .sms-box .signal {
+            position: absolute;
+            width: 132px;
+            height: 120px;
+            top: -90px;
+            left: -50px;
+
+            transform: rotateZ(-90deg);
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .sms-box .signal svg.signal-line path {
+            opacity: 0;
+            animation-name: signal;
+            animation-duration: 2.4s;
+            animation-timing-function: linear;
+            animation-delay: 1.35s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .sms-box .signal svg.signal-line path:nth-child(1) {
+            animation-delay: 1.35s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .sms-box .signal svg.signal-line path:nth-child(2) {
+            animation-delay: 1.1s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .sms-box .signal svg.signal-line path:nth-child(3) {
+            animation-delay: 0.85s;
+        }
+
+        .page6 .main .pic-box .bg-box .bg-inner .sms-box .signal svg.signal-line path:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .page6 .main .text-box h6 {
+            background-color: #008958;
+        }
+
+        .page6 .main .text-box h6:before {
+            border-bottom: 20px solid #008958;
+        }
+
+        .page6.active .main .pic-box .bg-box .bg-inner>div {
+            opacity: 1;
+        }
+
+        /* end page 6 */
+
+        /* begin page 7*/
+
+        .page7 {
+            background-color: #2dd9ea;
+        }
+
+        .page7 .main .pic-box .bg-box {
+            position: relative;
+            width: 668px;
+            height: 632px;
+            margin: 0 auto;
+        }
+
+        .page7 .main .pic-box .bg-box .bg-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+            transition-delay: 1s;
+        }
+
+        .page7 .main .pic-box .bg-box .bg-inner .code {
+            position: absolute;
+            animation-name: code;
+            animation-duration: 0.2s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        @keyframes code {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .page7 .main .pic-box .bg-box .bg-inner .code400 {
+            top: 100px;
+            left: 100px;
+            animation-duration: 4s;
+        }
+
+        .page7 .main .pic-box .bg-box .bg-inner .code500 {
+            top: 230px;
+            left: 230px;
+            animation-duration: 5s;
+        }
+
+        .page7 .main .pic-box .bg-box .bg-inner .code502 {
+            top: 380px;
+            left: 130px;
+            animation-duration: 4.2s;
+        }
+
+        .page7 .main .pic-box .bg-box .bg-inner .code401 {
+            top: 280px;
+            left: 60px;
+
+            animation-duration: 3.8s;
+        }
+
+        .page7 .main .pic-box .bg-box .bg-inner .code404 {
+            top: 340px;
+            left: 260px;
+
+            animation-duration: 4.6s;
+        }
+
+        .page7 .main .pic-box .bg-box .bg-inner .code501 {
+            top: 300px;
+            left: 460px;
+
+            animation-duration: 3.6s;
+        }
+
+        .page7 .main .pic-box .bg-box .bg-inner .code500100 {
+            top: 430px;
+            left: 300px;
+
+            animation-duration: 3.4s;
+        }
+
+        .page7 .main .pic-box .bg-box .bg-inner .codeerror {
+            top: 160px;
+            left: 420px;
+
+            animation-duration: 4.8s;
+        }
+
+        .page7 .main .pic-box .bg-box .bg-inner .code403 {
+            top: 90px;
+            left: 420px;
+
+            animation-duration: 3.2s;
+        }
+
+        .page7 .main .pic-box .bg-box .bg-inner .code50013 {
+            top: 60px;
+            left: 260px;
+
+            animation-duration: 3s;
+        }
+
+        .page7 .main .text-box h6 {
+            background-color: #299fce;
+        }
+
+        .page7 .main .text-box h6:before {
+            border-bottom: 20px solid #299fce;
+        }
+
+        .page7.active .main .pic-box .bg-box .bg-inner {
+            opacity: 1;
+        }
+
+        /* end page 7*/
+
+        .bottom-box {
+            min-height: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        .bottom-box .content-box {
+            color: #ff3;
+            font-size: 2.2em;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            width: 100%; /* 去掉包裹性*/
+        }
+
+        .bottom-box .content-box a {
+            display: inline-block;
+            margin-left: 1em;
+            border: 0;
+            outline: 0;
+            color: white;
+            font-size: 1em;
+            text-decoration: none;
+            line-height: 1em;
+            padding: 0.5em 1.2em;
+            border-radius: 4px;
+            background-color: #54bc0e;
+            cursor: pointer;
+        }
+
+        .bottom-box .content-box a:hover {
+            background-color: #58c50f;
+        }
     </style>
     <script src="../lib/jquery.min.js "></script>
     <script>
@@ -510,6 +1587,289 @@
             </div>
         </div>
     </div>
+
+
+
+    <div class="page page4">
+        <div class="main">
+            <div class="pic-box">
+                <div class="bg-box">
+                    <svg class="drawline" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 637">
+                        <path fill="none" style="stroke:#FEE2A0; stroke-width:10;" stroke-miterlimit="10" d="M73.712,524.919C-36.175,400.873,28.621,170.458,41.088,16.78c164.22,6.607,390.553-30.33,500.442,93.72c109.873,124.03,94.24,317.362-34.922,431.781C377.412,656.729,183.587,648.953,73.712,524.919z"></path>
+                    </svg>
+                    <div class="bg-inner">
+                        <div class="sleep-box">
+                            <img src="../images/week7/sleep.png">
+                            <div class="mouth-box">
+                                <img src="../images/week7/mouth.png">
+                            </div>
+                            <div class="pao-box">
+                                <img src="../images/week7/pao.png">
+                            </div>
+                        </div>
+                        <div class="server-box">
+                            <img src="../images/week7/server.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-box">
+                <h6>网站宕机，自动切换到备用服务器</h6>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="page page5">
+        <div class="main">
+            <div class="pic-box">
+                <div class="map-line-box">
+                    <svg class="drawline" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 710.727 587.416">
+                        <path fill="none" stroke="#41AC7F" stroke-width="2" stroke-miterlimit="10" d="M710.243,87.667l-2.597-16.96l0.174-0.345h0.173c1.214-1.905,1.904-3.462,1.558-4.673l-0.691-1.038c-1.903-1.212-2.771-3.979-2.252-8.653h-1.556c-1.212-0.172-2.597,0.346-3.979,1.213c-1.387,1.037-2.251,2.249-2.426,3.113c-0.69,2.078-2.939,3.461-6.747,4.672l-0.866,5.366 v0.172l-0.174,0.173l-1.901,3.461l-0.172,0.348h-0.177h-0.171l-17.131,3.113h-0.172h-0.519v-0.346L665.6,71.92l1.556-1.558 l-1.904-2.597l-2.422-1.729l-0.173-0.173h-0.174v-0.175v-0.174l-0.864-4.67l-4.501,0.346l-0.344-0.346l-3.806-2.252l-13.672-2.424 l-11.421-0.518l-0.345,0.346c-0.521,0-0.864-0.172-1.041-0.518l-6.576-14.882c-0.691-1.212-3.459-5.018-8.995-11.595 c-5.191-6.402-8.136-9.863-9-10.555l-9.69-9.518l-1.557-0.864l-12.113-0.174h-0.173l-0.347-0.348 c-1.212-0.864-2.941-1.731-5.536-2.25c-2.249-0.862-7.44,0.867-15.575,5.191l-5.759,1.604l-0.816,0.127 c-2.249,0.173-3.807,1.559-4.673,4.153v0.175l-2.596,3.976l2.596-0.171h0.174l0.173-0.173l0.174,0.344l2.076,0.866h0.345 l0.346,0.175v0.519l0.348,3.635l1.038,3.459v0.173v0.175v0.174l-5.71,11.247c-1.037,1.559-1.559,5.71-1.901,11.938v0.52 l-2.251,4.327l1.557,1.73v0.346c0.172,2.597,0,4.153-0.692,4.5l-0.521,0.172c-1.209,0.693-5.189,4.845-11.59,12.633l-0.519,0.519 l-0.348-0.174l-0.519-0.345c-2.252-1.558-4.327-2.942-5.54-4.325c-1.037-0.693-3.632-1.214-7.956-1.214l-0.174,7.96l-0.175,0.176 L510.9,94.761c-0.696,1.903-0.868,5.364-0.868,10.556l1.21,1.558l1.041-2.076h0.173l0.174-0.348l3.978-2.075l11.073,1.73 l1.214-1.387l1.558-2.768l0.345-0.172l0.174-0.172l4.325-0.866l5.712-0.347c1.732,0.347,3.807,2.595,6.401,6.056 c6.922,3.46,10.73,6.577,11.597,9.345c0.517,1.384,0.517,2.424,0,3.633c-0.523,1.212-1.733,1.904-3.463,2.077h-0.172 c-8.481-0.345-13.325-0.345-15.056,0.175l-4.153,2.766c-5.191,3.809-8.65,5.713-10.557,5.713l-3.459,0.519l-2.075,8.653 c-0.519,2.594-1.386,4.324-2.944,5.536c-1.383,1.385-3.462,2.249-6.227,2.768c-3.29,0.52-6.056,1.731-8.655,3.29l-2.94,6.23 l-0.174,0.172h-0.173h-0.172l-7.96,3.287h-0.521l-3.98-0.865c-3.116-0.52-5.536-1.384-7.096-2.422 c-2.072-1.037-4.325-1.211-6.745-0.521c-2.078,2.943-3.116,6.577-2.942,10.557c0.171,2.077,0.69,3.463,1.21,3.807l1.211-0.17 l1.388-0.868l0.343,5.537c0,1.904-0.69,3.288-2.077,4.328c-0.864,0.689-2.423,1.386-4.671,2.075l-1.384,0.344 c-1.729,0.694-5.366,5.367-10.73,13.846v0.173h-0.171l-5.192,3.113c0.864,0,1.387,0.349,1.213,1.04 c-0.174,0.693-0.693,0.865-2.076,1.039l-14.71-0.346c-16.438-0.52-29.243,3.979-38.418,13.322l-0.171,0.174l-0.346,0.174h-0.174 l-6.056,0.691l-0.347,0.172h-0.346l-1.731-4.15l-6.229,1.556c-3.289,0.175-7.614-0.692-12.46-3.114 c-4.499-1.901-8.479-4.499-12.459-7.615c-2.598-2.074-5.885-3.459-9.69-4.152l-5.537-0.518l-6.229,0.863 c-4.501,0.692-9,0.692-13.154,0.348c-5.015-0.348-11.073-1.73-18.34-3.98l-0.521,1.039h0.174h0.173l0.174,0.172l-1.904,0.691 l-2.252-1.73v-0.172l-2.421-2.596l-3.114-0.519l-2.313,0.692l-2.532-1.038l0.174-0.174h0.171v-0.174l-5.536-15.748l-3.461-2.767 v-0.347l-0.866-6.403l-7.266-1.037h-0.174h-0.347v-0.172l-0.172-0.348v-0.173c-0.866-2.423-3.115-5.019-6.577-7.788 c-1.903-1.558-3.806-2.596-5.364-2.94c-1.211-0.692-2.422-1.212-3.287-1.905c-2.25-1.557-10.036-2.768-23.706-3.113h-0.521 l-1.557-2.422c-0.692-1.558-1.212-2.943-1.385-4.5c0-1.902,2.25-8.133,7.094-18.342l-2.422-7.613l-2.596-12.112 c-0.346-1.731-3.287-3.29-8.479-4.847c-1.038-0.345-2.077-0.692-3.114-1.383c-1.904-0.867-3.289-2.425-3.98-4.327 c-1.039-2.252-2.769-4.153-5.192-5.192l-0.173-0.173l-0.172-0.171l-2.077-10.73l-8.306,0.865l-0.865,2.25 c-1.038,3.633-2.077,5.363-3.289,5.363l-5.364,1.732c-3.289,1.209-5.365,2.595-6.403,4.15c-0.519,0.693-1.038,2.77-1.384,5.54 c-0.52,3.113-1.039,5.362-1.731,6.748c-1.038,2.25-2.595,3.979-5.018,4.844c-4.499,1.729-12.113-1.211-22.668-8.652L137.473,115.7 l1.729,7.44h0.173l0.172,0.345l-0.345,0.174v0.172c-0.691,1.039-1.729,1.729-2.942,1.904c-1.384,0.345-2.769-0.175-4.325-1.212 c-1.385-1.038-5.366-1.904-11.768-2.25l-2.942-0.174l-4.325-0.344l-4.672,0.863l2.077,2.941c1.73,2.25,2.421,3.636,2.249,4.5 l-1.904,11.249l0.865,6.056h0.173v0.173l-0.173,0.174l-3.46,11.247c-0.173,1.037-0.52,1.557-0.866,1.385h-0.345v-0.172 l-0.521-1.038c-0.691-1.386-1.038-1.905-1.557-1.731c-0.347,0.172-0.865,0.865-1.038,2.422c-0.692,3.115-2.596,5.711-5.537,8.48 l-3.115,2.422l-1.558,0.865h-0.174l-11.248,0.174l-4.326,4.153H77.6h-0.348H77.08l-11.94-1.729 c-1.903,2.073-3.807,2.766-5.71,2.42c-1.731-0.52-4.673,0.174-8.825,1.73l-4.846,5.71l-0.174,0.348l-7.613,0.172v-6.402h-4.846 l-0.865,2.77l-3.633,0.864h-0.347l-0.172-0.174h-0.174c-2.25-1.385-5.018-2.422-7.787-2.769c-1.557-0.174-3.461,0.866-6.229,3.29 c-2.943,2.421-5.018,4.672-6.057,6.748c0.519,0.345,0.865,1.038,0.865,2.074c0.346,1.212,0.519,2.25,0.519,3.636 c-0.173,1.384-0.693,2.25-1.384,2.939c-0.866,0.521-1.384,2.079-1.904,4.847l2.769,1.904l3.807-3.982l4.845,5.367v0.346 l1.038,9.516v0.176h-0.173l-2.769,13.15h-0.691c-3.98,0-6.575,0.172-7.615,0.863c0.174,0.867,1.904,2.252,4.846,4.155l2.422-0.346 h0.518l0.174,0.173l5.71,5.536c2.25,1.904,2.077,5.19-0.865,10.036l0.865,5.365l2.25,0.519h8.825l-4.5,4.152l2.596,1.384 l3.461,1.904l9.345,3.98l0.173,0.173h0.347l0.864,14.189c0.172,2.748,2.311,4.845,6.404,6.228l0.345,4.156v0.173l-0.173,0.174 c-2.596,3.634-4.326,6.229-4.498,7.959c-0.175,0.866,0.865,3.979,3.114,9.347l1.557,3.636c0.692,1.728,0.174,3.808-1.385,6.056 l-3.114,3.114H41.26l-1.037-5.712l-1.386,7.094l2.25,3.461c0.172,0.52,0.172,0.869,0,1.039l-0.346,0.346 c-0.693,0.52-1.731,2.251-2.769,5.19c-1.038,2.598-0.52,5.193,1.557,7.962h4.154c1.384,0.348,3.461,2.595,6.402,6.578l0.173,0.346 c0,1.207,0.519,2.076,1.384,2.766l9.171,8.479v0.172l4.153,5.196h2.423l2.596-4.675l0.346-0.345l0.174-0.177l6.401,1.563v0.17 v0.348l0.865,4.322l7.614,8.83l2.596,1.04l0.173,0.169l1.211,0.695l0.173,0.171l5.71,8.481l4.673-0.697h0.345h0.173l0.346,0.353 l0.173,0.345l3.979,8.305l4.846,2.939l3.98,1.039l1.903,5.365h2.942l0.172,0.17l6.23,3.461v0.175l0.172,0.173l4.499,5.541 l6.576-1.215h0.346l2.422,1.037h0.173l4.153,3.637l7.441,0.52l4.498-0.693c6.057-1.041,9.865-0.519,11.249,1.037 c0.864,1.384,0.346,2.77-1.731,4.5l-1.73,1.732c-0.519,0.864,0.173,2.25,2.423,4.322l0.172,0.35h-0.172l1.384,1.038l0.519-0.522 c4.326-8.131,7.787-12.63,10.211-13.498c2.595-0.861,7.958,1.389,16.439,6.578l10.383,1.906l-0.174,0.344v0.347l-0.519,4.846 l5.191,0.69l-0.172,6.574c1.557,2.943,2.768,4.673,3.461,5.193c1.037,0.693,6.228,0.693,15.399,0l5.366-2.77l5.19-7.268 l6.057-0.176l2.94-0.861l11.421-6.576h0.173l0.173-0.173c6.575-0.694,10.382-0.866,11.42,0l7.44,6.227l2.25,0.866l0.346,0.348 l2.94,1.213l0.173,0.174v-0.521v-0.176v-0.171v-0.174l1.212-5.191c-0.519-1.557-0.519-2.766,0-3.807 c0.209-0.523,0.63-0.908,1.216-1.216l7.659,3.944c0.387,0.642,0.775,1.342,1.163,2.116l0.345,0.177h0.111l1.101,1.556l-0.174,1.21 v4.843c0.174,1.562,0.348,2.427,0.867,2.427c1.035,0.519,2.249,0.519,3.287-0.349l1.038-0.517l3.288,7.609v0.178v0.344 c-1.212,13.672-2.421,21.459-3.98,23.534c-0.693,0.69-1.209,1.036-2.25,1.21c-1.211,0-2.075-0.174-3.287-0.863 c-4.499,8.996-7.441,13.669-8.824,14.361c0,0-0.866,2.422-0.693,6.405l1.038,0.866l0.345,0.344l0.347,0.346l-1.559,1.903 l-0.692,2.247c1.038,0,2.425-0.688,3.808-1.728l0.174-0.173h0.345l6.922-0.866l4.499-2.252l1.73,2.421l0.348,0.177l-2.078,3.288 l2.423,2.426v0.171v0.519l-1.733,7.267l4.501,3.29l8.133,0.345l-1.211,1.559c-5.192,6.403-7.615,10.208-7.441,11.42l3.114,0.689 c4.153,0.348,6.577,1.56,7.44,3.116c1.038,2.077,2.078,4.154,2.942,6.574l4.673,2.6l2.942,0.516l6.056-5.189l3.116,4.674v0.17 l0.173,0.176l1.038,4.324l2.595,0.518l3.982,1.386l1.038-0.345v-0.174l-0.693-4.5l-0.174-0.172l-2.249-10.207v-0.35l1.385-7.094 l0.345,0.172h0.519l4.673,0.348l5.885-4.328l0.518,0.346c3.113,2.424,5.191,4.329,6.229,5.713c1.037-0.346,2.941-2.25,5.536-5.191 l0.174-0.172l0.348-0.35l8.65,2.252l3.807-3.114l0.174-0.176l0.174-0.171h0.173l0.171,0.171l3.636,0.692l11.768-10.379 l3.017,0.857l0.961,0.527l1.907,3.457l0.517,1.041l7.445,0.688l0.169,0.177l0.174,0.173l2.942,1.729l6.573-0.172v0.865 l0.348,3.286v0.349h0.175l-2.945,2.941c-0.346,3.807,0.349,6.059,1.904,6.578l5.537,2.939l4.327,2.943l3.635-1.729l0.343-0.178 l0.35-0.175l0.172,0.175l5.536,4.152l0.867,0.346l1.384-1.729l0.346-0.344l0.175-0.176h0.173h0.172l3.29,0.52l0.69-5.712 l4.152,7.441l3.461,0.177l0.52,0.169h0.345v0.35v2.249l1.386-0.345l5.627-7.508l2.507,3.525l1.71,1.577l-0.673,8.46l1.038,2.248 l0.174,0.347v2.251l2.076,2.596l0.172,0.346v2.072l5.539-0.34l0.344-0.521v-0.173h0.176v-0.171l1.555-2.08l-3.458-3.111 l-0.35-0.346l-1.902-1.563l-0.171-0.172l-0.177-0.174v-3.46h2.944l0.343-1.207l-1.209-3.464h6.751l11.938-5.714l1.558-2.593 l0.345-0.867l2.424,1.041h0.175l0.17,0.52l1.04,1.208l1.212-0.169l-0.346-2.6h3.98l3.806,0.692l1.557-2.591l0.174-0.176v-0.174 l0.345-0.17l4.151-1.215l0.655-5.699l0.292-0.134l4.072,3.587l1.731,0.346l0.863-1.038l-0.518-14.296l2.941,0.621l5.365,8.824 l5.881-0.689l1.039-0.344l0.867-2.078l-1.731-1.385l-0.52-0.691l3.98-1.383l0.348-0.176l0.174-0.174l1.556,1.732l1.384-0.693 v-2.596l0.866-0.171h2.941c2.076,0.171,3.635,1.212,4.845,2.767l0.345,0.693l1.212-4.152c0.692-1.039,2.075-1.214,4.155-0.346 l0.344,0.17v0.176l0.173,0.17c0.175,0.172,0.52,0.348,0.693,0.348c0.864-0.348,3.981-2.423,8.998-6.398 c0-2.598,1.383-3.98,3.634-4.675c1.557-0.175,2.424-0.866,2.767-1.731v-0.172l0.173-0.521h0.692l3.114-0.175v-2.247 c-0.703,0-1.41-0.245-2.115-0.707l2.637-1.196l0.671-4.868l3.827,3.829l0.693-0.691l3.115-6.402l0.518-3.637l0.52,0.18h0.346 l3.288,0.168l-0.174-2.596v-0.521v-0.342h0.521l4.325,0.169c2.249-2.247,3.286-4.15,3.286-5.706l-0.69-6.233l3.807,1.213 l1.04-1.73l-1.73-1.732l-0.519-0.691l3.458-3.462l0.174,0.349h0.346l2.075,1.214v-0.524l-1.386-3.113l0.522-0.52l0.863-0.519 l-0.345-1.211l-1.73-3.288l0.347-0.176l0.343-0.346l4.676-2.592l0.173-1.904c-3.981-2.078-6.058-3.807-5.713-4.675 c0.175-0.69,0.521-0.862,1.387-0.862l5.19,0.862l0.175-3.11v-0.349l2.594-2.597l0.693-1.9c-1.038-0.346-1.729-1.039-2.422-1.73 l-0.173-0.35v-0.344l0.173-0.865l-0.173-0.345l-0.111-0.056l1.531-1.677h0.137l0.174,0.345l3.113,2.424l0.866-1.385l-0.174-5.883 l0.174-0.174l2.076-2.598c0.173-0.342,0-1.037-0.866-1.901l-0.52-0.519l0.345-0.346l0.175-0.346l0.519-0.172l4.327-7.096 l0.348,0.174l0.864,0.173l0.345,0.171v0.346l-0.345,2.771h0.345l4.847-4.325l-0.348-2.249h-0.864l-1.73,0.169l2.942-7.956 l-2.595-0.347h-0.348v-0.348l-0.864-1.035c-0.52-1.039-0.52-1.904,0.171-2.771l4.154-0.173h2.597c0-0.864-0.521-2.425-2.076-5.019 l-3.634-1.211l3.804-3.635v-0.866l-1.899,0.351h-0.696v-0.178l-0.171-0.173l-0.173-0.345c-0.521-1.73-1.557-3.112-3.116-3.633 l-6.922,0.171l-2.942,3.462v0.173l-0.863-0.173l-10.902-3.462l10.557-2.765c0.691,0,2.419-1.734,5.363-5.194l0.956-3.103 c0.82-0.481,1.491-0.665,2.157-0.531l3.637,0.691l0.171-1.213c0.174-2.422,1.041-3.804,2.078-4.497l1.21-1.384v-0.174 l-4.324-3.461c-0.491-0.338-0.958-0.617-1.416-0.862l0.435-1.411c1.116,0.572,2.306,1.378,3.575,2.448l-1.209-3.459l-1.904-2.597 l-0.346-3.118l-2.942-0.519h-0.173v-0.17l-7.786-4.501l-3.81-0.692v-0.861l-0.173-3.981c-2.597-7.269-4.671-11.769-6.228-13.326 c-1.904-1.56-3.462-4.327-5.021-8.653c-5.016,0-7.956-0.862-9.34-2.597c-1.041-1.554-3.116-2.591-6.059-3.457l-0.867-0.175 l0.867-2.943l-0.52-0.346l-0.171-0.036l0.332-1.783l0.358,0.089l0.345,0.174l1.906-8.651v-0.175l2.767-0.52 c2.769-1.903,4.156-3.461,3.98-4.846l-0.52-2.595c-0.692-1.731-0.692-2.941-0.345-3.462c0.519-0.52,0.864-0.691,1.383-0.691 c1.214,0,2.597,0.346,3.982,1.037l0.345-2.768v-0.348l0.171-0.174l2.943-1.382l0.347-1.558h-1.73l-0.346-0.174l0.17-0.864v-0.522 l0.176-0.344h0.52h0.345c1.214,0,2.597-0.689,4.153-2.075l10.902-7.789h0.346l3.46,1.558l1.386-0.172l-0.866-3.635v-0.346 l0.175-0.173l0.172-0.174l1.901-3.114l-0.516-0.348l-1.214,0.348v0.172h-0.172l-3.461,0.52h-0.865h-0.172v-0.171l-0.174-0.521 l-0.693-1.211h-0.692l-0.343,0.172c0,0.865-0.521,1.385-1.388,1.385l-6.748-0.693c-4.672-0.863-7.786-1.557-9.343-2.423 l-9.519,9.001l0.347,3.805v0.346l-0.864,0.174c-7.442,1.038-11.423,0.347-11.943-2.074l-0.864-10.729l-8.65-0.522l-3.547,7.438 l-0.143-0.355l-0.293-2.756c-0.172-2.596-0.689-4.154-1.211-4.499l-1.149,0.575l-0.769-1.937c0.289-0.13,0.581-0.255,0.882-0.368 l-1.038-0.865l-0.552-0.551l-2.875-7.242c0.485-0.232,0.988-0.504,1.521-0.858l-1.037-1.904v-0.348v-0.173l0.348-1.557v-0.172 l1.903-3.462h3.288l0.863-0.174c-0.158-0.476-0.47-1.145-0.938-1.95l1.24-0.822c0.652,1.049,1.074,1.96,1.257,2.772l6.746-0.864 l2.943-1.559l2.769-3.461l1.212-3.287v-0.174v-0.17l0.864-3.463v-0.174l0.047-0.096l5.939-3.928l0.037-0.104l0.898-0.197 l1.555-2.078l4.157-7.959h0.17v-0.172l1.904-2.597l0.173-0.175l3.288-1.557l2.252-0.172c0.866-1.385,1.556-2.076,2.42-2.076 c0.52,0,1.386,0.346,2.773,1.036l0.343,0.175v0.175l2.941,4.498v0.171h0.175v0.347l0.343,3.288l-0.175,3.635l-0.864,3.113v0.348 h-0.171l-2.249,2.768l-1.04,2.25l0.176,3.807h0.345l1.21-0.52l1.385-1.211l0.345-0.346l0.175-0.347l1.73,1.56v0.17v2.77h-0.174 l-1.557,0.691l-0.52,0.694v1.556l-0.173,0.174l-1.036,1.904h-0.176l-0.343,0.172l-1.388,0.172l-1.384,0.348l-1.037,1.902 l0.171,0.348l5.71-0.692l1.039-0.866l1.904-5.017l12.805-13.153h0.349l2.771-1.385l0.169-0.172v0.172h2.251l2.248-0.516 l2.423-1.041l1.728-1.9l2.771-7.616v-0.173l10.73-11.247v-0.175l-0.029-0.254l1.71-1.721l0.05,0.592l0.613-1.258l0.373-0.375 l0.547-1.508l2.446-4.992c1.21-4.328,2.595-6.924,4.497-7.268c1.559-0.518,3.979,0.344,7.097,2.076l11.248,0.863l0.346-2.424 l-5.191-5.016c-2.423-1.387-3.462-2.421-3.114-3.114l3.977,0.173c3.638,1.21,7.097-0.865,10.384-6.75h0.174l3.809-3.632 l0.519-7.96v-0.867h0.519h0.346l2.942-0.691h0.521l0.343,0.173v0.172l6.058,6.403l1.731-0.691l0.344-1.039l-3.286-3.115 l-0.519-0.344l-0.348-0.521l5.017-2.94l-0.343-7.268l-0.283,0.046l-0.279-1.929l0.215-0.022l-2.594-12.63 c-1.732-1.04-3.289-3.115-4.846-5.539c-1.21-2.075-0.52-5.018,2.249-8.478c1.557-1.73,3.461-3.462,5.538-5.191l0.175-0.346h2.42 l0.174,0.346l2.075,0.864h4.328c1.728-0.864,3.285-3.46,5.018-7.613C710.937,100.471,710.937,95.452,710.243,87.667z"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M243.375,229.732 M249.604,222.984 M253.41,221.428 M255.488,218.658 M258.255,215.196 M263.793,209.142 M275.56,206.202L275.56,206.202 M284.212,203.431 M284.212,203.256L284.212,203.256 M288.018,196.508 M312.764,228.35L312.764,228.35 M316.569,226.271 M320.549,224.541 M328.165,224.023 M328.338,223.848 M400.151,352.246l0.174-1.209l0.171-0.344l0.348-0.174l0.343-0.346v-0.349l-0.861-3.636 l-0.174-1.9l-0.174-0.172v-0.175l0.174-0.174v-0.172l1.386-2.25l0.174-0.173l0,0l2.766-1.902h0.175h5.709l0.867-0.346 l-0.175-2.943l-0.865-2.595l-1.905-3.115l-0.171-0.171v-0.175v-4.325v-0.174l0,0l1.037-2.596l0,0l0.175-0.175l0,0l4.672-6.746 l0.172-0.175h0.174l0.348-0.172h1.037l1.731,0.172l3.978,2.252l2.596,0.691l0.346-1.213l-0.519-0.346v-0.52 c0-1.037,0.519-1.904,1.556-2.768l3.116-2.25l0.174-0.172l0,0v-0.176c1.73-0.519,2.768-0.862,3.462-0.862l2.769-0.347h0.346l0,0 l1.729,0.347l1.213-4.328v-2.942c0-1.904,0-3.116,0.517-3.462l1.212-2.25l-1.557-2.075l-2.075-1.387l-4.328-1.209 c-0.864,0-2.421-0.864-5.018-3.116l-2.597-1.208h-0.172l-0.174-0.175l-3.115-3.806h-2.939l-0.177-0.174h-0.171l-2.595-1.387 l-1.56,2.076l-0.345,8.135l0.521,3.113h1.21l0.174,0.176l2.424,0.69v0.173v0.173l1.208,2.939h0.174v0.175l0,0v0.175l-0.689,5.365 v0.345v0.174l-0.174,0.17c-0.867,0.523-1.558,0.867-2.423,1.388l-0.349,0.175l-0.171-0.175h-0.174l-1.21-0.347l-2.771,1.041 h-0.171l0.171,0.518l0.174,0.174l0.518,4.674c0,0.689-0.343,1.038-1.038,1.211h-2.076c-1.037-0.173-1.557-0.521-2.075-1.041 l-2.076-1.556l-0.173-0.172h-0.177v-0.175l-1.209-2.941c-0.346-0.348-1.209-0.865-2.943-1.386h-0.173h-0.172l-2.423-1.731h-0.345 v-0.345l0,0l-0.692-2.942l0.347-2.25h0.174v-0.173l0,0l1.036-1.21v-0.867l-1.036-3.115l-2.425-2.25v-0.346l-0.692-7.094 l-1.731-1.731h-0.171l-0.172-0.173l0,0l-1.387-3.287l-6.23-0.693c-1.556-0.518-2.594-1.557-3.286-2.939 M244.758,240.289h2.422 l4.154,0.865l5.364,0.347l2.423-0.347h0.346h0.174l4.671,1.73l0,0h0.173l2.422,1.902l5.191,1.906h0.173l3.461,2.074l8.479,7.787 l3.806,1.729l1.557-0.69l1.559-2.941l-0.867-4.674c0-1.383,1.041-2.248,3.116-3.114l0.345-0.171l10.557,6.228l1.211-0.345 l2.423-1.385h0.345l1.383,0.172l2.078-1.73l0.345-0.172l0.521,0.345l6.227,4.327l0.173,0.172l3.982,3.289 c1.035,0.69,2.421,1.902,3.632,3.633l1.904,2.078l1.557-0.174l1.73-3.287l3.632,2.594h0.174h0.174l0,0l2.942,3.635l7.786,5.884 l0,0l2.252,2.595l6.746-1.903l0.347,5.017l2.94,2.943l0,0v0.173l2.425,3.636v0.172v0.172v0.172l2.595,11.939l2.597,4.85 l-3.46,8.825v0.518l-2.943,0.694v2.594l-0.173,0.174l-2.942,4.846h-0.346l-4.153,0.346l-4.153,3.459 c0.521,0.521,1.211,0.865,2.423,1.383c1.73,0.522,1.901,1.908,1.038,4.33v0.17l-2.939,2.945h-0.177l-0.171,0.344h-0.174h-0.172 l-8.307-1.209l-0.173,2.938l0.867,6.232l6.921,2.939v0.349l0,0 M244.24,238.559"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M509.167,403.121L509.167,403.121 M454.487,422.502l1.211,4.676c0.172,0.52,0.172,0.689,0,0.865l-0.521,0.17c-0.864,0.521-1.209,1.731-1.037,3.464l1.73,7.09 l-0.52,0.353c-3.114,1.728-4.67,3.113-4.844,3.803l-0.346,2.424l2.94-1.209l0.172-0.177h0.175c2.076,0,3.286,0.694,3.459,2.423 l0.521,3.809l-0.174,0.52l-0.348,0.347c-0.516,0.517-0.864,1.035-0.864,1.731l-0.519,3.979c0.174,1.384,0.695,2.424,1.383,2.939 l3.637,4.325l3.288-2.598l2.594-0.344h0.174l0.174,0.344l1.729,0.521c0.52,0,1.039-0.174,1.559-0.693l1.555-2.25l-0.346-1.384 c0.346-0.517,0.864-0.861,1.559-1.212h4.153c0.69,0.351,1.21,0.177,1.21-0.172c0.521-1.21,1.037-1.73,1.557-2.074 c0.521,0,1.385,0.171,1.906,0.691c1.209,1.039,2.075,1.905,2.075,3.113l-0.347,3.115l0.693,0.52 c1.037,0.869,1.729,1.732,1.729,2.422l-0.692,3.115c-0.52,1.73-1.037,2.943-1.73,3.289v-0.171l-2.595,5.537l0.866,0.342 l4.151,0.174l0.867,0.346l-0.349,0.692c-0.519,1.735-0.69,2.939-0.519,3.807c1.385,0.866,2.252,1.387,2.768,0.866l2.424-1.036 l1.212-0.518h2.249l2.249-2.428v-2.941c-0.176-1.037,0-1.73,0.348-2.248c0.693-0.52,2.075-0.52,4.154,0.692l4.15,2.594 c1.386,1.04,2.421,1.386,3.114,1.386v-0.174c0.348-0.692,0-2.076-0.864-3.806l-2.25-3.46v-0.35h0.175l0.171-0.342 c2.249-3.115,4.673-4.154,7.442-3.115l6.404,2.939l2.594-1.73h0.171v-0.172v-0.174l-0.343-0.348l0.172-0.168l0.171-0.348 c2.079-3.462,2.77-6.056,2.079-7.439c-0.521-1.216-1.386-1.732-2.079-1.732h-0.516l-0.349-1.729h0.349 c1.209-0.521,1.904-1.042,2.074-1.734l-0.52-0.861l-2.769-2.598l0,0v-0.174l-1.386-3.804c-0.517-2.941-0.863-5.541-0.517-7.962 v-1.73l-1.733,1.557l-1.555,1.732l-0.521-7.271l0,0v-0.344h0.175c3.805-5.537,6.401-8.826,7.266-9.694l-1.729-5.189 c-0.517-2.598-0.864-4.154-0.864-4.842l-3.116-1.385l-1.556-0.521l0.174-0.171"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M534.604,369.032 M452.409,412.123l0.173-0.52 v-0.174l1.905-5.361l0,0l0.173-0.18l0,0l3.461-4.496l0.175-0.171l4.322-2.076h0.348l2.77,1.729l3.633-0.344l-1.211-6.059 l0.691-0.176l3.286-0.346l3.463,0.175h0.345v0.171l6.922,3.117l5.882,1.21h0.177l0,0h0.173l1.902,1.386l2.768,1.035v0.177l0,0 l0,0l0,0l1.731,1.558l1.035,0.342l1.907-1.729v-0.171l2.941-2.252l1.56-2.942l2.766,1.559v0.172v0.174l0.693,2.25v0.518 l-0.347,1.384l0.175,0.347l1.728-0.864l2.424-2.42h2.251v0.17h0.172l1.56,1.04c1.036,1.037,1.383,1.903,1.036,2.766l-0.172,3.809 l1.036,1.904l0.346,0.174c4.153-4.501,6.923-6.749,8.653-6.749h4.672l1.038-2.249l3.633-1.73h0.175l4.5-0.348l4.672-2.422v-0.174 h2.939 M449.987,407.969L449.987,407.969 M464.696,377.686L464.696,377.686 M534.258,369.381l-2.597-1.73 c-1.209,1.559-2.419,2.596-3.804,2.941c-1.212,0.519-3.118-0.865-5.711-3.98l-1.386-1.732c-0.173-0.346-1.383,0-3.286,0.695 c-2.942,1.037-4.845,1.211-5.71,0.69c-0.864-0.866-1.213-2.593-0.864-4.845c0.171-1.906,0-2.941-0.349-3.462l-22.493-1.21 c-2.081-0.863-3.809-1.731-4.675-2.596l-3.462-0.865c-1.383-0.519-3.979-2.768-7.438-7.098"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M509.512,292.893l-0.863-0.172l-1.558-0.519 l-0.345-1.038l0,0v-0.174l0,0l0,0l-0.174-0.52v-0.174v-0.519l-0.345,0.173l-0.348,4.499l-0.174,1.558 c-0.346,0.863-0.69,1.384-0.346,1.73c0.867,1.211,0.692,2.593-0.174,3.805l0.693,2.945l-0.174,0.172l-0.346,0.174l-2.075,1.9 v3.983l-0.52,0.176c-3.808,1.73-6.402,2.592-7.962,2.592l-7.612-0.516l-3.287,2.941h-0.174h-0.173l-13.151,5.362l-3.98,3.808 c-0.69,5.882,0,9.345,2.077,10.382l3.805,2.426h0.177v0.171l1.038,6.401"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M554.157,14.986 M553.294,18.449 M554.331,24.332L554.331,24.332 M554.679,24.505 M558.659,25.543 M561.253,26.236 M563.676,25.717 M565.062,23.986 M574.923,36.964 M582.709,39.041 M586.347,35.753 M592.575,33.848 M593.091,33.848 M594.822,30.389 M597.419,29.004 M603.13,35.753 M605.55,61.361 M603.993,65.86 M600.88,82.302 M595.687,81.089 M592.575,84.551 M588.247,93.029 M586.691,93.203 M582.364,98.741L582.364,98.741 M582.709,99.433 M584.614,102.719 M588.074,109.297 M562.466,204.297L562.466,204.297 l0.518,0.52l2.078-2.943h0.173l1.731-1.73l-0.695-2.597l-1.901-11.073l5.017,2.424h0.175h0.171l2.251,2.768l1.384,1.385 l2.077-1.385l7.266-7.959l0,0h0.176l2.594-1.904l2.943-4.152l0.173-0.348l3.98,1.039h1.902c0-1.557,0.345-2.595,0.519-3.287 l2.944-3.461l0.863-0.52l3.461,1.209l4.152-0.518l2.771-2.939l1.382-2.598l-0.864-1.386l-2.422,1.212l-0.175-0.172l-0.173-0.174 l-3.113-2.768l-0.174-0.172l1.211-4.674l0.345-3.463l-0.865-2.938l-2.421-0.866v-0.173l-0.175-0.174l-0.171-0.173l-2.078-4.153 l-0.345-0.52l-2.942,3.462l-2.941,1.903l-0.69,0.347l-0.174-0.175l-0.174-0.345l-3.113-2.943v-0.173l-2.25-4.844v-0.175 l-1.039-3.458v-0.174l0,0v-5.193l-0.347-3.114l-2.422-0.863h-0.172v-0.174l-5.539-4.325l0.348-0.521l2.595-2.77v-0.174v-0.17 h0.345l0,0l2.942-0.346h0.174c0.865,0,1.729,0.516,2.421,1.382l2.425,1.905l2.598-2.078l1.898-2.595v-2.249 M554.852,11.525 l-4.5,0.693c-2.249,0.173-3.807,1.559-4.673,4.153v0.175l0,0l-2.596,3.976l2.596-0.171h0.174l0.173-0.173l0.174,0.344 l2.076,0.866h0.345l0.346,0.175v0.519l0.348,3.635l1.038,3.459v0.173v0.175v0.174l-5.71,11.247 c-1.037,1.556-1.559,5.71-1.901,11.938v0.52l-2.251,4.327l1.557,1.73v0.346c0.172,2.594,0,4.153-0.692,4.499l-0.521,0.17 c-1.209,0.696-5.189,4.848-11.59,12.636l-0.519,0.519l-0.348-0.174l-0.519-0.345c-2.252-1.558-4.327-2.942-5.54-4.325 c-1.037-0.695-3.632-1.214-7.956-1.214l-0.174,7.96l-0.175,0.174L510.9,94.761c-0.696,1.903-0.868,5.364-0.868,10.554l1.21,1.56 l1.041-2.076h0.173l0.174-0.348l3.978-2.075l11.073,1.73l1.214-1.387l1.558-2.768l0.345-0.174l0,0l0.174-0.17l4.325-0.866 l5.712-0.349c1.732,0.349,3.807,2.597,6.401,6.058c6.922,3.46,10.73,6.577,11.597,9.345c0.517,1.384,0.517,2.424,0,3.633 c-0.523,1.212-1.733,1.904-3.463,2.077h-0.172c-8.481-0.347-13.325-0.347-15.056,0.175l-4.153,2.766 c-5.191,3.809-8.65,5.713-10.557,5.713l-3.459,0.519l-2.075,8.653c-0.519,2.594-1.386,4.324-2.944,5.536 c-1.383,1.384-3.462,2.249-6.227,2.768c-3.29,0.52-6.056,1.731-8.655,3.288l-2.94,6.232l-0.174,0.172h-0.173h-0.172l-7.96,3.287 h-0.521l-3.98-0.865c-3.116-0.52-5.536-1.386-7.096-2.422c-2.072-1.039-4.325-1.211-6.745-0.521 c-2.078,2.943-3.116,6.574-2.942,10.557c0.171,2.077,0.69,3.463,1.21,3.807l1.211-0.174l1.388-0.864l0.343,5.537 c0,1.904-0.69,3.288-2.077,4.328c-0.864,0.689-2.423,1.382-4.671,2.075l-1.384,0.344c-1.729,0.694-5.366,5.367-10.73,13.846 v0.173h-0.171l-5.192,3.113c0.864,0,1.387,0.349,1.213,1.039c-0.174,0.694-0.693,0.866-2.076,1.04l-14.71-0.346 c-16.438-0.521-29.243,3.977-38.418,13.322l-0.171,0.174l-0.346,0.174h-0.174l-6.056,0.691l-0.347,0.172h-0.346l-1.731-4.15 l-6.229,1.556c-3.289,0.172-7.614-0.692-12.46-3.114c-4.499-1.901-8.479-4.499-12.459-7.615c-2.598-2.075-5.885-3.459-9.69-4.152 l-5.537-0.52l-6.229,0.865c-4.501,0.692-9,0.692-13.154,0.348c-5.015-0.348-11.073-1.732-18.34-3.98l-0.521,1.039h0.174h0.173 l0.174,0.172v0.173l0.171,1.729l1.559,3.289l3.633,4.499l0.173,0.519l-0.692,3.287v0.174h-0.174l-2.075,2.768l2.25,2.252 c0.866,0.863,1.386,1.557,1.386,2.247l0.518,3.29l2.595,2.594v0.348l0.345,2.25v1.73l1.559,1.211l1.038-0.348l0.173-0.519 c0.52-1.384,1.383-2.075,2.595-2.249l1.385-0.52l9.171-0.867l3.635-1.383l0.345-0.173l0.519-0.346l1.904,4.153h0.171l0,0 c0.174,1.039,0,1.902-0.519,2.77l-5.018,7.093l0.346,1.212l2.251,2.25l2.25,1.384h0.171c1.04,1.384,1.904,2.25,2.942,2.598 c1.212,0.345,2.423,1.382,3.461,2.767l0.174,0.521l1.73,0.69l0.519,0.174h0.174l0.518,1.904l0,0l0.174,1.902l0.69,2.771 l4.325,0.689h0.349l0.172,0.174v0.175l0.172,0.344l1.212,2.424l3.461,1.211l2.423-1.211l-0.348-1.387l-2.246-2.075l0.345-0.344 v-0.349l1.901-3.635h4.154l0.174,0.176l5.885,2.076l3.286-0.519l2.595-2.423c2.942-3.635,4.848-5.191,6.058-4.326l1.384-0.174 c1.559,0,2.423,0.174,2.944,0.346c0.172,0.346,0.345,0.693,0.345,1.038c0,0.693,0.692,2.079,1.733,3.981v0.172v0.174l0.517,2.422 v0.518l-0.692,2.771l0,0v0.17l-0.175,0.176l-2.941,3.459l-0.172,0.175l0,0l-6.232,2.769l-0.863,1.73l-0.864,5.018l0.52,2.424 l1.557,2.594l0.692,0.518L378,275.07h7.271l6.057-0.865l0.864-0.865c0.867-1.037,1.73-1.384,2.247-1.384l4.154,0.691l0.345-0.691 c-0.345-1.214-0.345-2.25,0.349-3.288l1.731-2.941v-5.537v-0.174l3.114-8.998l0.173-0.173v-0.173h0.172v-0.173l5.365-4.327 l0.346-0.346l4.672,2.075l0,0c2.424,1.731,3.635,3.116,3.635,3.979l-0.345,3.808l-1.561,2.424l-1.21,3.463v3.806l1.21,1.729 l1.561-0.173l0.345-0.173l2.595,0.173c1.385,0.691,2.252,1.902,2.941,3.635l1.556,0.518h0.175l0,0h0.174l5.885,2.77l2.595,0.863 l3.634-0.518l1.558-2.077l2.077-8.479l0.172-4.671v-0.346l0.345-0.175l0.177-0.173l3.285-2.769l1.903-2.423l0.171-0.172 l3.465-1.558l2.073-1.21l2.597-1.04l-1.383-5.191l5.881,0.692l0,0v0.173l0,0l3.115,1.213l0,0v-0.174l0.864-3.287v-0.52 l0.521,0.174h0.347l2.768,0.691h1.385l2.595-2.943h0.172l0.173-0.171h0.177l3.458-0.693l2.945-2.768l1.556-2.252v-2.769 c0-1.037,0.518-1.727,1.558-2.248l0,0h0.347h0.171l3.288,0.346l1.385-0.865l0.519-2.422l3.461-1.036h0.172h0.177l0,0l4.323,0.519 l3.462-0.867l2.076-2.075l1.385-2.768"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M287.673,189.587l0.174-0.172h0.171v-0.174 l-5.536-15.748l-3.461-2.767v-0.347l-0.866-6.403l-7.266-1.037h-0.174h-0.347v-0.172l-0.172-0.348v-0.173 c-0.866-2.424-3.115-5.019-6.577-7.789c-1.903-1.557-3.806-2.595-5.364-2.939c-1.211-0.692-2.422-1.212-3.287-1.905 c-2.25-1.557-10.036-2.768-23.706-3.113h-0.521l0,0l-1.557-2.422c-0.692-1.561-1.212-2.943-1.385-4.5 c0-1.902,2.25-8.133,7.094-18.342l-2.422-7.613l0,0l-2.596-12.114c-0.346-1.731-3.287-3.288-8.479-4.845 c-1.038-0.345-2.077-0.692-3.114-1.386c-1.904-0.864-3.289-2.422-3.98-4.326c-1.039-2.25-2.769-4.151-5.192-5.19l-0.173-0.173 l-0.172-0.173l-2.077-10.729l-8.306,0.865l-0.865,2.248c-1.038,3.635-2.077,5.365-3.289,5.365l-5.364,1.73 c-3.289,1.211-5.365,2.597-6.403,4.152c-0.519,0.691-1.038,2.77-1.384,5.537c-0.52,3.116-1.039,5.365-1.731,6.748 c-1.038,2.249-2.595,3.98-5.018,4.847c-4.499,1.729-12.113-1.211-22.668-8.652L137.473,115.7l1.729,7.44h0.173l0.172,0.345 l-0.345,0.174v0.172c-0.691,1.038-1.729,1.729-2.942,1.904c-1.384,0.345-2.769-0.175-4.325-1.212 c-1.385-1.038-5.366-1.904-11.768-2.25l-2.942-0.174l0,0l-4.325-0.344l-4.672,0.863l2.077,2.941c1.73,2.25,2.421,3.636,2.249,4.5 l-1.904,11.249l0.865,6.056h0.173v0.173l-0.173,0.172l0,0l-3.46,11.249c-0.173,1.037-0.52,1.557-0.866,1.383h-0.345v-0.17 l-0.521-1.038c-0.691-1.386-1.038-1.905-1.557-1.734c-0.347,0.175-0.865,0.868-1.038,2.424c-0.692,3.116-2.596,5.712-5.537,8.481 l-3.115,2.422l-1.558,0.865l0,0h-0.174l-11.248,0.172l-4.326,4.153H77.6h-0.348H77.08l-11.94-1.729 c-1.903,2.073-3.807,2.768-5.71,2.422c-1.731-0.52-4.673,0.174-8.825,1.73l-4.846,5.71l-0.174,0.348l-7.613,0.172v-6.402h-4.846 l-0.865,2.768l-3.633,0.866h-0.347l0,0l-0.172-0.174h-0.174c-2.25-1.385-5.018-2.422-7.787-2.769 c-1.557-0.174-3.461,0.864-6.229,3.288c-2.943,2.423-5.018,4.672-6.057,6.75c0.519,0.345,0.865,1.036,0.865,2.074 c0.346,1.212,0.519,2.25,0.519,3.636c-0.173,1.384-0.693,2.247-1.384,2.939c-0.866,0.521-1.384,2.079-1.904,4.847l2.769,1.904 l3.807-3.982l4.845,5.365v0.348l1.038,9.516v0.176h-0.173l-2.769,13.15h-0.691c-3.98,0-6.575,0.172-7.615,0.863 c0.174,0.867,1.904,2.25,4.846,4.153l2.422-0.344h0.518l0.174,0.171l5.71,5.538c2.25,1.903,2.077,5.19-0.865,10.036l0.865,5.365 l2.25,0.519h8.825l-4.5,4.152l2.596,1.384l0,0l3.461,1.904l9.345,3.98l0.173,0.173h0.347l0.864,14.188 c0.173,2.768,3.287,4.501,7.441,5.884h-0.345h0.173h0.172l9.691,1.386h0.691v-0.175l0.173-0.348c1.039-1.9,1.73-3.283,1.73-3.632 v-0.348c-0.172-1.556,0.521-2.939,1.904-3.978c1.385-1.04,2.249-2.078,2.769-3.287l0.173-0.174c0.52-1.385,2.25-1.73,5.192-0.865 h0.171l0,0l3.289,1.902l10.901,2.078l6.75-0.52l4.845-2.076c0.864-1.212,1.556-1.73,2.077-2.078 c0.865-0.172,2.075,0.174,3.46,1.385l0.693,0.348c0.693,0.52,1.211,1.558,1.903,3.459l3.46,2.596h2.596h0.173h0.346h0.172 l3.634,1.558l6.749-0.519l3.807-1.211l9.865,0.866l4.325-1.212l5.018-2.078c1.038-0.691,2.25-1.212,3.98-1.729h9.517l3.462-1.21 c1.384-0.867,2.594-1.386,3.634-1.386h5.537l2.595,1.904l7.442,1.556c1.038,0,2.076,0.865,3.806,2.424l3.115,2.076l0.346,0.346 l7.095,0.173l0,0h0.174l3.288,1.731l4.326,0.865h0.173l3.634,0.518l1.038-2.076l-1.558-3.461l-0.692-3.46v-0.172h-0.173 l0.521-0.52l2.421-3.288v-0.172l0,0h0.173v-0.174l2.422-1.731l0,0l-0.519-1.038l-1.038-3.461c0-0.519-0.52-0.864-1.558-1.557l0,0 l-2.595-2.768l-3.289-2.769l-0.172-0.347l-0.347-0.174l0.174-0.172v-0.348l0.518-3.287v-2.424l-1.557-4.152l3.979-0.865 l1.903-1.903h4.846l4.846-0.692h0.172l3.288,0.348l3.807-1.384l4.327-0.521l2.768-1.21h0.173l7.441-1.385l1.21-1.213 l-0.345-1.384l-1.386-2.421v-0.175l-0.173-0.173v-0.171l0.347-2.598l0.173-0.173v-3.633l-0.692-3.115l0,0v-0.174l1.73-3.461 c0.692-1.557,1.557-2.422,2.595-2.422l4.499,0.346c0.692,0,1.558-0.346,2.423-1.038l6.749-9.172v-0.173l0.173-0.174l3.633-2.941 l0.347-0.346c1.384-0.346,2.249-0.863,2.769-1.208l0.865-0.868c1.211-1.556,2.25-2.25,2.941-2.25l5.885,1.213l5.017-2.424l0,0 h0.173l0,0h0.172l2.942-0.346l2.421-1.039v-3.98l0.693-5.018v-0.174l0,0v-0.17l0.866-1.387V189.587z"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M288.71,355.362v0.349l0.693,5.365v0.17v0.52 l-2.597,1.211l-0.345,3.288v0.521l-6.056,2.424l-2.077-4.85l-1.209-0.344l-1.904,1.9l-1.211,3.465l-4.327,1.211l-2.422-1.73 l-3.46-1.041l-1.038-4.844l-1.385-2.941l-2.076-0.865l-0.174-0.346l-1.558-1.902l0,0l-1.556-2.77l-2.423-3.115h-2.077 l-3.46,1.209l-0.173,0.177l-8.825-0.519l-6.749-1.385c-0.519-0.346-1.73-0.867-3.633-2.078l-5.191-1.727 c-3.981-1.041-6.229-1.908-6.749-2.946l-0.865-0.521l-1.211-0.344l-3.115-1.73l-0.346-0.173c-0.52-0.692-1.039-1.21-1.385-1.904 l-0.692-1.556l-1.382-2.078l-2.251-1.037l-0.865,0.518l-0.865,0.693l-0.52,0.346c-0.865,0.693-1.73,1.041-2.422,1.211 c-1.386,0.348-2.769-0.348-4.325-2.073l-3.289-3.462c-1.213-1.557-2.077-2.77-2.423-3.636l-0.865-1.386 c-1.21-1.209-2.077-2.422-2.596-3.461c-0.519-1.557-0.692-2.941-0.173-4.325v-0.171l0,0l2.25-3.809l1.211-3.978l0.519-2.597 l-0.865-3.986l-2.595-2.245l0.519-3.29c0-2.42,0.866-3.634,2.596-3.979c0.519-0.174,0.865-0.519,0.693-1.21v-0.174l0.172-3.461 v-0.173l0,0v-3.979h-0.346l-0.173-0.174l0,0l0,0l-0.692-0.346 M295.114,427.178h0.173 M51.643,288.914v0.174l-0.692,2.248v0.173 l-0.173,0.173l0,0c-2.596,3.635-4.326,6.23-4.498,7.96c-0.175,0.864,0.865,3.979,3.114,9.347l1.557,3.636 c0.692,1.728,0.174,3.806-1.385,6.056l-3.114,3.113H41.26l-1.037-5.711l-1.386,7.094l2.25,3.461c0.172,0.52,0.172,0.869,0,1.038 l-0.346,0.348c-0.693,0.519-1.731,2.25-2.769,5.189c-1.038,2.597-0.52,5.193,1.557,7.962h4.154 c1.384,0.348,3.461,2.595,6.402,6.576l0.173,0.348l0,0c0,1.207,0.519,2.076,1.384,2.766l9.171,8.479v0.172l4.153,5.197h2.423 l2.596-4.676l0.346-0.345l0.174-0.177l6.401,1.563v0.17v0.348l0.865,4.322l7.614,8.83l2.596,1.04l0.173,0.169l1.211,0.693 l0.173,0.171l5.71,8.482l4.673-0.696h0.345h0.173l0.346,0.351l0.173,0.346l3.979,8.306l4.846,2.939l3.98,1.039l1.903,5.365h2.942 l0.172,0.17l0,0l6.23,3.459v0.176l0,0l0.172,0.174l4.499,5.541l6.576-1.217h0.346l2.422,1.039h0.173l4.153,3.636l7.441,0.521 l4.498-0.694l0,0c6.057-1.04,9.865-0.518,11.249,1.038c0.864,1.384,0.346,2.77-1.731,4.498l-1.73,1.734 c-0.519,0.863,0.173,2.25,2.423,4.323l0.172,0.349h-0.172l1.384,1.037l0.519-0.521c4.326-8.133,7.787-12.63,10.211-13.498 c2.595-0.861,7.958,1.389,16.439,6.576l10.383,1.908l-0.174,0.344v0.346l-0.519,4.846l5.191,0.691L208.766,436 c1.557,2.941,2.768,4.673,3.461,5.193c1.037,0.693,6.228,0.693,15.399,0l5.366-2.77l5.19-7.268l6.057-0.176l2.94-0.861 l11.421-6.576h0.173l0.173-0.173l0,0c6.575-0.696,10.382-0.868,11.42,0l7.44,6.227l2.25,0.866l0.346,0.348l2.94,1.212 l0.173,0.174v-0.52v-0.175v-0.172v-0.174l1.212-5.191c-0.519-1.556-0.519-2.766,0-3.807"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M285.769,492.587l-0.692,2.247 c1.038,0,2.425-0.689,3.808-1.728l0.174-0.175h0.345l6.922-0.863l4.499-2.252l1.73,2.42l0.348,0.177l-2.078,3.288l2.423,2.424 v0.172v0.52l-1.733,7.266l4.501,3.291l8.133,0.345l-1.211,1.56c-5.192,6.402-7.615,10.207-7.441,11.419l3.114,0.689 c4.153,0.348,6.577,1.558,7.44,3.116c1.038,2.077,2.078,4.152,2.942,6.574l4.673,2.6l2.942,0.516l6.056-5.189l3.116,4.674v0.17 l0,0l0.173,0.176l1.038,4.324l2.595,0.518l0,0l3.982,1.386l1.038-0.345v-0.174l-0.693-4.501l-0.174-0.172l-2.249-10.206v-0.35 l1.385-7.094l0.345,0.17h0.519l4.673,0.35l5.885-4.327l0.518,0.344c3.113,2.424,5.191,4.331,6.229,5.714 c1.037-0.346,2.941-2.25,5.536-5.191l0.174-0.172l0.348-0.351l8.65,2.252l3.807-3.113l0.174-0.176l0.174-0.171h0.173l0.171,0.171 l3.636,0.693l11.768-10.38l3.634,1.033l0,0l0.172,0.175l0.172,0.176l0.173,0.171l0.868,1.555l0.866-1.035h0.174v-0.174h0.171 l3.461-1.9l2.597-2.426l-0.694-5.361l-0.519-0.695l-3.285,1.387l0,0c-1.041,0.344-1.904,0.691-3.116,0.691h-3.807 c-1.213-0.174-1.903-0.52-2.425-1.211l-0.346-5.537c-1.211-0.693-1.73-1.039-2.249-1.039l-0.866,0.346l-1.212,0.693L387,492.587 h-0.693l-0.171-0.351l-1.387-2.42l-0.169-2.247l0,0l1.382-6.575l0,0h0.174v-0.172l1.555-3.291l-4.844-4.327l-0.173-0.171 l-0.172-0.174v-5.018l0.172-0.175l2.769-7.959l-1.732-4.323l-1.556-0.349l-1.905,0.173l-1.9,2.943l-2.424-1.734l-2.424-1.382 l-1.903-4.845l0,0l0,0l-0.693-3.461v-0.348l-0.171-0.169l0.52-0.353l2.248-3.111l0.52-0.348l0,0h0.174l1.73-0.344l1.902-0.52 l8.997-0.346H387l1.212,0.518l0.345,0.176l1.384,0.516l2.426-1.038l2.072-1.554l1.038-1.732l0.176-0.865l-0.176-3.807 l-1.901-0.346l-3.635,1.209c-1.039,1.214-2.25,2.078-3.459,2.078c-1.211,0-2.252-1.043-3.29-2.941l0,0h-0.173v-0.174 l-0.172-2.422v-0.348l0.172-2.25l-1.902-4.67l-3.635,1.039l-1.557,1.383l0.52,5.191l-5.711-2.594l1.383,3.114l0.173,0.169v0.351 l-0.518,3.458V436h-0.174l-3.287,4.673l0,0l-5.362,3.287l-0.521,3.116c-0.172,0.52,0.521,1.904,1.385,3.635l0.173,0.168v0.179 l0.346,4.497v0.52l-0.171,0.172l-2.079,2.768l0,0l-0.171,0.179h-0.174l-1.559,1.037h-0.172h-0.173h-0.174h-0.174l-3.979-0.866 c-0.691,0-1.558,0.345-2.422,1.037l-1.73,1.904l-1.385,1.729c-0.865,1.557-2.076,1.906-3.98,1.557 c-1.211-0.172-1.556-1.385-1.211-2.94v-1.214l-0.171-1.206l-0.693,0.862c-0.52,0.691-1.038,0.865-1.73,0.865 c-0.692-0.174-1.212-0.865-1.559-2.075v-0.174l-0.346-3.978l-0.864-3.811l-1.73-1.729l0,0l-0.173-0.174l-3.635-8.307 l-0.171-0.172l-1.04-2.42v-0.178h-0.172v-0.175l-0.692-4.497l-0.52-0.691l-0.692,0.522c-1.211,1.383-2.076,2.247-2.423,2.247 c-0.52,0-1.385-0.693-2.769-1.731l-2.595-1.21l-0.347-0.174l-0.174-0.172v-0.174l-0.171-0.347l-0.174-3.46l0,0l-0.519-2.598 l-1.383-3.457h-1.385c0.172,1.384,0,2.596-0.345,3.457c-0.348,1.039-1.04,1.73-2.079,2.598c-0.345,1.21-0.864,2.076-1.557,2.766 c-1.04,1.041-1.904,1.041-2.942,0.351l-0.519-0.174c-1.038-0.346-1.212-1.56-1.038-3.81v-0.864l-2.25-1.384 c-0.866-0.344-1.385-1.383-1.557-2.939l0.864-7.788l-0.348-1.212l-2.768,3.115l-1.902,1.386l-0.521,1.206 c0.692,1.559,1.041,2.77,1.041,3.638c0,1.729-0.866,3.112-2.423,3.633l-3.116,1.21l-0.864,0.521l-0.174,1.21v4.844 c0.174,1.56,0.348,2.425,0.867,2.425c1.035,0.521,2.249,0.521,3.287-0.346l1.038-0.52l3.288,7.612v0.177l0,0v0.342 c-1.212,13.674-2.421,21.461-3.98,23.536c-0.693,0.691-1.209,1.036-2.25,1.21c-1.211,0-2.075-0.174-3.287-0.862 c-4.499,8.995-7.441,13.668-8.824,14.36c0,0-0.866,2.422-0.693,6.405l1.038,0.864l0.345,0.346l0.347,0.346L285.769,492.587z"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M395.477,490.684 M457.429,463.169 l-1.037,2.249h-0.172l0,0l-0.177,0.172l0,0l-1.212,1.211h-2.249l-2.25,0.693l-2.768,2.074H446.7l-1.039,0.698 c-0.865,0.858-1.21,1.556-0.69,2.243l1.209,1.733l-4.845-0.518l-2.597,2.078l-0.345,0.861v0.175l-0.52,1.385l-0.173,0.173 l-0.171,0.172h-2.424l-3.116-1.212l-1.037-0.172l-2.424,0.346c-1.037,0-2.249-1.212-3.287-3.113l-2.076-0.866l-1.731,2.594l0,0 h-0.172l-2.424,2.079h-0.174v0.173h-0.345l-1.902,0.517l-2.769,2.425l0,0l-2.941,1.384l-2.077,2.769h-6.92l0,0l-5.366-2.075 l-2.943-0.351l-2.595,1.388h-0.174l0,0l-1.731,0.691c-0.863,0.347-1.556,0.867-2.077,1.039l-0.343,0.865v2.079 M467.81,464.033 M471.616,462.305 M473.351,458.324 M480.097,456.769 M407.073,494.667"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M410.708,419.908v2.25l-0.866,0.867 l0.519,0.345h0.692l1.039-2.079h0.345l2.768,0.867l0.175,0.867h1.385l0,0l-0.346-1.039l-0.174-0.344l1.905-2.948 c0.345-0.862,1.208-1.205,2.42-0.862l3.114,0.173l1.729-2.25v-2.08l0.696-2.245v-0.176l0.171-0.168l0.172-0.176l1.213-0.693 v-0.17h0.174l0.171,0.17l2.597,0.348v0.346l0.52,2.077v1.038l0.345,1.558l0.694,0.172l0.865-1.212v-0.174l1.384-1.898 l0.173-0.348l1.902-0.869h0.174l0.171-0.168l2.252,0.689h0.172l0.348,0.174l1.21,2.42v2.424l1.731,3.287l0,0v0.348v2.424 l0.52,1.037h0.519l0.692-0.863l0.174-0.352l2.075,1.215h0.174h0.171v0.346v0.175l0.693,2.939l0.867,0.519l0.173-0.346 l0.863-2.246V425.1l0.173-0.347h0.174h0.173l1.213-0.692h0.171v-0.172h1.559l-0.348-0.863v-0.352l-0.864-8.131l-3.286-5.365 l-6.232-7.264l-0.174-0.176l-0.343-4.673l-2.077-3.63v-0.176l-0.175-0.172l0,0l0.175-0.346l1.039-4.5h0.345h0.346l10.901-0.695 l5.885-3.113l0,0l0.175-0.172c2.072-0.689,3.458-1.556,3.806-2.424c0.517-0.867,0.864-2.075,0.864-3.807l-1.212-2.768 l-1.901-2.77l-2.076-0.519h-0.176v-0.171h-0.172l-1.73-0.867l0,0h-0.348l-0.69,0.173l-2.251,0.345h-0.173l-0.345-0.171 l-2.251-0.866v-0.172h-0.173v-0.172l0,0l-1.732-1.729l-1.9-1.906l-1.731-1.04"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M582.709,416.104l0.176,2.939l-0.176,0.172 l-0.345,0.176l-2.943,2.073l-2.595,2.945h-0.174v0.344h-3.806l0,0l-2.078-1.21c-2.594,0.691-3.977,2.422-4.498,5.707 l-0.172,2.946l2.076-1.906l-1.383,5.71v0.174v0.174l-5.711,5.017c-0.866,1.038-1.212,1.908-0.866,2.424l1.038,1.212 c1.213,1.038,1.903,1.904,1.73,2.596c0,0.518-0.174,1.039-0.518,1.385l-3.634,3.112c0.174,0.864,0.174,2.25,0,3.81v0.516 l-0.173,0.177l-1.387,0.519c0,0.863-0.346,1.383-1.211,2.25l-1.904,1.9v0.172c0.347,0.869,0.347,1.908-0.344,3.467 c0.865,1.73,0.865,2.939,0,3.46l-1.732,1.729l-0.346,0.175l-0.865,0.343v0.347l1.211,4.151h0.346 M575.097,490.684l0.174-5.366 l4.324,4.327l0.693-0.691l3.115-6.402l0.518-3.637l0.52,0.179h0.346l3.288,0.169l-0.174-2.597v-0.52v-0.342h0.521l4.325,0.169 c2.249-2.247,3.286-4.15,3.286-5.706l-0.69-6.233l3.807,1.213l1.04-1.73l-1.73-1.732l-0.519-0.691l3.458-3.462l0.174,0.347h0.346 l2.075,1.216v-0.524l-1.386-3.113l0.522-0.519l0.863-0.521l-0.345-1.209l-1.73-3.289l0.347-0.176l0.343-0.346l4.676-2.592 l0.173-1.904c-3.981-2.078-6.058-3.807-5.713-4.675c0.175-0.69,0.521-0.862,1.387-0.862l5.19,0.862l0.175-3.112v-0.346 l2.594-2.598l0.693-1.9c-1.038-0.347-1.729-1.039-2.422-1.73l-0.173-0.349v-0.346l0.173-0.864l-0.173-0.346l-0.348-0.172 l-0.174,0.172"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M568.864,339.617h-0.169v-0.172 c-1.903-6.574-3.634-10.211-4.846-10.729l-6.059-2.08c-3.46-1.035-5.884-1.729-6.921-2.422c-1.731-1.039-3.98-3.459-6.572-7.439 h-1.043l0.176,0.174c0.345,1.383,1.729,3.807,4.672,7.266l0.173,0.175l0.172,0.346l-2.769,5.02 c-1.037,1.903-2.074,2.769-3.111,2.421c-0.695-0.348-2.078-1.903-4.328-4.843l-2.943-0.866c0,0.866,0.523,2.592,1.732,5.361 v0.176v0.172v0.172v0.176l-0.519,1.902l-3.118,1.383l0,0l-1.036,0.345c-0.52,0.522-0.52,1.388-0.347,2.428 c0.347,2.593,0.173,4.149-0.348,4.845c-0.343,0.343-0.517,0.343-0.864,0.343h-0.171l0,0l-3.459-0.692 c0.169,0.692,0.69,1.385,1.557,1.906c1.729,1.557,3.112,3.805,4.499,6.4l0.169,0.521l0,0l1.561-0.348 c1.9-0.346,3.633,0,5.363,1.212l1.902,2.248l0.174,0.174v0.172h-0.174l-0.172,4.5c0.521,0.693,0.862,1.558,0.521,2.251 c-0.35,0.863-1.042,1.383-2.252,1.559c-1.386,0-2.076,0.861-2.423,2.593l0,0l0,0v0.174l-1.383,2.942l2.075,2.074l4.498,0.867 h0.348l0,0l2.248,2.424l-2.771,4.15l6.405,13.846l0.174,0.346l-1.04,1.209l0.347,1.039h0.172l11.768-7.438l-1.901,3.462 c-1.56,2.592-2.423,4.842-2.771,6.398c2.078-0.861,3.808-2.422,4.849-5.191l0.171-0.346h0.172l3.287-1.728l0.174-0.349 l4.672,4.152l5.189,0.176l0.179,0.17l2.421,1.559l6.4-5.539c0.521-0.518,1.039-1.555,1.73-3.285l0.694-1.388 c0.17-0.688-0.694-2.417-2.425-5.362l-1.558-2.246l7.613,2.59l2.252-1.208l-2.252-4.846l-0.169-0.171l3.804-5.02l-1.558-2.427 c-1.559-1.726-2.594-2.589-3.286-2.589l-0.348,0.168l-1.904,1.906l-0.345-0.174h-0.347l-3.114-1.037l-0.865-2.771 c-1.211-0.172-2.421-0.866-3.461-2.075l-1.904-1.215c-1.559-0.689-2.421-1.556-2.421-2.42c-0.347-1.039,0-2.25,1.041-3.807 c1.898-2.768,2.939-5.021,2.939-6.748v-2.25l1.209,0.172l3.982,0.176c0.346-0.348,0.864-2.078,1.556-5.191l-1.21-0.174 c-2.771,1.902-4.846,3.113-6.404,3.633c-1.903,0.521-4.324-0.52-7.787-2.939v-0.174L568.864,339.617z"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M570.769,193.049L570.769,193.049 M581.152,188.029L581.152,188.029 M592.228,180.242 M592.401,180.242 M596.553,179.205 M606.936,173.493 M610.569,169.861 M578.729,221.945l1.559-0.344l1.555-2.078l4.157-7.959h0.17v-0.175l1.904-2.594l0.173-0.175l3.288-1.557l2.252-0.174 c0.866-1.385,1.556-2.074,2.42-2.074c0.52,0,1.386,0.346,2.773,1.036l0.343,0.175v0.175l2.941,4.495v0.174h0.175v0.347 l0.343,3.288l-0.175,3.635l0,0l-0.864,3.113l0,0v0.348h-0.171l-2.249,2.768l-1.04,2.25l0.176,3.807h0.345l1.21-0.52l1.385-1.212 l0.345-0.345l0.175-0.347l1.73,1.56v0.17v2.77h-0.174l-1.557,0.691l-0.52,0.692v1.558l-0.173,0.174l0,0l-1.036,1.904h-0.176 l-0.343,0.172l-1.388,0.172l-1.384,0.348l-1.037,1.902l0.171,0.346l5.71-0.69l1.039-0.866l1.904-5.019l0,0l12.805-13.151h0.349 l2.771-1.385l0.169-0.172v0.172h2.251l2.248-0.518l2.423-1.039l1.728-1.902l2.771-7.614l0,0v-0.173l10.73-11.25v-0.172 l-0.693-6.055c-0.519-0.174-1.211-0.521-1.559-1.04l-0.346-0.346v0.174l-1.73,0.172c-0.864-0.346-1.385-0.69-2.077-1.558 l-0.518-1.038v-0.173l-0.173-0.174v-9.344c-1.038-0.346-2.078-1.04-3.288-2.248l-2.249-2.424l-2.077-2.942 c-0.346-0.692-0.346-1.729-0.175-3.286l0.175-0.865l-1.212-1.559l-0.174,1.385l-1.557,2.943h-0.517 c-1.212,0-2.597-0.175-3.638-0.693c-1.035-0.344-1.556-1.211-1.556-2.25v-0.691h-0.864l-3.288,0.865l-2.423-2.424l-0.865-0.172 l-0.864,0.865l1.036,1.73 M572.847,218.832"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M710.243,87.665l-2.597-16.958l0.174-0.345 h0.173c1.214-1.905,1.904-3.462,1.558-4.673l-0.691-1.038c-1.903-1.212-2.771-3.979-2.252-8.653h-1.556 c-1.212-0.172-2.597,0.346-3.979,1.213c-1.387,1.037-2.251,2.249-2.426,3.113c-0.69,2.075-2.939,3.461-6.747,4.672l-0.866,5.366 v0.172l-0.174,0.173l-1.901,3.461l-0.172,0.346h-0.177h-0.171l-17.131,3.115h-0.172h-0.519v-0.346L665.6,71.92l1.556-1.558 l-1.904-2.597l-2.422-1.73l-0.173-0.175h-0.174v-0.171v-0.174l-0.864-4.672l-4.501,0.348l-0.344-0.348l-3.806-2.25l-13.672-2.424 l-11.421-0.518l-0.345,0.346c-0.521,0-0.864-0.172-1.041-0.52l-6.576-14.882c-0.691-1.212-3.459-5.018-8.995-11.593 c-5.191-6.402-8.136-9.863-9-10.555l-9.69-9.518l-1.557-0.866l-12.113-0.172h-0.173l-0.347-0.348 c-1.212-0.864-2.941-1.731-5.536-2.25c-2.249-0.862-7.44,0.867-15.575,5.191l-0.346,0.175l0.346,2.423h0.172v0.171h-0.172v0.348 l-1.384,2.769v0.175h-0.172l-0.174,1.902c0,1.555,0.346,3.288,0.864,4.671l1.211,0.866l2.597-0.174l2.251,0.52l0.863-0.693 c0-1.557,0.521-2.768,1.212-3.116h1.729l6.058,1.732l1.384,0.173l-1.905,3.289v3.98c0,0.863,1.561,2.939,4.673,5.882 c1.904,1.385,3.116,2.078,4.154,2.249l0.864-0.171l0.865-0.349l2.943-2.941l2.249-1.383v-0.173l0,0l4.673-0.694l1.383-2.941 l4.153-2.421l3.635,2.076v0.173l0.345,0.172l3.461,5.885l1.386,3.98v0.518l-0.695,4.846l1.386,3.288v0.518l-1.035,3.81v3.459 c1.035,3.115,1.556,5.193,1.556,5.713l-0.348,2.939l0,0v0.174l-1.729,2.422V66.9l0,0l0,0l-1.73,2.076l-0.174,3.809l1.037,3.979 l0,0l0.175,0.173l-0.175,0.174l0,0l-1.037,6.056l-0.867,0.866c-0.689,0.519-1.554,0.519-2.594,0h-0.343l-1.558-1.73l-1.731,0.519 l-2.25,2.421l-2.424,7.096v0.174l-0.173,0.173l-2.421,2.077h-0.348l-1.385,0.173l-2.768,3.98l1.386,2.595l0.347,0.347 l3.458,4.325v0.174v1.384l3.809,0.521l0.689,3.461v0.171l0.52,4.154l1.04,0.863l3.461-1.037l3.284-1.904l0.522-0.344l1.209,5.882 l1.562,2.251l0.345,0.17l1.211,2.424l2.598,2.079c0.343,0.519,1.21,0.519,2.074,0.519l0.865,0.174l1.559-0.692 c1.209-0.522,2.422-1.039,3.804-1.213l1.039-0.519l2.425-0.174c0.865,0,1.211,0.174,1.73,0.692l3.459-2.249h0.348l0.345,0.174 l0.174-0.174l0.346,0.345c1.385,1.558,2.077,2.942,2.077,3.636l1.559,2.594l1.21,0.348h0.171h0.177l-0.348-0.348 c-0.174-0.864-0.174-1.383,0-1.73c0.348-0.52,1.038-0.863,2.075-0.863l6.404-0.175l0.173-0.173h0.345v0.348h0.346l1.904,3.634 l-0.174,1.903h-0.17l2.422,0.518h0.173c-0.173-0.518-0.173-0.864,0.172-1.21l0.865-0.174l5.712,3.979 c0.519,0.52,0.863,1.21,1.038,2.078l0.171,2.422l1.904,0.346l1.211-2.076c-0.521-1.037-0.864-2.078-0.689-2.77 c0.169-0.691,0.345-1.211,1.035-1.558l0.521-0.52c0-0.345,0.174-0.519,0.516-0.692l1.558,0.174 c0.866,0.519,1.561,2.25,1.904,5.191v0.344l0.347,0.176c0.175,0.692,1.21,1.211,2.771,1.73h0.169l0.175,0.174l5.539,5.71l0,0 l2.594-0.866l-0.348-0.864c-0.69-0.864-0.864-1.73-0.864-2.25c0-1.212,0.864-2.423,2.598-3.634l2.941-2.596l3.462,2.42h0.689 l0.693-3.805v-0.692l0.692-0.174l2.771,0.348c0.52,0.519,0.862,1.038,0.862,1.903c0,0.69-0.52,1.559-1.038,2.25l0.519,0.346 c1.733,0.865,3.116,1.56,4.153,1.73h0.175l0,0l2.249,1.211l1.729-0.174l-2.594-12.632c-1.732-1.038-3.289-3.113-4.846-5.537 c-1.21-2.075-0.52-5.018,2.249-8.478c1.557-1.73,3.461-3.462,5.538-5.191l0,0l0.175-0.346h2.42l0.174,0.346l2.075,0.864h4.328 c1.728-0.864,3.285-3.462,5.018-7.613C710.937,100.471,710.937,95.452,710.243,87.665z"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M550.352,249.287l-2.249,0.519l-4.848-1.21 c-1.901-0.865-3.113-1.902-3.457-3.115c-1.039-3.115-1.384-5.885-1.213-8.307c-0.692,0.865-1.557,1.039-2.423,1.039l-3.636-0.865 l-2.42-1.73l-2.939-0.693h-1.389c-0.864,0-1.902-0.344-2.594-1.038c-1.038-0.692-1.557-1.384-1.731-2.075 c-0.345-1.385,0-2.248,1.213-3.116c1.21-0.862,2.595-2.249,3.804-3.979c-1.209-1.557-1.73-3.113-1.209-4.672l0.173-0.171 c0.172-0.868,1.56-1.56,4.151-2.424c0.177-0.867,0.521-1.386,0.867-1.558l2.594,0.172l-0.345-0.344 c-1.73-1.038-2.249-2.252-1.383-3.636l1.383-1.039c1.557-0.519,3.461-0.347,5.362,0.691l3.982,2.771h3.633l1.211,1.037 l0.346,1.384c0,0.866-0.519,1.386-1.21,1.386c-0.866,0-1.211,0.865-1.384,1.903l1.727,4.153c1.041-1.558,2.079-2.424,3.119-2.596 c0.519,0,1.21,0.344,1.73,1.038c0.518,0.866,1.039,2.423,1.386,3.979c0.171,1.903,0.69,3.461,1.21,4.326l1.384,1.904 c2.075,2.596,3.285,4.5,3.635,6.056l6.746-0.864l2.943-1.559l2.769-3.461l1.212-3.287v-0.174v-0.17l0.864-3.463v-0.174 l0.171-0.344h0.176l2.598-1.734l0.516-0.344l-0.174-0.174l-4.323-1.385h-0.347v-0.172l-0.866-2.596l-0.348-0.865l-1.383-0.692 l0,0h-0.173l-1.038-1.039l-4.847-1.385h-1.208l-0.867,0.347l-1.904-3.633l0.174-0.175l1.388-1.728v-2.078l0.171-0.346 l0.864-1.382l-0.692-0.35l-2.594-0.519l0,0l-4.502-0.691h-0.344l-2.596-2.596v-0.174l-0.866-1.73l-0.174-0.518l1.385-3.635 v-2.598l-0.172-0.689l-1.385,1.385l-0.174,0.172l-0.345,0.519l-0.349-0.519l-0.519-0.172l-2.595-2.078l-0.347-0.346v-0.348 l-0.52-3.805l-1.209-1.904l-2.597,0.174l-1.556,2.768l-0.175,0.348l-0.174,0.172l-4.153-0.865l-0.692,3.807v3.807l-0.171,0.174 l-2.251,3.461v0.346l-0.346,0.173h-0.175l-2.595,0.173l-2.597,2.076l-0.345,0.348l0,0h-0.347l-0.173-0.174l-4.845-1.557 l-0.689,1.73v0.174l-2.078,3.462c-0.345,0.688-0.866,1.034-1.386,1.208l-2.075-0.346l-2.768-1.212l-0.522-0.347l-0.171-0.172 v-0.172l-0.52-4.152l-0.865-3.115l-0.52-0.865l-1.212,2.422l0,0l0,0l-2.075,2.768l-1.73,3.983v0.171l0,0v0.174h-0.172 l-1.559,2.249c0,0.692-0.52,1.729-1.56,3.287l1.04,3.979l5.191,5.711l0,0l1.731,3.635v0.345l-0.174,0.347h-0.174l-1.384,1.732 l-0.345,0.344l-3.461,0.693l0.344,2.768l2.599,1.385l3.805,0.864l1.039,3.462l0,0l0,0v0.174v0.172l-0.867,5.883l0,0v0.174 l-1.382,2.594v0.521h-0.348l-4.325,0.691v1.731l-1.209,3.806l-0.521,4.327l0.866,2.424l5.363,3.287l0.174,0.174l2.249,3.806 v0.175l0.171,0.171l-0.171,0.173l-2.769,6.055l-0.692,1.732l0,0l-1.73,3.98l-0.693,3.113l-0.171,0.346v0.175 c-0.866,0.689-1.387,1.386-1.73,2.423c-0.174,0.346-0.174,0.693,0.171,1.037l0.173,0.174l1.731,1.903l0,0l0,0l0.867,1.384 l0.345-0.173l0,0l0.174,0.519v0.174v0.52l0,0v0.174l0,0l0,0l0.345,1.038l1.558,0.519l6.229,1.383 c2.075,0,3.979-0.518,6.059-1.383c2.075-0.864,3.979-1.039,6.058-0.693"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="2" stroke-miterlimit="10" d="M633.933,459.014 c-5.537,3.98-9.519,9.001-12.113,15.057c-2.251,5.191-3.979,7.789-5.193,8.48l1.214,9.518v0.168l0,0l-0.866,6.58 c-0.348,2.075,0,3.459,0.518,3.807l7.097,4.672l0,0h0.174l0.174,0.517l0,0c0.343,1.562,1.382,2.946,2.766,4.675 c0.694,1.037,1.559,1.557,2.249,1.904l1.041-11.422v-0.346l5.017-12.111l1.73-14.366v-0.173l0.174-0.169l1.558-3.81l-1.212-3.288 v-0.175h-0.173l-0.347-4.498l0.174-0.17l0.173-0.176l0.866-1.038l0.519-1.214L633.933,459.014z"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="2" stroke-miterlimit="10" d="M463.483,560.244l-0.518,0.865v0.176 l-0.174,0.344l-7.094,1.73l0.345,0.865l2.253,2.598c-0.175,0-0.52,0.173-0.695,0.173l-3.288,1.728l-5.19,3.982 c-1.731,2.076-1.387,5.882,1.21,11.593l5.192,0.519h0.174v0.172l5.188,2.428l5.539-0.867c2.25-0.519,4.845-2.597,8.134-6.578 h0.174l0.345-0.342l2.421-0.696l-0.69-7.265v-0.346l3.113-4.5v-0.178h0.175l2.422-1.899c0.346-2.078,0.172-3.979-0.691-5.538 c-0.693-1.383-1.558-1.902-2.424-1.902l0.346,2.595l-4.671-0.864l-2.075,1.209h-0.174l0,0H463.483z"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M625.904,362.806l1.21-1.384l0,0l0,0v-0.174 l-4.324-3.461c-2.25-1.557-4.155-2.074-5.538-1.9l-1.903,0.689v3.637c-0.346,1.209-0.864,2.593-2.079,3.632l-0.692,0.69 l1.731,2.078h0.176l0.519,1.386l2.076,0.864c1.209-0.864,2.075-1.211,2.939-1.041l3.637,0.693l0.171-1.214 C624,364.881,624.867,363.498,625.904,362.806z"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M428.115,274.207l-2.939-1.385l-1.04-0.173 l-1.73,10.557 M455.282,369.034V365.4l-1.382-2.422h-0.172v-0.173l-1.041-4.499l2.421-2.42l0.174-0.174h0.174l2.078-0.349h2.249 l0.69-0.861l-1.383-1.907l-5.018-3.289l-1.21-1.901l-0.176-0.172l-0.173-0.175l0.173-0.342l1.386-2.598l0.345,0.344l3.464,0.863 l9.169-0.342l0.171,0.174h0.177l2.592,0.863l1.731-1.559l-0.864-5.364l-3.286-2.073c-2.77-1.561-3.634-5.365-3.118-11.596 l-2.768-1.387l-0.345-0.17h-0.349v-0.348v-0.17l-0.519-4.503l3.809-17.651c-1.559-5.191-2.423-8.65-2.423-10.383l-0.346-5.191 l0.346-5.711v-0.346l0.348-0.346l0,0l3.46-2.596v-2.768c0-0.693-0.346-1.731-1.214-3.117l-2.246-2.42h-0.348v-0.521l-0.346-4.152 v-0.172l-0.173-0.172l0.345-0.174v-0.174l4.501-5.711v-2.424l-1.385-2.594v-0.174l-0.174-0.346l2.251-2.768v-0.174h0.172 l2.423-1.903l-0.346-2.25 M446.977,365.058"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M546.093,225.461l-0.521,0.838l-0.169,0.173 l0.169,0.174l-1.554,1.558l-0.692,0.346l-1.904,1.038l-0.172,1.211c0.172,1.904-0.348,3.29-1.214,3.806l-0.69,2.078"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M397.315,432.717l0.345,4.668v0.176 l0.867,0.175l1.729,0.519l2.595-0.174l4.327-1.211l2.595-2.251l0.174-1.901l-1.211-1.385l-4.499-1.559l0,0l-0.349-0.175l0,0 v-0.171l-5.19-5.191l0.521-0.346l2.597-2.246l0.171-0.179l0,0l2.595-1.036l0,0h0.519l3.461,0.692h0.175l0.173,0.171v-1.383 l-1.559-2.596l-2.423-1.209l-3.285-4.85l0,0l-0.174-0.168v-0.176l-1.561-5.711v-4.324l2.771-2.596h4.152l9.691,0.866l4.497-6.403 v-0.346h0.348l3.634-1.903l1.904-3.808l0.172-0.176l4.325-3.633l2.075-3.809v-0.172h0.177v-0.17l0,0l1.729-1.732l2.076-3.46 l0.692-5.366v-0.518l0.174-0.174l2.768-1.902l0.693-0.695l-4.152-0.691l-6.924,0.346l-0.173-0.174l-2.595-2.07h-0.347v-0.176l0,0 l-1.383-2.078l-0.349,0.176l-0.175,0.345c-0.344,0.521-1.21,0.69-2.245,0.69l-1.041,0.52c-0.346,0.172-0.52,0.348-1.037,0.172 c-0.348,0-0.519-0.518-0.866-1.382c-0.172-0.865-0.517-1.731-1.558-2.598l-0.174-0.173v-0.171H418.6l-0.866-2.252h-0.693 l-2.594,1.731l-0.174,0.173h-0.172l-6.056,1.212h-0.347l-0.348-0.174l-3.979-2.766l0,0l-0.175-0.177v-0.172h-0.172l-1.037-2.077 l-2.944,3.115c-2.074,2.424-3.632,3.113-4.671,2.424l-3.979-2.078l-2.771-0.346l-0.345,0.174l-2.592-1.901l-0.176-0.177 l-0.52-0.172l1.212-4.672v-1.559l-1.558-0.69h-0.174l-3.634-3.983l0.174-2.939l-9.001-0.863l-3.461-1.904 c-0.864-0.518-1.556-1.559-2.075-3.287l-0.52-1.211l-0.689-2.598l-1.211,0.174l-2.771,2.252l-3.287,3.975l0.692,2.945 l1.038,3.806v0.172h0.172l-0.172,0.174v0.175c-0.345,1.039-1.384,1.557-2.942,1.557h-3.461l-2.076-1.037l-2.596,1.037 l-0.52,0.172l-0.346-0.172l-0.345,2.424l-0.173,0.344v0.518h-0.52l-4.327-1.381c0,1.381,0.174,2.422,0.866,3.633 c0.519,1.212,0.693,2.076,0.174,3.113l-0.519,1.387c-0.521,0.518-2.079,0.691-4.327,0.518h-2.943l-0.174,4.848l-3.805-1.386 h-0.175l-0.171-0.177l-1.904-3.629l-4.153-1.384l-1.038-2.255l-1.557,1.215h-0.174l-2.597,0.516h-0.69l-1.385-3.113l-1.384-1.904 l-0.173-0.172c-1.387-1.73-2.078-3.287-2.424-4.15c0-0.176-0.346-0.52-1.212-0.694l-0.69-0.174 c-1.213-0.521-2.078-1.558-2.597-3.109l-0.692-2.946v-2.424l-1.209-2.246l-2.078,0.689h-0.174h-0.172h-0.174l-3.979-1.209 l-4.153-0.52l-1.383,1.557l-0.348,2.945l0.174,0.17l1.211,4.498l0.172,3.463v1.037h-2.076l0.867,4.151l-3.287,1.212l-1.389,2.598 l1.733,1.382l0.345,0.174l0,0l6.059,4.845l0.172,0.176h0.17v0.169v0.176l0.867,4.323l2.768,3.982 c0.693,1.035,1.56,2.076,3.116,3.461h0.173l0.172,0.172v0.172l-0.172,0.346v3.808c0.52,1.04,0.693,3.289,0.693,6.576 c1.557,2.252,2.25,3.808,2.25,4.847c0,0.691,0.52,2.074,1.383,3.979l0,0v0.176l0,0c0.346,2.422,0.174,4.5-0.346,6.228 c-0.518,1.212,0.172,3.459,2.076,6.575l0.174,0.174l0.174,0.346l-0.174,0.35l-2.768,6.055"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M495.948,481.861v2.939l1.213,3.116 l0.174,0.171l-1.906,2.943l-1.211,2.768v0.176l-2.593,2.594l-4.328,9.862l0.175,5.362l-0.175,0.177l-9.345,5.36l-0.519,1.04 l1.211,2.771v0.174v0.172l-0.866,3.631l-3.805-0.516l-0.865,4.673h-4.846l-1.041,1.729l0,0l-1.381,2.939l-0.866,10.904 l1.038,2.248l0.174,0.348v2.25l2.076,2.596l0.172,0.346v2.072l5.539-0.34l0.344-0.521v-0.173h0.176v-0.171l1.555-2.079 l-3.458-3.113l-0.35-0.346l-1.902-1.562l-0.171-0.172l-0.177-0.173v-3.461h2.944l0.343-1.207l-1.209-3.464h6.751l11.938-5.714 l1.558-2.593l0.345-0.867l2.424,1.041h0.175l0.17,0.52l1.04,1.208l1.212-0.169l-0.346-2.6h3.98l3.806,0.691l1.557-2.59 l0.174-0.175v-0.175l0.345-0.17l4.151-1.217l0.695-6.053l4.324,3.809l1.731,0.346l0.863-1.039l-0.518-13.152v-0.346v-0.691 l2.941,0.518h0.173l0.349,0.174l0.173,0.172l4.671,8.477l5.881-0.689l1.039-0.344l0.867-2.078l-1.731-1.387l-0.52-0.689 l3.98-1.383l0.348-0.176l0.174-0.174l1.556,1.732l1.384-0.695v-2.594l0.866-0.172h2.941c2.076,0.172,3.635,1.211,4.845,2.766 l0.345,0.695l1.212-4.152c0.692-1.039,2.075-1.213,4.155-0.346l0.344,0.169v0.177l0.173,0.17c0.175,0.172,0.52,0.348,0.693,0.348 c0.864-0.348,3.981-2.424,8.998-6.4c0-2.596,1.383-3.98,3.634-4.672c1.557-0.176,2.424-0.867,2.767-1.732v-0.172l0.173-0.52 h0.692l3.114-0.176v-2.247c-0.862,0-1.729-0.351-2.593-1.04l-5.19-4.669v-0.177l-2.252-6.575l-3.113-3.112 c-3.809-0.174-6.748-0.174-8.823,0l-0.696,0.172l0.174,2.076v0.346v0.519h-0.519l-2.769,1.213l-0.519-0.345 c-2.25-2.251-3.634-3.115-4.5-2.597c-6.058,2.941-9.518,4.325-10.553,3.633c-0.696,0.175-1.562,0.866-2.771,2.075l-0.52,0.693 l-0.69-0.693c-1.73-1.555-2.597-2.941-2.597-3.979c0-0.688,1.212-2.077,3.287-4.322c2.423-2.771,3.633-4.327,3.633-4.679 l-0.52-0.858c-0.69-0.349-2.075,0.343-3.804,1.728c-1.73,1.21-2.772,1.731-3.464,1.558c-0.345,0-0.691-0.519-0.864-1.384 l-0.175-0.346l-1.555-2.771"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M579.008,397.416l1.558,0.865l-1.039,0.866 c-1.383,1.21-1.728,2.593-1.036,3.634l4.154,6.398h0.17v0.176l1.905,3.459v0.175l0.172,0.171l-0.172,0.35v0.346v0.172 l-0.345,0.344c0.864,0,1.556,0.346,2.422,0.868c1.383,0.866,2.423,3.289,2.939,6.921l0.695,3.463 c0.345,0.861,0.692,1.382,1.557,1.728c1.383,0.694,3.113,0.519,4.67-0.521c0.866-0.517,1.388-1.037,1.212-1.553l-0.172-0.176 v-0.347l2.942-2.079l0.345,0.352l2.25,3.803c0.863,0.693,1.729,1.039,3.115,1.039l0.863-0.17l0,0l-0.691-2.076l3.288,1.382h0.864 h0.175l0.174,0.346l3.113,2.423l0.866-1.387l-0.174-5.883l0.174-0.172l0,0l2.076-2.598c0.173-0.342,0-1.038-0.866-1.9l-0.52-0.52 l0.345-0.346l0.175-0.346l0.519-0.172l4.327-7.096l0.348,0.174l0.864,0.173l0.345,0.171v0.346l-0.345,2.771h0.345l4.847-4.325 l-0.348-2.249h-0.864l-1.73,0.167l2.942-7.956l-2.595-0.345l0,0h-0.348v-0.348l-0.864-1.035c-0.52-1.041-0.52-1.904,0.171-2.771 l4.154-0.175h2.597c0-0.863-0.521-2.423-2.076-5.018l-3.634-1.211l3.804-3.635v-0.866l-1.899,0.351h-0.696v-0.177l-0.171-0.174 l-0.173-0.345c-0.521-1.73-1.557-3.114-3.116-3.633l-6.922,0.171l-2.942,3.462v0.173l-0.863-0.173l-10.902-3.462l10.557-2.767 c0.691,0,2.419-1.731,5.363-5.193"></path>
+                        <path fill="none" stroke="#41AC7F" stroke-width="0.5" stroke-miterlimit="10" d="M610.502,259.846l-0.343,0.172 c0,0.865-0.521,1.385-1.388,1.385l-6.748-0.693c-4.672-0.863-7.786-1.557-9.343-2.423l-9.519,9.001l0.347,3.805v0.346 l-0.864,0.174c-7.442,1.038-11.423,0.347-11.943-2.078l-0.864-10.729l-8.65-0.519l-3.632,7.614l-0.351-3.287 c-0.172-2.596-0.689-4.154-1.211-4.499l-3.807,1.903l-1.729,2.248l-0.174,0.174h-0.172l-3.461,1.211 c-3.805,3.116-7.096,6.404-10.035,9.865l-9.174,12.458l1.906,4.325v0.693l0,0l-0.176,0.174c-0.69,1.038-0.343,2.594,0.695,4.324 c1.209,2.25,2.074,4.672,2.074,7.44v0.521l-7.439,4.326v1.732l3.461,1.556c0.345,0.173,0.519,0.521,0.519,0.694v0.342 c-0.174,0.87,1.209,2.082,3.806,3.293l6.403,1.729l1.904-1.21l2.078-2.941l1.73-5.022l5.016,1.906l0.692,0.521v0.344l0,0v0.176 c-0.867,2.076-0.346,3.458,1.212,4.326l5.537,0.173c1.904-0.348,3.46-1.041,4.498-1.907c0.692-0.861,1.73-1.036,3.287-0.861 c1.904,0.346,3.635,1.035,4.846,2.596l1.21-2.942l0.347-0.52h0.174c0.866-0.521,1.386-1.384,2.076-2.598 c0.521-1.213,1.383-2.426,2.77-3.288l2.423-1.384l0.173-0.178l0.172,0.178h0.173l1.386,0.346l0,0l0.345,0.174l1.906-8.652v-0.176 l2.767-0.518c2.769-1.904,4.156-3.46,3.98-4.846l-0.52-2.595c-0.692-1.731-0.692-2.942-0.345-3.462 c0.519-0.518,0.864-0.692,1.383-0.692c1.214,0,2.597,0.349,3.982,1.038l0.345-2.768v-0.346l0.171-0.174l2.943-1.382l0.347-1.56 h-1.73l-0.346-0.175l0.17-0.863v-0.521l0.176-0.344h0.52h0.345c1.214,0,2.597-0.693,4.153-2.078l10.902-7.786h0.346l3.46,1.558 l1.386-0.172l-0.866-3.635v-0.346l0.175-0.175l0.172-0.172l1.901-3.114l-0.516-0.348l-1.214,0.348v0.172h-0.172l-3.461,0.52 h-0.865h-0.172v-0.171l-0.174-0.521l-0.693-1.211H610.502z"></path>
+                    </svg>
+                    <div class="map-inner">
+                        <div class="province-box">
+                            <img src="../images/week7/province.svg">
+                        </div>
+                        <div class="drop drop1">
+                            <svg width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 56">
+                                <path fill="#FF8650" d="M41.817,25.481c0,8.186-9.544,14.578-14.818,19.854c-5.621-5.622-14.815-11.668-14.815-19.854 c0-8.184,6.634-14.816,14.815-14.816C35.182,10.665,41.817,17.298,41.817,25.481z"></path>
+                            </svg>
+                        </div>
+                        <div class="drop drop2">
+                            <svg width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 56">
+                                <path fill="#ef4545" d="M41.817,25.481c0,8.186-9.544,14.578-14.818,19.854c-5.621-5.622-14.815-11.668-14.815-19.854 c0-8.184,6.634-14.816,14.815-14.816C35.182,10.665,41.817,17.298,41.817,25.481z"></path>
+                            </svg>
+                        </div>
+                        <div class="drop drop3">
+                            <svg width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 56">
+                                <path fill="#fc1f6f" d="M41.817,25.481c0,8.186-9.544,14.578-14.818,19.854c-5.621-5.622-14.815-11.668-14.815-19.854 c0-8.184,6.634-14.816,14.815-14.816C35.182,10.665,41.817,17.298,41.817,25.481z"></path>
+                            </svg>
+                        </div>
+                        <div class="drop drop4">
+                            <svg width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 56">
+                                <path fill="#fff91d" d="M41.817,25.481c0,8.186-9.544,14.578-14.818,19.854c-5.621-5.622-14.815-11.668-14.815-19.854 c0-8.184,6.634-14.816,14.815-14.816C35.182,10.665,41.817,17.298,41.817,25.481z"></path>
+                            </svg>
+                        </div>
+                        <div class="drop drop5">
+                            <svg width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 56">
+                                <path fill="#1bc2ef" d="M41.817,25.481c0,8.186-9.544,14.578-14.818,19.854c-5.621-5.622-14.815-11.668-14.815-19.854 c0-8.184,6.634-14.816,14.815-14.816C35.182,10.665,41.817,17.298,41.817,25.481z"></path>
+                            </svg>
+                        </div>
+                        <div class="drop drop6">
+                            <svg width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 56">
+                                <path fill="#42a800" d="M41.817,25.481c0,8.186-9.544,14.578-14.818,19.854c-5.621-5.622-14.815-11.668-14.815-19.854 c0-8.184,6.634-14.816,14.815-14.816C35.182,10.665,41.817,17.298,41.817,25.481z"></path>
+                            </svg>
+                        </div>
+                        <div class="drop drop7">
+                            <svg width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 56">
+                                <path fill="#0088cc" d="M41.817,25.481c0,8.186-9.544,14.578-14.818,19.854c-5.621-5.622-14.815-11.668-14.815-19.854 c0-8.184,6.634-14.816,14.815-14.816C35.182,10.665,41.817,17.298,41.817,25.481z"></path>
+                            </svg>
+                        </div>
+                        <div class="drop drop8">
+                            <svg width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 56">
+                                <path fill="#fc1f6f" d="M41.817,25.481c0,8.186-9.544,14.578-14.818,19.854c-5.621-5.622-14.815-11.668-14.815-19.854 c0-8.184,6.634-14.816,14.815-14.816C35.182,10.665,41.817,17.298,41.817,25.481z"></path>
+                            </svg>
+                        </div>
+                        <div class="drop drop9">
+                            <svg width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 56">
+                                <path fill="#ff8650" d="M41.817,25.481c0,8.186-9.544,14.578-14.818,19.854c-5.621-5.622-14.815-11.668-14.815-19.854 c0-8.184,6.634-14.816,14.815-14.816C35.182,10.665,41.817,17.298,41.817,25.481z"></path>
+                            </svg>
+                        </div>
+                        <div class="drop drop10">
+                            <svg width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 56">
+                                <path fill="#1bc2ef" d="M41.817,25.481c0,8.186-9.544,14.578-14.818,19.854c-5.621-5.622-14.815-11.668-14.815-19.854 c0-8.184,6.634-14.816,14.815-14.816C35.182,10.665,41.817,17.298,41.817,25.481z"></path>
+                            </svg>
+                        </div>
+                        <div class="drop drop11">
+                            <svg width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 56">
+                                <path fill="#1bc2ef" d="M41.817,25.481c0,8.186-9.544,14.578-14.818,19.854c-5.621-5.622-14.815-11.668-14.815-19.854 c0-8.184,6.634-14.816,14.815-14.816C35.182,10.665,41.817,17.298,41.817,25.481z"></path>
+                            </svg>
+                        </div>
+                        <div class="drop drop12">
+                            <svg width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 56">
+                                <path fill="#42a800" d="M41.817,25.481c0,8.186-9.544,14.578-14.818,19.854c-5.621-5.622-14.815-11.668-14.815-19.854 c0-8.184,6.634-14.816,14.815-14.816C35.182,10.665,41.817,17.298,41.817,25.481z"></path>
+                            </svg>
+                        </div>
+                        <div class="drop drop13">
+                            <svg width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 56">
+                                <path fill="#fff91d" d="M41.817,25.481c0,8.186-9.544,14.578-14.818,19.854c-5.621-5.622-14.815-11.668-14.815-19.854 c0-8.184,6.634-14.816,14.815-14.816C35.182,10.665,41.817,17.298,41.817,25.481z"></path>
+                            </svg>
+                        </div>
+                        <div class="drop drop14">
+                            <svg width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 56">
+                                <path fill="#0088cc" d="M41.817,25.481c0,8.186-9.544,14.578-14.818,19.854c-5.621-5.622-14.815-11.668-14.815-19.854 c0-8.184,6.634-14.816,14.815-14.816C35.182,10.665,41.817,17.298,41.817,25.481z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-box">
+                <h6>覆盖全国的监控节点</h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="page page6">
+        <div class="main">
+            <div class="pic-box">
+                <div class="bg-box">
+                    <svg class="drawline" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 688.466 619.469">
+                        <path fill="none" stroke="#B9D87A" stroke-width="10" stroke-miterlimit="10" d="M236.227,575.179 C88.562,499.96,60.887,268.963,14.231,125.336c153.1-49.747,346.701-160.075,494.368-84.854 c147.645,75.211,206.39,255.881,131.188,403.508C564.567,591.656,383.876,650.39,236.227,575.179z"></path>
+                    </svg>
+                    <div class="bg-inner">
+                        <div class="customer-box">
+                            <svg class="drawline" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 131.333 120">
+                                <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M95.063,36.412 c0,16.408-12.581,29.714-28.113,29.714c-15.519,0-28.105-13.306-28.105-29.714c0-16.41,12.587-29.715,28.105-29.715 C82.482,6.697,95.063,20.001,95.063,36.412z"></path>
+                                <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M45.194,55.218c0,0-20.425,20.943-17.104,43.037 c3.327,22.094,74.097,24.098,77.424,0c3.321-24.099-11.29-37.186-17.283-42.439C88.231,55.816,68.465,78.951,45.194,55.218z"></path>
+                                <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M18.938,52.511c0,0-14.774,15.15-12.372,31.132 c0.95,6.312,9.521,10.344,19.684,11.854"></path>
+                                <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M39.337,18.037 c-1.502-0.381-3.048-0.625-4.662-0.625c-11.225,0-20.331,9.628-20.331,21.492c0,11.635,8.759,21.049,19.667,21.426"></path>
+                                <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M113.6,52.511c0,0,14.774,15.15,12.372,31.132 c-0.95,6.312-9.521,10.344-19.685,11.854"></path>
+                                <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M93.201,18.037 c1.503-0.381,3.049-0.625,4.662-0.625c11.226,0,20.331,9.628,20.331,21.492c0,11.635-8.759,21.049-19.667,21.426"></path>
+                            </svg>
+                        </div>
+                        <div class="weixin-box">
+                            <img src="../images/week7/weixin_2.svg">
+                            <img class="weixin-mask" src="../images/week7//weixin_1.svg">
+                            <div class="signal">
+                                <svg class="signal-line" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 131.333 120">
+                                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M68.129,45.949 C62.859,21.818,42.104,3.487,16.795,1.894"></path>
+                                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M48.578,54.475 c-5.047-16.958-19.693-29.77-37.64-32.148"></path>
+                                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M30.376,62.412 C25.814,51.965,16.761,43.938,5.654,40.76"></path>
+                                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M16.233,68.58 C12.59,62.992,7.469,58.457,1.416,55.547"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="email-box">
+                            <img src="../images/week7/email_bg.svg">
+                            <div class="email-inner">
+                                <img src="../images/week7/email_inner.svg">
+                            </div>
+                            <div class="email-bottom">
+                                <img src="../images/week7/email_top.svg">
+                            </div>
+                            <div class="email-top">
+                                <img src="../images/week7/email_top.svg">
+                            </div>
+                            <div class="signal">
+                                <svg class="signal-line" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 131.333 120">
+                                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M68.129,45.949 C62.859,21.818,42.104,3.487,16.795,1.894"></path>
+                                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M48.578,54.475 c-5.047-16.958-19.693-29.77-37.64-32.148"></path>
+                                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M30.376,62.412 C25.814,51.965,16.761,43.938,5.654,40.76"></path>
+                                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M16.233,68.58 C12.59,62.992,7.469,58.457,1.416,55.547"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="shake-box">
+                            <img src="../images/week7/shake_phone.svg">
+                            <div class="signal">
+                                <svg class="signal-line" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 131.333 120">
+                                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M68.129,45.949 C62.859,21.818,42.104,3.487,16.795,1.894"></path>
+                                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M48.578,54.475 c-5.047-16.958-19.693-29.77-37.64-32.148"></path>
+                                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M30.376,62.412 C25.814,51.965,16.761,43.938,5.654,40.76"></path>
+                                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M16.233,68.58 C12.59,62.992,7.469,58.457,1.416,55.547"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="sms-box">
+                            <img src="../images/week7/sms.svg">
+                            <div class="signal">
+                                <svg class="signal-line" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 131.333 120">
+                                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M68.129,45.949 C62.859,21.818,42.104,3.487,16.795,1.894"></path>
+                                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M48.578,54.475 c-5.047-16.958-19.693-29.77-37.64-32.148"></path>
+                                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M30.376,62.412 C25.814,51.965,16.761,43.938,5.654,40.76"></path>
+                                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M16.233,68.58 C12.59,62.992,7.469,58.457,1.416,55.547"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-box">
+                <h6>多种告警方式，瞬间直达</h6>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="page page7">
+        <div class="main">
+            <div class="pic-box">
+                <div class="bg-box">
+                    <svg class="drawline" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 668 632">
+                        <path fill="none" stroke="#0088CC" stroke-width="10" stroke-miterlimit="10" d="M178.009,556.377 C42.259,461.324,47.026,228.725,20.828,80C179.365,52.06,386.444-30.229,522.196,64.825 c135.73,95.041,168.739,282.134,73.711,417.847C500.854,618.423,313.743,651.419,178.009,556.377z"></path>
+                    </svg>
+                    <div class="bg-inner">
+                        <div class="code code400">
+                            <img src="../images/week7/400.svg">
+                        </div>
+                        <div class="code code500">
+                            <img src="../images/week7/500.svg">
+                        </div>
+                        <div class="code code502">
+                            <img src="../images/week7/502.svg">
+                        </div>
+                        <div class="code code401">
+                            <img src="../images/week7/401.svg">
+                        </div>
+                        <div class="code code404">
+                            <img src="../images/week7/404.svg">
+                        </div>
+                        <div class="code code501">
+                            <img src="../images/week7/501.svg">
+                        </div>
+                        <div class="code codeerror">
+                            <img src="../images/week7/error.svg">
+                        </div>
+                        <div class="code code500100">
+                            <img src="../images/week7/500100.svg">
+                        </div>
+                        <div class="code code403">
+                            <img src="../images/week7/403.svg">
+                        </div>
+                        <div class="code code50013">
+                            <img src="../images/week7/50013.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-box">
+                <h6>智能异常提醒，免去排查</h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-box">
+        <div class="content-box">
+            还等什么？
+            <a href="#/wizard">马上启用</a>
+        </div>
+    </div>
+
 </body>
 
 </html>
