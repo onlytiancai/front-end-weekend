@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>欢迎使用 D 监控</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        div,
+        img {
+            transition: all 1s ease-out 0s;
+        }
+
+        .page {
+            height: 100%;
+            position: relative;
+        }
+
+        .page .main {
+            /* 垂直居中 */
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+
+            /* 配合 inline block 进行内容的垂直居中*/
+            text-align: center;
+        }
+
+        /* begin page title */
+
+        .page .main .text-box {            
+            padding: 10px;
+        }
+
+        .page .main .text-box h6 {
+            margin: 30px auto 0;
+            position: relative;
+            display: inline-block;
+            /* 包裹性 */
+            padding: 0.3em 0.5em;
+            border-radius: 10px;
+            font-size: 3em;
+            font-weight: normal;
+            /* 去掉加粗 */
+            color: white;
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+
+        .page .main .text-box h6:before {
+            content: '';
+            position: absolute;
+            display: block;
+            top: -20px;
+            margin-left: -20px;
+            /* 水平居中，小三角宽度是 border-width * 2 */
+            left: 50%;
+
+            /* 小三角 */
+            height: 0;
+            width: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid rgba(0, 0, 0, 0.15);
+        }
+
+        /* end page title */
+
+        /* begin svg animation */
+
+        .page svg.drawline path {
+            stroke-dasharray: 500%;
+            stroke-dashoffset: 500%;
+            transition: all 2s ease-out 0s;
+        }
+
+        .page.active svg.drawline path {
+            stroke-dashoffset: 0;
+        }
+
+        /* end svg animation */
+
+        /* begin page1*/
+
+        .page1 {
+            background: url('../images/week7/header_bg.jpg');
+            background-attachment: fixed;
+        }
+
+        .page1 .open {
+            position: relative;
+            top: 295px;
+            margin: 0 auto;
+            height: 80px;
+            width: 430px;
+            background: url(../images/week7/start_text.png) center center no-repeat #348fce;
+            border: 2px solid #74b0dc;
+            border-radius: 10px;
+        }
+
+        .page1 .content-box .get-text {
+            position: relative;
+            top: 320px;
+            margin: 0 auto;
+            height: 45px;
+            width: 210px;
+            background: url(../images/week7/get_text.png) center center no-repeat;
+        }
+
+        .page1 .content-box .down-box {
+            position: absolute;
+            left: 50%;
+            margin-left: -10px;
+            bottom: 10px;
+            cursor: pointer;
+
+            /* 显示小三角 */
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid #afd3ec;
+
+            /* 动画效果 */
+            animation-name: jump;
+            animation-duration: 0.5s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+
+        @keyframes jump {
+            0% {
+                bottom: 10px;
+            }
+
+            50% {
+                bottom: 20px;
+            }
+
+            100% {
+                bottom: 10px;
+            }
+        }
+
+        .page1 .heartbeat-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-image: url(../images/week7/heartbeat.png);
+            background-repeat: repeat-x;
+            background-position: 0 300px;
+
+            -webkit-mask-image: -webkit-linear-gradient(left, transparent, white 100px);
+            -webkit-mask-size: 100px 100%;
+            -webkit-mask-repeat: repeat-y;
+            -webkit-mask-position: -10% 0;
+
+            animation-name: heartbeat;
+            animation-duration: 4s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        .page1 .heartbeat-box .open {
+            border: 2px solid #c6def0;
+        }
+
+        @keyframes heartbeat {
+            from {
+                -webkit-mask-position: -10% 0;
+            }
+
+            to {
+                -webkit-mask-position: 110% 0;
+            }
+        }
+
+        /* end page1 */
+
+        /* begin page2 */
+
+        .page2 {
+            background-color: #0099cc;
+        }
+
+        .page2 .main .pic-box .phone-box {
+            position: relative;
+            display: inline-block;
+            width: 127px;
+            height: 215px;
+        }
+
+        .page2 .main .pic-box .phone-box .phone-inner {
+            position: absolute;
+            top: 26px;
+            left: 12px;
+            /* 初始化状态*/
+            opacity: 0;
+            /* 延迟出现，在轮廓画完之后 */
+            transition-delay: 1s;
+        }
+
+        .page2 .main .pic-box .mac-box {
+            position: relative;
+            display: inline-block;
+            width: 790px;
+            height: 545px;
+        }
+
+        .page2 .main .pic-box .mac-box .mac-inner {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 710px;
+        }
+
+        .page2 .main .pic-box .mac-box .mac-inner .inner-title {
+            color: white;
+            text-align: center;
+            padding: 40px 0 20px;
+            /* 初始化状态*/
+            opacity: 0;
+        }
+
+        .page2 .main .pic-box .mac-box .mac-inner .inner-img {
+            vertical-align: baseline;
+        }
+
+        .page2 .main .pic-box .mac-box .mac-inner .inner-img .circle-box {
+            transition-delay: 1s;
+            width: 260px;
+            height: 260px;
+            display: inline-block;
+            /* 初始化状态*/
+            transform: scale(0) rotateZ(0deg);
+        }
+
+        .page2 .main .pic-box .mac-box .mac-inner .inner-img .rect-box {
+            margin: 0 100px 20px;
+            display: inline-block;
+            width: 80px;
+            /* 初始化状态 */
+            height: 0;
+            background-color: #9dd200;
+            transition-delay: 1s;
+        }
+
+
+        /* page title bg color*/
+
+        .page2 .main .text-box h6 {
+            background-color: #0084a8;
+        }
+
+        .page2 .main .text-box h6:before {
+            border-bottom: 20px solid #0084a8;
+        }
+
+        .page2.active .main .pic-box .phone-box .phone-inner {
+            opacity: 1;
+        }
+
+        .page2.active .main .pic-box .mac-box .mac-inner .inner-title {
+            opacity: 1;
+        }
+
+        .page2.active .main .pic-box .mac-box .mac-inner .inner-img .circle-box {
+            transform: scale(1) rotateZ(360deg);
+        }
+
+        .page2.active .main .pic-box .mac-box .mac-inner .inner-img .rect-box {
+            height: 250px;
+        }
+
+        /* end page2 */
+
+        /* begin page 3*/
+
+        .page3 {
+            background-color: #66cc33;
+        }
+
+        .page3 .main .pic-box .pc-box {
+            margin: 0 auto;
+            width: 913px;
+            height: 685px;
+            position: relative;
+        }
+
+        .page3 .main .pic-box .pc-box svg {
+            transform: translateZ(100px);
+        }
+
+        .page3 .main .pic-box .pc-box .pc-inner {
+            position: absolute;
+            top: 200px;
+            left: 300px;
+
+            /* 初始化状态 */
+            opacity: 0;
+            transform: translateZ(120px);
+            transition-delay: 1s;
+        }
+
+        .page3 .main .pic-box .pc-box .pc-inner .bg-shadow {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 163px;
+            height: 180px;
+            border-radius: 50%;
+
+            /* 防止遮盖图片 */
+            z-index: -1;
+
+            animation-name: shadow;
+            animation-duration: 3s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-play-state: running;
+        }
+
+        @keyframes shadow {
+            from {
+                box-shadow: 0 0 10px white;
+                opacity: 0.7;
+            }
+
+            to {
+                box-shadow: 0 0 150px white;
+                opacity: 1;
+            }
+        }
+
+        .page3 .main .pic-box .rolling-box {
+            position: absolute;
+            top: -20px;
+
+            /* 初始状态 */
+            opacity: 0;
+            transform: translateZ(80px) rotateX(-110deg) rotateY(-25deg) rotateZ(0deg) scaleX(2) scaleY(1) scaleZ(1);
+
+            transition-delay: 1.5s;
+        }
+
+        .page3 .main .pic-box .rolling-box img {
+            padding-top: 133px;
+            animation-name: rolling;            
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        @keyframes rolling {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .page3 .main .text-box h6 {
+            background-color: #43b500;
+        }
+
+        .page3 .main .text-box h6:before {
+            border-bottom: 20px solid #43b500;
+        }
+
+        .page3.active .main .pic-box .pc-box .pc-inner {
+            opacity: 1;
+        }
+
+        .page3.active .main .rolling-box {
+            opacity: 1;
+        }
+
+        /* end page 3*/
+    </style>
+    <script src="../lib/jquery.min.js "></script>
+    <script>
+        $(function () {
+            var checkActive = function () {
+                $(".page").each(function () {
+                    var scroll = $(document).scrollTop();
+                    if ($(this).offset().top - scroll < 200) {
+                        $(this).addClass("active");
+                    }
+                });
+            };
+            $(".down-box").click(function () {
+                var height = $(window).height();
+                $("body").animate({ "scrollTop": height }, 1000, checkActive);
+            });
+            $(window).scroll(function (e, delta) {
+                checkActive();
+            });
+            checkActive();
+        });
+    </script>
+</head>
+
+<body>
+    <div class="page page1">
+        <div class="content-box">
+            <div class="open"></div>
+            <div class="get-text"></div>
+            <div class="down-box">
+                <div class="triangle-down"></div>
+            </div>
+        </div>
+        <div class="heartbeat-box">
+            <div class="open"></div>
+        </div>
+    </div>
+
+
+    <div class="page page2">
+        <div class="main">
+            <div class="pic-box">
+                <div class="phone-box">
+                    <svg class="drawline" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127 215">
+                        <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M12.499,26.479l0,154.262l101.606,0l0,-154.262l-101.606,0"></path>
+                        <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M122.626,194.176c0,8.301-6.642,15.029-14.833,15.029H18.81c-8.191,0-14.833-6.729-14.833-15.029V21.049c0-8.301,6.641-15.029,14.833-15.029h88.983c8.191,0,14.833,6.729,14.833,15.029V194.176z"></path>
+                        <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M81.966,19.013c0,1.091-0.885,1.978-1.978,1.978H46.615c-1.091,0-1.978-0.887-1.978-1.978l0,0c0-1.093,0.887-1.978,1.978-1.978h33.374C81.082,17.035,81.966,17.92,81.966,19.013L81.966,19.013z"></path>
+                        <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M63.302,187.722a6.798,6.798,0,0,1,0,13.596a6.798,6.798,0,0,1,0,-13.596"></path>
+                        <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M63.302,192.547a1.973,1.973,0,0,1,0,3.946a1.973,1.973,0,0,1,0,-3.946"></path>
+                    </svg>
+                    <div class="phone-inner">
+                        <img src="../images/week7/phone_inner.jpg">
+                    </div>
+                </div>
+                <div class="mac-box">
+                    <svg class="drawline" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 545">
+                        <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M784.11,499.037 c0,11.195-9.076,20.271-20.271,20.271H26.094c-11.194,0-20.27-9.075-20.27-20.271V27.957c0-11.195,9.076-20.27,20.27-20.27 H763.84c11.194,0,20.271,9.075,20.271,20.27V499.037z"></path>
+                        <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M571.827,527.992 c0,4.797-3.889,8.685-8.687,8.685H226.794c-4.798,0-8.686-3.888-8.686-8.685l0,0c0-4.797,3.888-8.685,8.686-8.685h336.347 C567.938,519.308,571.827,523.195,571.827,527.992L571.827,527.992z"></path>
+                        <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M33.648,38.092l0,442.908l722.639,0l0,-442.908l-722.639,0z"></path>
+                    </svg>
+                    <div class="mac-inner">
+                        <div class="inner-title">响应时间分布及波动</div>
+                        <div class="inner-img">
+                            <div class="circle-box">
+                                <svg width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 322 330">
+                                    <path fill="#FCEE00" d="M162.814,20.586c-39.99,0.328-76.129,16.79-102.231,43.202L162.814,166.02V20.586z" />
+                                    <path fill="#BADA00" d="M60.583,63.788c-15.626,15.811-27.651,35.185-34.752,56.796l136.983,45.435L60.583,63.788z" />
+                                    <path fill="#9DD200" d="M25.831,120.584c-4.697,14.296-7.248,29.567-7.248,45.435c0,80.329,65.119,145.448,145.448,145.448 c39.855,0,75.96-16.035,102.231-42L162.814,166.02L25.831,120.584z"
+                                    />
+                                    <path fill="#7AC800" d="M164.032,20.571c-0.407,0-0.811,0.012-1.217,0.015V166.02l103.449,103.449 c26.679-26.367,43.218-62.975,43.218-103.449C309.481,85.69,244.361,20.571,164.032,20.571z"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="rect-box"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-box">
+                <h6>丰富的报表展现</h6>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="page page3">
+        <div class="main">
+            <div class="pic-box">
+                <div class="pc-box">
+                    <svg class="drawline" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 913.454 684.982">
+                        <path fill="none" stroke="#0062A5" stroke-width="2" stroke-miterlimit="10" d="M907.921,623.324c0,19.107-15.279,34.596-34.125,34.596c-18.848,0-34.125-15.488-34.125-34.596s10.75-34.662,34.125-34.596C898.224,588.796,907.921,604.216,907.921,623.324z"></path>
+                        <path fill="none" stroke="#0062A5" stroke-width="2" stroke-miterlimit="10" d="M843.683,606.576c0,0,24.77,13.055,60.793,0.441"></path>
+                        <path fill="none" stroke="#0062A5" stroke-width="2" stroke-miterlimit="10" d="M762.72,504.216c0,0,4.158,2,43.492,4.666c39.334,2.668,90.648,22.002,35.324,38.668c-55.324,16.668,9.076,34.729,32.01,41.178v23.787"></path>
+                        <path fill="#66CC33" stroke="#0062A5" stroke-width="2" stroke-miterlimit="10" d="M876.671,634.55c0,1.059-1.4,1.918-3.125,1.918l0,0c-1.727,0-3.125-0.859-3.125-1.918v-6.75c0-1.059,1.398-1.916,3.125-1.916l0,0c1.725,0,3.125,0.857,3.125,1.916V634.55z"></path>
+                        <path fill="none" stroke="#0062A5" stroke-width="2" stroke-miterlimit="10" d="M762.72,535.226c0,10.459-8.48,18.938-18.938,18.938H54.542c-10.457,0-18.938-8.479-18.938-18.938V95.119c0-10.46,8.48-18.938,18.938-18.938h689.241c10.457,0,18.938,8.478,18.938,18.938V535.226z"></path>
+                        <path fill="none" stroke="#0062A5" stroke-width="2" stroke-miterlimit="10" d="M564.392,562.277c0,4.482-3.631,8.113-8.115,8.113H242.045c-4.482,0-8.115-3.631-8.115-8.113l0,0c0-4.48,3.633-8.113,8.115-8.113h314.231C560.761,554.164,564.392,557.796,564.392,562.277L564.392,562.277z"></path>
+                        <path fill="none" stroke="#0062A5" stroke-width="2" stroke-miterlimit="10" d="M61.599,104.587l0,413.787l675.126,0l0,-413.787l-675.126,0z"></path>
+                    </svg>
+                    <div class="pc-inner">
+                        <div class="bg-shadow"></div>
+                        <img src="../images/week7/Dtoken.svg">
+                    </div>
+                    <div class="rolling-box">
+                        <img src="../images/week7/rolling.png">
+                    </div>
+                </div>
+            </div>
+            <div class="text-box">
+                <h6>多线路全方位监控您的网站</h6>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
