@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body {
+            background: #009966;
+        }
+
+        .test1 {
+            position: relative;
+            height: 200px;
+        }
+
+        .test1 img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .test1 img.weixin-mask {
+            animation-name: weixin;
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        @keyframes weixin {
+            0% {
+                opacity: 1;
+            }
+
+            0.1% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            50.1% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .test2 {
+            height: 300px;
+            width: 300px;
+        }
+
+        .test2 path {
+            stroke-dasharray: 1000%;
+            stroke-dashoffset: 1000%;
+            animation: dash 2s linear infinite;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .test3 {
+            height: 200px;
+        }
+
+        .test3 img:nth-child(1) {
+            transform: rotate(0deg);
+        }
+
+        .test3 img:nth-child(2) {
+            transform: rotate(15deg);
+        }
+
+        .test3 img:nth-child(3) {
+            transform: rotate(30deg);
+        }
+
+        .test3 img:nth-child(4) {
+            transform: rotate(45deg);
+        }
+
+        .test3 img:nth-child(5) {
+            transform: rotate(60deg);
+        }
+
+        .test4 {
+            width: 200px;
+            height: 200px;
+        }
+
+        .test4 img {
+            animation-name: shake;
+            animation-duration: 3.2s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            1% {
+                transform: rotate(10deg);
+            }
+
+            3% {
+                transform: rotate(-10deg);
+            }
+
+            5% {
+                transform: rotate(10deg);
+            }
+
+            7% {
+                transform: rotate(-10deg);
+            }
+
+            9% {
+                transform: rotate(10deg);
+            }
+
+            11% {
+                transform: rotate(-10deg);
+            }
+
+            12% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .test5-1 {
+            width: 200px;
+            height: 100px;
+            position: relative;
+            top: 50px;
+        }
+
+        .test5-1 .email-top {
+            position: absolute;
+            top: -4px;
+            left: 2px;
+            transform: rotate(180deg);
+        }
+
+        .test5-1 .email-inner {
+            position: absolute;
+            top: 40px;
+            left: 19px;
+
+            /* 默认把信件隐藏 */
+            overflow: hidden;
+            height: 0px;
+        }
+
+        .test5-1 .email-bottom {
+            position: absolute;
+            top: 25px;
+            left: 2px;
+        }
+
+        .test5-2 {
+            width: 200px;
+            height: 100px;
+            position: relative;
+            top: 50px;
+        }
+
+        .test5-2 .email-top {
+            position: absolute;
+            top: -30px;
+            left: 2px;
+        }
+
+        .test5-2 .email-inner {
+            position: absolute;
+            left: 19px;
+            overflow: hidden;
+            top: 8px;
+            height: 32px;
+        }
+
+        .test5-2 .email-bottom {
+            position: absolute;
+            top: 25px;
+            left: 2px;
+        }
+
+        .test5 {
+            width: 200px;
+            height: 100px;
+            position: relative;
+
+            top: 50px;
+        }
+
+        .test5 .email-top {
+            position: absolute;
+            top: -4px;
+            left: 2px;
+            transform: rotate(180deg);
+        }
+
+        .test5 .email-inner {
+            position: absolute;
+            overflow: hidden;
+            height: 0px;
+            top: 40px;
+            left: 19px;
+            animation: emailinner 5s linear 0s infinite;
+        }
+
+        .test5 .email-bottom {
+            position: absolute;
+            top: 25px;
+            left: 2px;
+        }
+
+        .test5 .email-top img {
+            /* 设置旋转轴位置 */
+            transform-origin: 50% 100%;
+            animation: openemail 5s linear 0s infinite;
+        }
+
+        @keyframes openemail {
+            0% {
+                transform: rotateX(0deg);
+            }
+
+            15% {
+                transform: rotateX(0deg);
+            }
+
+            35% {
+                transform: rotateX(180deg);
+            }
+
+            65% {
+                transform: rotateX(180deg);
+            }
+
+            85% {
+                transform: rotateX(0deg);
+            }
+
+            100% {
+                transform: rotateX(0deg);
+            }
+        }
+
+        @keyframes emailinner {
+            0% {
+                top: 40px;
+                height: 0;
+            }
+
+            25% {
+                top: 40px;
+                height: 0;
+            }
+
+            40% {
+                top: 8px;
+                height: 32px;
+            }
+
+            60% {
+                top: 8px;
+                height: 32px;
+            }
+
+            80% {
+                top: 40px;
+                height: 0;
+            }
+
+            100% {
+                top: 40px;
+                height: 0;
+            }
+        }
+
+        .test6 {
+            background-image: url("../images/onepiece.jpg");
+            -webkit-mask-image: url("../images/mask.png");
+            /* 遮罩图片的高度 */
+            height: 260px;
+        }
+
+        .test7 .item {
+            height: 100px;
+            width: 100px;
+            display: inline-block;
+        }
+
+        .test7 div.item:nth-child(1) {
+            background: -webkit-linear-gradient(yellow, green);
+        }
+
+        .test7 div.item:nth-child(2) {
+            background: -webkit-linear-gradient(left, yellow, green);
+        }
+
+        .test7 div.item:nth-child(3) {
+            background: -webkit-linear-gradient(left top, yellow, green);
+        }
+
+        .test7 div.item:nth-child(4) {
+            background: -webkit-linear-gradient(180deg, yellow, green);
+        }
+
+        .test7 div.item:nth-child(5) {
+            background: -webkit-linear-gradient(red, yellow, green);
+        }
+
+        .test7 div.item:nth-child(6) {
+            background: -webkit-linear-gradient(yellow, transparent);
+        }
+
+        .test7 div.item:nth-child(7) {
+            background: -webkit-radial-gradient(yellow, green);
+        }
+
+        .test7 div.item:nth-child(8) {
+            background: -webkit-radial-gradient(yellow 30%, green 100%);
+
+        }
+
+        .test8 {
+            height: 300px;
+            background-image: url("../images/onepiece.jpg");
+            -webkit-mask-image: -webkit-linear-gradient(left, transparent, white);
+        }
+
+        .test9 {
+            height: 300px;
+            background-image: url("../images/onepiece.jpg");
+
+            -webkit-mask-image: -webkit-linear-gradient(left, transparent, white);
+            /* 设置遮罩大小，否则默认遮罩占满全屏*/
+            -webkit-mask-size: 100px 100%;
+            /* 禁止水平平铺，通过 position 移动来达到扫描效果 */
+            -webkit-mask-repeat: no-repeat;
+            animation: heartbeat 5s linear 0s infinite;
+        }
+
+        @keyframes heartbeat {
+            from {
+                -webkit-mask-position: -10% 0;
+            }
+
+            to {
+                -webkit-mask-position: 110% 0;
+            }
+        }
+
+        .test10 {
+            position: relative;
+        }
+
+        .test10 .bg-shadow {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 163px;
+            height: 180px;
+            border-radius: 50%;
+
+            /* 防止遮盖图片 */
+            z-index: -1;
+            animation: shadow 3s linear 1s infinite alternate;
+        }
+
+        @keyframes shadow {
+            from {
+                box-shadow: 0 0 10px white;
+                opacity: 0.7;
+            }
+
+            to {
+                box-shadow: 0 0 150px white;
+                opacity: 1;
+            }
+        }
+
+        .test11 .path {
+            width: 300px;
+            height: 300px;
+            background: orange;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(1turn);
+            }
+        }
+
+        .test11 .avatar {
+            animation: spin 3s infinite linear;
+            transform-origin: 50% 150px;
+            /* 150px = path radius */
+        }
+
+        .test11 .avatar>img {
+            width: 30px;
+            animation: infinite;
+            animation-direction: reverse;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>透明度动画</h2>
+    <div class="test1">
+        <div class="weixin-box">
+            <img src="../images/week7/weixin_2.svg">
+            <img class="weixin-mask" src="../images/week7//weixin_1.svg">
+        </div>
+    </div>
+
+    <h2>svg 画图</h2>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <line x1="200" y1="0" x2="400" y2="200" style="stroke:#fff;stroke-width:2" />
+
+        <rect x="50" y="0" width="50" height="100" style="fill:blue;stroke-width:1;stroke:yellow" />
+
+        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
+
+        <polyline points="20,20 40,25 60,40 80,120 120,140 200,180" style="fill:none;stroke:black;stroke-width:3" />
+
+        <path d="M150 0 L75 200 L225 200 Z" fill="yellow" />
+
+    </svg>
+
+    <h2>svg 路径描边动画</h2>
+    <div class="test2">
+        <svg width="580" height="400" xmlns="http://www.w3.org/2000/svg">
+
+            <path d="m62.5,127.5c0,-1 -0.612209,-6.100586 1,-14c1.455803,-7.133064 6,-18 11,-24c5,-6 9.179062,-11.743629 15,-16c5.168724,-3.779465 10.763046,-8.380554 17,-12c3.867996,-2.244686 9.635666,-6.480377 19,-8c6.909607,-1.121277 23.968811,-4.499569 36,-5c11.989639,-0.498703 26,0 44,0c15,0 32.086716,2.519447 50,6c18.100586,3.516941 35.906921,9.36813 55,14c17.919342,4.347122 25.998352,4.003906 45,12c14.069366,5.92054 19.518707,12.541237 23,17c3.58844,4.595985 8.188171,12.406822 12,19c5.005188,8.657265 7.881775,17.027084 10,26c1.894592,8.02562 3,18 3,25c0,8 -1.720032,16.086121 -4,23c-2.675781,8.114197 -7.033386,15.976273 -12,23c-7.047546,9.966553 -17.599945,20.527481 -28,28c-13.516174,9.711472 -31.78894,22.442139 -44,28c-16.733093,7.616028 -36.137421,13.966248 -55,17c-23.238556,3.737549 -43.842285,10.018066 -60,12c-16.90271,2.073303 -34.010361,4.498718 -46,4c-12.031189,-0.500427 -23.264008,-5.51062 -31,-10c-9.355431,-5.429169 -17.238876,-12.739075 -26,-21c-8.231537,-7.761566 -11.621788,-14.652313 -17,-25c-4.542076,-8.738968 -7.13546,-20.556122 -9,-27c-2.79335,-9.65387 -3.497551,-19.925797 -4,-25c-0.591225,-5.970795 -0.175377,-12.06134 2,-18c1.852272,-5.056595 4.345444,-8.808334 7,-14c3.467102,-6.780792 6.733246,-13.232742 12,-19c6.675606,-7.310013 15.105415,-11.726669 18,-13c9.424088,-4.145668 15.488075,-10.060036 25,-14c6.725952,-2.78598 16.140518,-3.561226 23,-6c7.175751,-2.551216 12,-5 15,-5c4,0 13.124756,-0.575279 19,1c8.252518,2.212677 18.11499,5.538994 27,8c6.095062,1.688232 13.34346,1.763138 19,4c6.705811,2.651794 11.30368,7.544121 19,13c5.223724,3.703064 13,10 19,16c3,3 4.851135,7.485306 7,12c1.772003,3.7229 2.095428,7.977341 3,12c1.118652,4.974792 2,11 2,16c0,5 -3.707916,11.380569 -8,17c-4.893738,6.407135 -9.88855,11.194092 -15,14c-3.920288,2.152039 -10.920227,7.25087 -20,10c-10.912521,3.304047 -22,6 -31,8c-9,2 -22,2 -29,2c-8,0 -19.897461,-0.365845 -30,-3c-8.921265,-2.326141 -18.078049,-5.442108 -23,-10c-4.278297,-3.961838 -8.573563,-9.702087 -12,-17c-3.631172,-7.733994 -5,-18 -5,-20c0,-6 -1.148048,-11.228363 0,-14c1.623589,-3.919693 3.976151,-5.779968 8,-10c4.976273,-5.218872 12.736572,-9.577179 21,-13c8.764694,-3.630447 20.953323,-7.499039 29,-8c4.990341,-0.310684 10.077332,-1.109604 18,0c7.209747,1.009766 12.918304,5.112137 17,8c2.943359,2.082474 7.220535,3.831284 11,9c2.128189,2.910461 2.633453,7.022476 3,10c0.503769,4.092209 1.869354,8.128723 1,11c-1.04483,3.450851 -4.19577,3.648865 -8,6c-4.25325,2.628662 -9.020447,3.505112 -15,4c-6.062042,0.501709 -13,2 -17,2c-3,0 -6.190277,-1.881516 -8,-5c-2.24469,-3.867996 -4.346191,-8.70546 -6,-11c-1.307449,-1.813995 -1,-6 -1,-7c0,-1 -1.414215,-4.585785 0,-6c1.414215,-1.414215 2,-1 4,-1c1,0 2.228363,-1.148056 5,0c1.306564,0.541199 2.647491,3.972519 7,5c0.973251,0.229752 2,2 3,2c2,0 2,2 2,4c0,1 0,3 -1,5l-1,0l-1,0l-1,1"
+                id="svg_1" stroke-width="1.5" stroke="#000" fill="none" />
+
+        </svg>
+    </div>
+
+    <h2>旋转变形</h2>
+
+    <div class="test3">
+        <img src="../images/week7/shake_phone.svg">
+        <img src="../images/week7/shake_phone.svg">
+        <img src="../images/week7/shake_phone.svg">
+        <img src="../images/week7/shake_phone.svg">
+        <img src="../images/week7/shake_phone.svg">
+    </div>
+
+    <h2>旋转变形动画</h2>
+    <div class="test4">
+        <img src="../images/week7/shake_phone.svg">
+    </div>
+
+    <h2>组合动画零件</h2>
+
+    <div class="test5-0">
+        <img src="../images/week7/email_bg.svg">
+        <img src="../images/week7/email_inner.svg">
+        <img src="../images/week7/email_top.svg">
+    </div>
+
+    <h2>组合动画初始态</h2>
+    <div class="test5-1">
+        <img src="../images/week7/email_bg.svg">
+        <div class="email-inner">
+            <img src="../images/week7/email_inner.svg">
+        </div>
+        <div class="email-top">
+            <img src="../images/week7/email_top.svg">
+        </div>
+        <div class="email-bottom">
+            <img src="../images/week7/email_top.svg">
+        </div>
+    </div>
+
+    <h2>组合动画结束态</h2>
+    <div class="test5-2">
+        <img src="../images/week7/email_bg.svg">
+        <div class="email-inner">
+            <img src="../images/week7/email_inner.svg">
+        </div>
+        <div class="email-top">
+            <img src="../images/week7/email_top.svg">
+        </div>
+        <div class="email-bottom">
+            <img src="../images/week7/email_top.svg">
+        </div>
+    </div>
+
+    <h2>组合动画</h2>
+    <div class="test5">
+        <img src="../images/week7/email_bg.svg">
+        <div class="email-inner">
+            <img src="../images/week7/email_inner.svg">
+        </div>
+        <div class="email-top">
+            <img src="../images/week7/email_top.svg">
+        </div>
+        <div class="email-bottom">
+            <img src="../images/week7/email_top.svg">
+        </div>
+    </div>
+
+
+    <h2>遮罩</h2>
+    <div class="test6">
+
+    </div>
+
+
+    <h2>渐变</h2>
+    <div class="test7">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <h2>渐变遮罩</h2>
+
+    <div class="test8">
+
+    </div>
+
+    <h2>渐变遮罩动画</h2>
+
+    <div class="test9">
+
+    </div>
+
+    <h2>荧光动画</h2>
+
+    <div class="test10">
+        <div class="bg-shadow"></div>
+        <img src="../images/week7/Dtoken.svg">
+    </div>
+
+    <h2>路径动画</h2>
+    <div class="test11">
+        <div class="path">
+            <div class="avatar">
+                <img src="../images/week7/Dtoken.svg" /> </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
