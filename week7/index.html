@@ -34,10 +34,12 @@
 
         .page .main {
             /* 垂直居中 */
-            position: absolute;
+            /* 相对 .page 定位 */
+            position: absolute; 
             top: 50%;
             transform: translateY(-50%);
-            width: 100%;
+            /* 防止坍缩，因为 absolute 后有包裹性*/
+            width: 100%; 
 
             /* 配合 inline block 进行内容的垂直居中*/
             text-align: center;
@@ -51,25 +53,30 @@
 
         .page .main .text-box h6 {
             margin: 30px auto 0;
+            /* 给小三角做定位容器 */
             position: relative;
+            /* 利用包裹性，否则太宽 */
             display: inline-block;
-            /* 包裹性 */
+
+            
             padding: 0.3em 0.5em;
             border-radius: 10px;
             font-size: 3em;
+            /* 去掉 h 标签默认的加粗 */
             font-weight: normal;
-            /* 去掉加粗 */
+            
             color: white;
             background-color: rgba(0, 0, 0, 0.15);
         }
 
+        /* 向上小三角 */
         .page .main .text-box h6:before {
             content: '';
             position: absolute;
             display: block;
             top: -20px;
-            margin-left: -20px;
-            /* 水平居中，小三角宽度是 border-width * 2 */
+            /* 水平居中，小三角宽度是 border-width * 2， 所以要回撤 20px */
+            margin-left: -20px;            
             left: 50%;
 
             /* 小三角 */
@@ -85,6 +92,7 @@
         /* begin svg animation */
 
         .page svg.drawline path {
+            /* 下面两个值要尽量大一些，百分比是针对 svg viewbox*/
             stroke-dasharray: 500%;
             stroke-dashoffset: 500%;
             transition: all 2s ease-out 0s;
