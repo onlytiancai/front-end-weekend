@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+    body {
+        background-color: #009966;
+        padding-bottom:500px;
+    }
+    .test1 {
+        width: 200px;
+        height: 200px;
+        background: lightgreen;
+        transition: all 1s;
+    }
+    
+    .test1:hover {
+        width: 300px;
+        height: 300px;
+        background: blue;
+    }
+    
+    .test2 {
+        width: 300px;
+        height: 300px;
+        position: relative;
+    }
+    
+    .test2 img {
+        position: absolute;
+        opacity: 1;  
+
+    }
+    
+    .test2 img.mask {
+        animation-name: weixin;
+        animation-duration: 3s;  
+        animation-iteration-count: infinite;
+    }
+    
+    @keyframes weixin {
+        0% {opacity: 0;}
+        0.1% {opacity: 1;}
+        50% {opacity: 1;}
+        50.1% {opacity: 0;}
+        100% { opacity: 0; }
+    }
+    
+    .test3 {
+        background: #fff;
+    }
+    
+    .test3 svg {
+        width: 100%;        
+    }
+    
+    .test3 .line {
+        stroke: red;
+        stroke-width: 5px;
+        stroke-dasharray: 5000px;
+        stroke-dashoffset: 5000px;
+        
+        animation-name: line;
+        animation-duration: 3s;  
+        animation-iteration-count: infinite;
+    }
+    
+    @keyframes line {
+        100% { stroke-dashoffset: 0; }
+    }
+    
+    .test4 img {
+        animation-name: phone;
+        animation-duration: 3s;  
+        animation-iteration-count: infinite;
+    }
+    
+    @keyframes phone {
+        0% { transform: rotate(0deg)}
+        2% { transform: rotate(15deg)}
+        4% { transform: rotate(-15deg)}
+        6% { transform: rotate(15deg)}
+        8% { transform: rotate(-15deg)}
+        10% { transform: rotate(15deg)}
+        12% { transform: rotate(-15deg)}
+        14% { transform: rotate(0deg)}
+        100% { stroke-dashoffset: 0; }
+    }
+    
+    .test5 {
+        position: relative;
+    }
+    
+    .test5 .email-top {
+        position: absolute;
+        top: -4px;
+        left: 2px;
+        transform: rotate(180deg);
+    }
+    
+    .test5 .email-top img {       
+        transform-origin: 0 100%;
+
+        animation-name: emailtop;
+        animation-duration: 5s;  
+        animation-iteration-count: infinite;
+        
+    }
+    
+    @keyframes emailtop {
+            0% {
+                transform: rotateX(0deg);
+            }
+
+            15% {
+                transform: rotateX(0deg);
+            }
+
+            35% {
+                transform: rotateX(180deg);
+            }
+
+            65% {
+                transform: rotateX(180deg);
+            }
+
+            85% {
+                transform: rotateX(0deg);
+            }
+
+            100% {
+                transform: rotateX(0deg);
+            }      
+    }
+    
+    .test5 .email-bottom img {
+        position: absolute;
+        left: 2px;
+        top: 25px;
+    }
+    
+    .test5 .email-inner {
+        position: absolute;
+        top: 39px;
+        left: 20px;
+        height: 0px;        
+        overflow: hidden;       
+
+        animation: emailinner 5s linear 0s infinite;     
+    }
+    
+    @keyframes emailinner {
+            0% {
+                top: 40px;
+                height: 0;
+            }
+
+            25% {
+                top: 40px;
+                height: 0;
+            }
+
+            40% {
+                top: 8px;
+                height: 32px;
+            }
+
+            60% {
+                top: 8px;
+                height: 32px;
+            }
+
+            80% {
+                top: 40px;
+                height: 0;
+            }
+
+            100% {
+                top: 40px;
+                height: 0;
+            }
+    }
+    
+    .test6 {
+        background-image: url("../images/onepiece.jpg");
+        -webkit-mask-image: url("../images/mask.png");
+        /* 遮罩图片的高度 */
+        height: 260px;
+    }
+        
+    </style>
+</head>
+<body>
+    <div class="test1"></div>
+    <div class="test2">
+        <img src="../images/week7/weixin_2.svg">
+        <img class="mask" src="../images/week7/weixin_1.svg">        
+    </div>
+    
+    <div class="test3">
+        <svg height="300" >
+        <line class="line" x1="0" y1="200" x2="400" y2="200" 
+        style="" />
+        <rect
+        x="50"
+        y="0"
+        width="50"
+        height="100"
+        style="fill:blue;stroke-width:1;stroke:yellow" />
+        
+        <circle
+        cx="50"
+        cy="50"
+        r="40"
+        stroke="black"
+        stroke-width="2"
+        fill="red" />
+
+        <polyline
+        points="20,20 40,25 60,40 80,120 120,140 200,180"
+        style="fill:none;stroke:black;stroke-width:3" />
+
+        <path d="M150 0 L75 200 L225 200 Z" fill="yellow" />
+
+      
+        </svg>
+        <svg height="500"  >
+          <path class="line" d="m48.5,94.5c0,3 2.690659,15.559921 17,74c3.405197,13.906998 16,59 16,59c-2,-33 -1.475639,-72.096542 2,-88c0.88031,-4.02803 1.641174,-5.550369 6,-8c9.389191,-5.276657 83.352386,-3.77713 84,15c0.66571,19.301727 -43.778214,38.362701 -95,46c-40.852146,6.091156 -47.17625,6.486252 -45,7c44.769455,10.568634 145,-10 189,-10c2,0 -8.835587,-17.80191 -36,-56c-23.993347,-33.738991 -45.910339,-50.098312 -48,-57c-0.28978,-0.957092 -1.192612,-1.08522 -2,1c-31.891159,82.364761 -44.999207,194.915558 -47,266c-0.84407,29.988129 -2.424454,25.85022 8,7c35.331146,-63.888275 100.373138,-124.344055 120,-155c9.166245,-14.317123 14.327408,-24.042435 13,-33c-1.116379,-7.533508 -5.940109,-18.026016 -5,-35c1.001526,-18.083054 3.812363,-16.988998 3,13c-4.501648,166.182831 -3.384277,213.88208 1,213c14.737976,-2.965149 12.083023,-40.425995 24,-113c9.466187,-57.648865 2.820801,-80.952698 0,-92c-5.340668,-20.915955 -11.986923,-41.757111 -13,-48c-0.160187,-0.987091 0.494797,-5.176872 65,-19c66.555115,-14.262413 102.064575,-12.800911 107,-12c3.121429,0.506538 13.486694,22.240334 9,64c-15.086334,140.4151 -38.310181,265.787994 -52,272c-1.287842,0.584381 9.870422,-26.567596 -43,-171c-20.1409,-55.021301 -44,-79 -59,-91c-5,-4 -18,-12.585785 -18,-14c0,-1.414215 36.316193,-9.591293 102,9c2.15155,0.608978 3.157959,2.414124 1,3c-14.508087,3.938919 -17,1 -19,1c-6,0 -20.266327,2.275894 -25,21c-9.88031,39.081696 -9,90 -7,90c1,0 -14.386414,-55.157028 -18,-68c-0.856506,-3.044083 5.334412,-13.599289 29,0c11.103516,6.380569 6.717773,30.972076 -34,50c-26.64505,12.451569 -35.326401,10.503113 -34,12c22.045776,24.879364 77.514709,12.485291 86,4c1.414215,-1.414215 5.849701,-5.783386 5,-25c-0.364258,-8.238159 -1,-8 1,-6c2,2 3,3 5,3l2,2l1,1" id="svg_1" stroke-width="1.5" stroke="#000" fill="none"/>
+        </svg>
+    </div>
+    <div class="test4">
+        <img src="../images/week7/shake_phone.svg">
+    </div>
+    
+    <div class="test5">
+        <img src="../images/week7/email_bg.svg">
+        <div class="email-inner">
+            <img src="../images/week7/email_inner.svg">
+        </div>
+        <div class="email-top">
+            <img src="../images/week7/email_top.svg">
+        </div>
+        <div class="email-bottom">
+            <img src="../images/week7/email_top.svg">
+        </div>
+    </div>
+    
+    <div class="test6">
+    </div>
+</body>
