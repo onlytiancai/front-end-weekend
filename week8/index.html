@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: lightgreen;
+    }
+    .test1 {
+        position: relative;
+        height: 700px;        
+        overflow: hidden;
+    }
+    .test1 video {        
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    
+    .test1 .text {
+        position: absolute;
+        font-size: 200%;
+        top: 300px;       
+        color: #fff;
+        padding-left: 100px;
+    }
+    
+    .test1 .nav {    
+        top: 0;
+        position: absolute;
+        width: 100%;
+        z-index: 100;
+        
+        margin: 0;
+        padding: 0;        
+        list-style: none;
+
+        height: 50px;
+        line-height: 50px;
+        
+        background: rgba(0, 0, 0, .5);
+
+    }
+    
+    .test1 .nav li {
+        display: inline-block;
+        margin: 0 30px;
+    }
+    
+    .test1 .nav li a {        
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .polina {
+        padding-left: 100px;
+        font-size: 200%;
+        color: #fff;
+    }
+
+    </style>
+    
+    <script src="../lib/jquery.min.js "></script>
+    <script>
+        $(function () {
+            $(window).scroll(function (e, delta) {
+                if ($(document).scrollTop() > 50) {
+                    $('.test1 .nav').css('position', 'fixed');
+                } else {
+                    $('.test1 .nav').css('position', 'absolute');
+                }
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <h1>再别康桥</h1>
+    <div class="test1">
+        <video autoplay loop >      
+            <source src="http://www.isoftstone.com/upload/accessory/20182/p1c70j52n5kqsktr1n5g5f91qjp4.mp4" type="video/mp4">
+        </video>
+
+        <div class="text">
+            <h1>软通动力</h1> 
+            <h2>中国领先的创新型软件及信息技术服务商</h2>
+        </div>
+        
+        <ul class="nav">
+            <li><a href="#">行业</a></li>
+            <li><a href="#">软件技术服务</a></li>
+            <li><a href="#">企业数字化转型</a></li>
+            <li><a href="#">关于我们</a></li>
+        </ul>
+    </div>
+    
+    <div class="polina">
+        <pre>
+轻轻的我走了，
+正如我轻轻的来；
+我轻轻的招手，
+作别西天的云彩。
+　
+那河畔的金柳，
+是夕阳中的新娘；
+波光里的艳影，
+在我的心头荡漾。
+　
+软泥上的青荇，
+油油的在水底招摇；
+在康河的柔波里，
+我甘心做一条水草！
+　
+那榆荫下的一潭，
+不是清泉，
+是天上虹；
+揉碎在浮藻间，
+沉淀着彩虹似的梦。
+　
+寻梦？撑一支长篙，
+向青草更青处漫溯；
+满载一船星辉，
+在星辉斑斓里放歌。
+　
+但我不能放歌，
+悄悄是别离的笙箫；
+夏虫也为我沉默，
+沉默是今晚的康桥！
+　
+悄悄的我走了，
+正如我悄悄的来；
+我挥一挥衣袖，
+不带走一片云彩。
+        </pre>
+    </div>
+</body>
