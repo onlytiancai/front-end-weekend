@@ -1,0 +1,130 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>个人任务管理</title>
+</head>
+
+<body>
+    <h1>任务管理系统</h1>
+    <p>
+        <input type="text" name="task" id="txtTask">
+        <input type="button" value="添加任务" id="btnAdd">
+    </p>
+    <h2>未完成任务</h2>
+    <ol id="todo-list">
+    </ol>
+    <h2>已完成任务</h2>
+    <ul id="done-list"></ul>
+    <script>
+        var todo_list = ['吃饭', '睡觉', '打豆豆'];
+        var done_list = [];
+        var todoContainer = document.getElementById('todo-list');
+        var doneContainer = document.getElementById('done-list');
+        var btnAdd = document.getElementById('btnAdd');        
+
+        function addToList(list, task) {
+            if (task != '') {
+                list.push(task);
+            }
+            syncData();
+        }
+
+        function removeFromList(list, task) {
+            var temp = [];
+            for (var i = 0; i < list.length; i++) {
+                if (list[i] !== task) {
+                    temp.push(list[i]);
+                }
+            }
+            return temp;  
+        }
+
+        function addTodo(task) {
+            addToList(todo_list, task);            
+        }
+
+        function addToDone(task) {
+            addToList(done_list, task);
+        }
+
+        function removeFromTodo(task) {
+            todo_list = removeFromList(todo_list, task);
+            syncData();
+        }
+
+        function removeFromDone(task) {
+            done_list = removeFromList(done_list, task);
+            syncData();
+        }
+
+        function moveToDone(task) {
+            removeFromTodo(task);
+            addToDone(task);
+        }
+
+        function clearContainer(container) {
+            container.innerHTML = '';
+        }
+
+        function todoClickHandler() {
+            var task = this.innerText;
+            moveToDone(task);
+            showTodoList();
+            showDoneList();
+        }
+
+        function doneClickHandler() {
+            var task = this.innerText;
+            removeFromDone(task);
+            showDoneList();
+        }
+
+        function addTaskToContainer(container, task, handler) {
+            var li = document.createElement('li');
+            li.innerText = task.toString();
+            li.onclick = handler;
+            container.appendChild(li);
+        }
+
+        function showTodoList() {
+            clearContainer(todoContainer);
+            for (var i = 0; i < todo_list.length; i++) {
+                addTaskToContainer(todoContainer, todo_list[i], todoClickHandler);
+            }
+        }
+
+        function showDoneList() {
+            clearContainer(doneContainer);
+            for (var i = 0; i < done_list.length; i++) {
+                addTaskToContainer(doneContainer, done_list[i], doneClickHandler);
+            }
+        }
+
+        btnAdd.onclick = function () {
+            var task = txtTask.value;
+            addTodo(task);
+            showTodoList();
+        };
+        
+        function loadData() {
+            var temp = localStorage.getItem('todo_list');
+            todo_list = temp != null && temp != '' ? temp.split('|') : [];
+            
+            temp = localStorage.getItem('done_list');
+            done_list = temp != null && temp != '' ? temp.split('|') : [];
+        }
+        
+        function syncData() {
+            localStorage.setItem('todo_list', todo_list.join('|'));
+            localStorage.setItem('done_list', done_list.join('|'));        
+        }
+
+        loadData();
+        showTodoList();
+        showDoneList();
+
+    </script>
+</body>
+
+</html>
