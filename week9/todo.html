@@ -105,6 +105,7 @@
             var task = txtTask.value;
             addTodo(task);
             showTodoList();
+            txtTask.value = '';
         };
         
         function loadData() {
@@ -117,7 +118,7 @@
         
         function syncData() {
             localStorage.setItem('todo_list', todo_list.join('|'));
-            localStorage.setItem('done_list', done_list.join('|'));        
+            localStorage.setItem('done_list', done_list.join('|'));
         }
 
         loadData();
