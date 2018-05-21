@@ -26,7 +26,7 @@ async function main() {
             let ret = await execAsync(cmd);
             if (ret.err) continue;
 
-            cmd = `sloc --exclude lib -f json ${studentDir}/`;
+            cmd = `sloc --exclude --exclude "(bootstrap|java|xml|jquery|svg|lib)" -f json ${studentDir}/`;
             console.log(cmd);
             ret = await execAsync(cmd);
             if (ret.err) continue;

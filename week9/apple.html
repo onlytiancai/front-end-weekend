@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Apple</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        nav {
+            background: #000;
+            position: relative;
+        }
+
+        nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+            padding-left: 50px;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin-right: 50px;
+            line-height: 44px;
+        }
+
+        nav ul li a:hover {
+            opacity: .65;
+        }
+
+        nav .logo {
+            display: block;
+            width: 20px;
+            height: 44px;
+            background-image: url(image_large.svg);
+            text-indent: -2000px;
+        }
+
+        nav>ul>li>ul {
+            display: none;
+            position: absolute;
+            background: #222;
+            left: 0;
+            width: 100%;
+        }
+
+        nav>ul>li>ul>li>a {
+            line-height: 100px;
+            margin-right: 0;
+            margin-top: 20px;
+        }
+
+        nav>ul>li>ul>li {
+            background-repeat: no-repeat;            
+            background-position: center top;
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+
+        nav>ul>li>ul>li:nth-child(1) {
+            background-image: url(macbook_dark_large.svg);
+        }
+
+        nav>ul>li>ul>li:nth-child(2) {
+            background-image: url(macbookair_dark_large.svg);
+        }
+
+        nav>ul>li>ul>li:nth-child(3) {
+            background-image: url(macbookpro_dark_large.svg);
+        }
+
+        nav>ul>li>ul>li:nth-child(4) {
+            background-image: url(imac_dark_large.svg);
+        }
+
+        nav>ul>li>ul>li:nth-child(5) {
+            background-image: url(imac_pro_dark_large.svg);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="" class="logo">Apple</a>
+            </li>
+            <li>
+                <a href="" id="mac">Mac</a>
+                <ul id="maclist">
+                    <li>
+                        <a href="">MacBook</a>
+                    </li>
+                    <li>
+                        <a href="">MacBook Air</a>
+                    </li>
+                    <li>
+                        <a href="">MacBook Pro</a>
+                    </li>
+                    <li>
+                        <a href="">iMac</a>
+                    </li>
+                    <li>
+                        <a href="">iMac Pro</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">iPad</a>
+            </li>
+            <li>
+                <a href="">iPhone</a>
+            </li>
+            <li>
+                <a href="">Watch</a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        var mac = document.getElementById('mac');
+        var maclist = document.getElementById('maclist');
+
+        function show() {
+            maclist.style.display = 'block';
+        }
+
+        function hide() {
+            maclist.style.display = 'none';
+        }
+
+        mac.addEventListener('mouseover', show);
+        mac.addEventListener('mouseout', hide);
+        maclist.addEventListener('mouseover', show);
+        maclist.addEventListener('mouseout', hide);
+
+    </script>
+</body>
+
+</html>
