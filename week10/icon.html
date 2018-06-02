@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .logo {            
+            max-width: 200px;
+        }
+        #index a {
+            padding-left: 5em;
+        }
+
+        #index a img {
+            position: absolute;
+            left: 1em;
+            top: 50%;
+            max-height: 3em;
+            max-width: 3em;
+            margin-top: -1.5em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div data-role="page" id="pageone">
+        <div data-role="main" class="ui-content">
+            <img class="logo" src="logo_big_a.png" alt="">            
+            <h2>课程目录</h2>
+            <ul data-role="listview" data-inset="true" id="index">
+                <li>
+                    <a href="#">
+                        <img src="code.svg">
+                        <h2>认识变量</h2>
+                        <p>学习数字，字符串，布尔值等类型的变量</p>
+                        <span class="ui-li-count">8</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="code.svg">
+                        <h2>条件语句</h2>
+                        <p>使用 if, switch 等条件语句实现分支逻辑。</p>
+                        <span class="ui-li-count">10</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="code.svg">
+                        <h2>循环语句</h2>
+                        <p>使用 for, while 等循环语句进行重复的操作。</p>
+                        <span class="ui-li-count">13</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#">
+                        <img src="code.svg">
+                        <h2>函数</h2>
+                        <p>使用函数封装一系列的操作。</p>
+                        <span class="ui-li-count">15</span>
+                    </a>
+                </li>
+            </ul>
+            <img src="banner.jpg" alt="">
+        </div>
+    </div>
+
+</body>
+
+</html>

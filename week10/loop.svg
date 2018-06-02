@@ -1,0 +1,15 @@
+<svg width="470" height="470" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_5" fill="#933ec5" d="m462.5,22.5l-455,0c-4.143,0 -7.5,3.358 -7.5,7.5l0,410c0,4.142 3.357,7.5 7.5,7.5l455,0c4.143,0 7.5,-3.358 7.5,-7.5l0,-80c0,-4.142 -3.357,-7.5 -7.5,-7.5s-7.5,3.358 -7.5,7.5l0,72.5l-440,0l0,-335l440,0l0,232.5c0,4.142 3.357,7.5 7.5,7.5s7.5,-3.358 7.5,-7.5l0,-300c0,-4.142 -3.357,-7.5 -7.5,-7.5zm-447.5,15l277.5,0l0,45l-277.5,0l0,-45zm292.5,45l0,-45l147.5,0l0,45l-147.5,0z"/>
+  <path id="svg_6" fill="#933EC5" d="m381.5,52c-4.411,0 -8,3.589 -8,8s3.589,8 8,8s8,-3.589 8,-8s-3.589,-8 -8,-8z"/>
+  <path id="svg_7" fill="#933EC5" d="m340.5,52c-4.411,0 -8,3.589 -8,8s3.589,8 8,8s8,-3.589 8,-8s-3.589,-8 -8,-8z"/>
+  <path id="svg_8" fill="#933EC5" d="m422.5,52c-4.411,0 -8,3.589 -8,8s3.589,8 8,8s8,-3.589 8,-8s-3.589,-8 -8,-8z"/>
+  <text style="cursor: text;" stroke="null" transform="matrix(3.3378049681736774,0,0,3.8211792641741935,-138.0025382308038,-547.1560885512426) " font-weight="bold" xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="24" id="svg_13" y="219.36494" x="81.207432" stroke-opacity="null" stroke-width="0" fill="#933ec5">LOOP</text>
+ </g>
+</svg>
